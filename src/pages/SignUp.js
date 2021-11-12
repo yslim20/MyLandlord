@@ -93,10 +93,9 @@ export default function SignUp() {
       </RadioCont>
 
 {/* // ============ Signup form */}
-      <MidCont> {/*  Form box starts */}
+      <MidCont onSubmit={()=>signup(event)}> {/*  Form box starts */}
         <ContLeft>
           <FullName />
-          <Input />
           <Input title="Email" type="email"/>
           <Input title="Password" type="password"/>
           <Input title="Confirm the Password" type="password"/>
