@@ -56,7 +56,7 @@ export default function LogIn() {
             <TopNav />
 {/* // ============ Content start*/}
             <Header />
-            <BttmCont onSubmit={()=>login(event)} >
+            <BttmCont onSubmit={login} >
 {/* // ============ Form*/}
                 <ContLeft>
                     <Input title="Email" type ="email"/>
