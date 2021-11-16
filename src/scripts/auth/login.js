@@ -9,7 +9,7 @@ const login = async (event) => {
 	// idk where this going dude
 	const response = await axios({
 		// url: 'http://localhost:3080/auth/login',
-		url: 'http://idsp-mylandlord.herokuapp.com/auth/login',
+		url: 'https://idsp-mylandlord.herokuapp.com/auth/login',
 		data: {
         	email: event.target.Email.value,
         	password: event.target.Password.value,
