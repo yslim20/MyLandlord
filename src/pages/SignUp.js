@@ -100,7 +100,7 @@ export default function SignUp() {
       </RadioCont>
 
 {/* // ============ Signup form */}
-      <MidCont onSubmit={()=>console.log('hi')}> {/*  Form box starts */}
+      <MidCont onSubmit={signup}> {/*  Form box starts */}
         <ContLeft >
           <FullName />
 
