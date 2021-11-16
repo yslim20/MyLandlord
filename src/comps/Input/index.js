@@ -67,7 +67,7 @@ const Input = ({
         > {title}</LabelFor>
         <InputBox 
           type={type} 
-          name={title} required 
+          name={title}
           iwidth={iwidth} 
           iheight={iheight}
         />

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import React from 'react';
+import { margin } from '@mui/system';
 
 // ============ CSS ============== //
 const Cont = styled.div`
     width:${props=>props.width};
     height:${props=>props.height};
     margin-right:7%;
+    margin-top: ${props=>props.mtop}%;
 `;
 
 const Avatar = styled.img`
@@ -20,15 +22,16 @@ const Avatar = styled.img`
 // ============ Function ============== //
 const RetangleAvatar = ({
 // ============ Props
-    width="463px",
-    height="486px",
-    src="/images/img_landlordProfile.png"
+    width="399px",
+    height="419px",
+    src="/images/img_landlordProfile.png",
+    marginTop = "1"
 
 }) => {
 
 // ============ Layout
     return(
-        <Cont width={width} height={height}>
+        <Cont width={width} height={height} mtop={marginTop}>
             <Avatar src={src} />
         </Cont>
     );

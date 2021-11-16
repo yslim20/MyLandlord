@@ -8,7 +8,7 @@ import PropertyCard from '../comps/PropertyCard';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
-import TopNav from '../comps/TopNav';
+import Navi from '../comps/Navi';
 import CircleAvatar from '../comps/CircleAvatar';
 import Input from '../comps/Input';
 import Button from '../comps/Button';
@@ -98,7 +98,7 @@ export default function LandlordEdit() {
     return(
         <Cont>
 {/* // ============ Top Navigation */}
-            <TopNav children = 
+            <Navi children = 
                 {<UserDrop 
                     src="./images/img_avatar_jasper.png"
                     routeTo = "/LandlordMypage"

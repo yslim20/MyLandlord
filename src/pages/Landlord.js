@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import React from 'react';
 
 // ============ Imported Components ============== //
-import Button from '../comps/Button';
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
-import TopNav from '../comps/TopNav';
+import Navi from '../comps/Navi';
 import SearchBar from '../comps/SearchBar';
 import ImgBox from '../comps/ImgBox';
 import EnhancedTable from '../comps/EnhancedTable'
@@ -19,7 +18,19 @@ const Cont = styled.div`
 	margin: 0;
 	padding: 0 4% 0 4%;
   box-sizing: border-box;
+  
 `
+
+const HeadCont = styled.div`
+  display:flex;
+  flex-direction: ${props=>props.flexDir}; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 1%;
+  box-sizing: border-box;
+`;
+
 const MidCont = styled.div`
 	display:flex;
 	flex: 1;
@@ -28,21 +39,15 @@ const MidCont = styled.div`
 	align-items:flex-start;
 	margin-bottom: ${props=>props.cmarginB}; 
 `
-//the filter bar with 2 icon 
-const TopBar = styled.div`
-  display:flex;
-  flex:1;
-  flex-direction:row;
-  justify-content:center;
-	align-items:flex-start;
-`
 
 // ============ Function ============== //
 const Landlord = ({
 
 // ============ Properties
-  cmarginB = "100px",
-  cmarginBttm = "0px"
+
+  cmarginB = "50px",
+  cmarginBttm = "0px",
+  flexDir = "column",
 
 })=>{
 
@@ -50,36 +55,44 @@ const Landlord = ({
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
-			<TopNav/>
+			<Navi/>
 
 {/* // ============ MAP */}
       <MidCont cmarginB={cmarginB}>
-        <Header text="Map" marginLeft="0"/>
+        <HeadCont flexDir={flexDir}>
+          <Header text="Landlord" marginBottom = "40px"/>
+        </HeadCont>
         <SubHead 
           marginB = "40"
           justifyContent="left"
           text="Which area do you want to search?"
+          marginL="2%"
         />
-        <SearchBar/>
+        <SearchBar marginL="2"/>
 
 {/* it is a image with img tag */}
         <ImgBox 
           cwidth="100%" 
           cheight="auto"
           src="./images/img_map.png"
+          marginL="%"
         />
       </MidCont>
 
 {/* // ============ LIST OF LANDLORD */} 
       <MidCont cmarginB = {cmarginBttm}>
-        <Header text="List of Landlord" marginLeft="0"/>
+        <HeadCont flexDir={flexDir}>
+          <Header text="List of Landlord" cMinWidth = "600px" marginBottom = "40px"/>
+        </HeadCont>
         <SubHead 
           marginB = "40"
           justifyContent="left"            
           text="Who do you want to search?"
+          marginL="2%"
         />
         <SearchBar
           placeholder="Please type your landlord name or address.."
+          marginL="2"
         />
 
         <EnhancedTable/>        

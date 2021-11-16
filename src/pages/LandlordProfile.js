@@ -15,8 +15,7 @@ import LandlordInfo from '../comps/LandlordInfo';
 import SubHead from '../comps/SubHead';
 import ChatIcon from '../comps/ChatIcon';
 import RoutButton from '../comps/RoutButton';
-import TopNav from '../comps/TopNav'
-
+import Navi from '../comps/Navi';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -83,7 +82,7 @@ export default function LandlordProfile() {
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <TopNav children = {<UserDrop/>} />
+            <Navi children = {<UserDrop/>} />
 
 {/* // ============ Landlord information */}
             <HeadCont>
@@ -95,7 +94,7 @@ export default function LandlordProfile() {
             </ButtCont>
             <LandlordSub/>
             <InfoCont>
-                <RetangleAvatar />
+                <RetangleAvatar marginTop="2"/>
                 <InfoText>
                     <SubHead text="Burnaby, BC." fontSize="24" justifyContent="left" marginB="10" marginL="3%"/>
                     <LandlordInfo />

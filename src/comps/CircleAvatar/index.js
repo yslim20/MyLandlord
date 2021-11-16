@@ -45,7 +45,7 @@ const Icon = styled.img`
 // ============ Function ============== //
 // ============ Props
 const TenantAvatar =({
-  width = 508,
+  width = 380,
   //icon
   src= "/images/img_tenant.png",
 

@@ -56,7 +56,7 @@ const HeroImage = ({
     >
       <Letterbox>
         <SubHead 
-          text = "Want to share your landlord experience?"
+          text = "Share your experiences with landlord with us"
           fontWeight = "500"
           align="center"
           marginB="30"
@@ -64,7 +64,7 @@ const HeroImage = ({
 
         <RoutButton
           routeTo = "/Landlord"
-          text="Go to the Landlord"
+          text="View the Landlord List"
           height="60"
           width = "395"
           margintop = "0"

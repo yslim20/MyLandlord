@@ -59,7 +59,7 @@ const Checkbox = ({
                 color: deepPurple["A400"],
               },
             }}
-          />} label={<Typography fontWeight="500" fontSize="24px" >{value}</Typography>}>
+          />} label={<Typography fontWeight="500" fontSize="24px">{value}</Typography>}>
           </FormControlLabel>
         </RadioCont>
       

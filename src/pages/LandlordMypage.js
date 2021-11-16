@@ -13,7 +13,7 @@ import LandlordSub from '../comps/LandlordSub';
 import RetangleAvatar from '../comps/RectangleAvatar';
 import LandlordInfo from '../comps/LandlordInfo';
 import SubHead from '../comps/SubHead';
-import TopNav from '../comps/TopNav';
+import Navi from '../comps/Navi';
 import UserDrop from '../comps/UserDrop';
 
 // ============ CSS ============== //
@@ -30,13 +30,13 @@ const HeadCont = styled.div`
     align-items: center;
 `;
 
-const ButtCont = styled.div`
-    position: absolute;
-    left: 70%;
-    top: 35%;
-    margin-right: 3%;
-    z-index:1;
-`;
+// const ButtCont = styled.div`
+//     position: absolute;
+//     left: 70%;
+//     top: 35%;
+//     margin-right: 3%;
+//     z-index:1;
+// `;
 
 const ProfCont = styled.div`
     display: flex;
@@ -100,7 +100,6 @@ const Icon = styled.img`
     border-radius: 50%;  
 `
 
-
 // ============ Function ============== //
 // ============ Layout
 export default function LandlordMypage() {
@@ -108,7 +107,7 @@ export default function LandlordMypage() {
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <TopNav children = 
+            <Navi children = 
                 {<UserDrop 
                     src="./images/img_avatar_jasper.png"
                     routeTo = "/LandlordMypage"
@@ -124,7 +123,7 @@ export default function LandlordMypage() {
             </HeadCont>
             <LandlordSub/>
             <InfoCont>
-                <RetangleAvatar />
+                <RetangleAvatar marginTop = "2"/>
                 <InfoText>
                     <SubHead text="Burnaby, BC." fontSize="24" justifyContent="left" marginB="10"/>
                     <LandlordInfo />

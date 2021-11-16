@@ -9,6 +9,7 @@ const HeaderCont = styled.div`
 	margin-right: ${props=>props.cmarginR};
 	padding: ${props=>props.cpadding};
 	margin-bottom: ${props=>props.marginB}px;
+	margin-left: ${props=>props.marginL};
 `;
 
 const Text = styled.p`
@@ -28,6 +29,7 @@ const Subhead = ({
 	justifyContent = "center",
 	cWidth = "",
 	cmarginR = "",
+	marginL = "",
 	text="Log In",
 	cpadding ="",
 	fontSize= 32,
@@ -46,6 +48,7 @@ const Subhead = ({
 			cmarginR={cmarginR}
 			cpadding={cpadding}
 			marginB={marginB}
+			marginL={marginL}
 		>
 			<Text 
 				fontSize={fontSize}

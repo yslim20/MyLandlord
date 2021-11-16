@@ -24,24 +24,18 @@ export default function ColorRadioButtons() {
     checked: selectedValue === item,
     onChange: handleChange,
     value: item,
-    name: 'color-radio-button-demo',
+    name: 'is_landlord',
     inputProps: { 'aria-label': item },
   });
-
-// ============ CSS ============== //
-  const LabelText = styled.div`
-    font-size: 24px
-  `;
-  const RadioCont = styled.div`
-    margin-right:50px;
-  `;
 
 // ============ Layout
   return (
     <div>
-      <RadioGroup row aria-label="login" name="row-radio-buttons-group">
-        <RadioCont>
-            <FormControlLabel value="Tenant" control={<Radio
+      <RadioGroup row aria-label="login" name="is_landlord">
+        <FormControlLabel 
+          value={0} 
+          control={
+          <Radio
             {...controlProps('e')}
             sx={{
               color: deepPurple["A400"],
@@ -52,21 +46,27 @@ export default function ColorRadioButtons() {
                 color: deepPurple["A400"],
               },
             }}
-          />} label={<Typography fontWeight="500" fontSize="24px" >Tenant</Typography>}>
-          </FormControlLabel>
-        </RadioCont>
-        <FormControlLabel value="Landlord" control={<Radio
-        {...controlProps('d')}
-        sx={{
-          color: deepPurple["A400"],
-          '& .MuiSvgIcon-root': {
-            fontSize: 28,
-          },
-          '&.Mui-checked': {
-            color: deepPurple["A400"],
-          },
-        }}
-      />} label={<Typography fontWeight="500" fontSize="24px" >Landlord</Typography>}/>
+          />} 
+          label={<Typography fontWeight="500" fontSize="24px" marginRight ="50px">Tenant</Typography>}>
+        </FormControlLabel>
+
+        <FormControlLabel 
+          value={1} 
+          control={
+          <Radio
+            {...controlProps('d')}
+            sx={{
+              color: deepPurple["A400"],
+              '& .MuiSvgIcon-root': {
+                fontSize: 28,
+              },
+              '&.Mui-checked': {
+                color: deepPurple["A400"],
+              },
+            }}
+        />} 
+        label={<Typography fontWeight="500" fontSize="24px" >Landlord</Typography>}
+      />
       </RadioGroup>
     </div>
   );

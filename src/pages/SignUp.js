@@ -1,7 +1,7 @@
 // import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 // import axios from 'axios'
 
 // ============ Imported Comps ============== //
@@ -13,10 +13,11 @@ import VeriButton from '../comps/VeriButton';
 import ImgBox from '../comps/ImgBox';
 import Button from '../comps/Button'
 import Header from '../comps/Header';
-import TopNav from '../comps/TopNav'
+import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
-
 import signup from "../scripts/auth/signup";
+import RoutButton from '../comps/RoutButton';
+
 
 // ============ css ============== //
 const Cont = styled.div`
@@ -31,7 +32,7 @@ const RadioCont = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom:30px;
+  margin-bottom:50px;
   padding-left:5px;
 `
 // ============ Form box
@@ -57,7 +58,6 @@ const ContRight = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-top: 30px;
   align-items: flex-end;
   justify-content: center;
 `
@@ -68,9 +68,16 @@ const CheckCont = styled.div`
   align-items: flex-start;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding-left: 15px;
   box-sizing: border-box;
+`
+
+const VeriCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 const BttnCont = styled.div`
@@ -84,7 +91,7 @@ export default function SignUp() {
   return (
     <Cont>
 {/* // ============ Top Navigation */}
-      <TopNav />
+      <Navi />
 
 {/* // ============ Content Starts */}
       <Header text="Sign Up"/>
@@ -96,6 +103,8 @@ export default function SignUp() {
       <MidCont onSubmit={()=>console.log('hi')}> {/*  Form box starts */}
         <ContLeft >
           <FullName />
+
+          {/* <Input/> repeated input field*/}
           <Input title="Email" type="email"/>
           <Input title="Password" type="password"/>
           <Input title="Confirm the Password" type="password"/>
@@ -111,13 +120,21 @@ export default function SignUp() {
 
 
 {/* // ============ Verification button */}
-          <VeriButton />
+          <VeriCont>
+            <VeriButton cwidth = "80%" cheight = "85"/>
+          </VeriCont>
+          
 {/* // ============ Buttons */}
           <BttnCont>
-            <Button
+            {/* <Button
               text = "Cancel"
               margintop = "0px"
               width = "95%"
+            /> */}
+            <RoutButton 
+              text="Cancel"
+              margintop = "0px"
+              routeTo = "/"
             />
             <Button
               text = "Submit"
@@ -136,8 +153,9 @@ export default function SignUp() {
           <ImgBox
             src="./images/img_signup.png"
             cwidth = "90%"
-            // cheight = "1000px"
-            // objectFit = "contain"
+            cheight = "800px"
+            height = "auto"
+            objectFit = "contain"
           />
         </ContRight>
       </MidCont> {/*  Form box ends */}

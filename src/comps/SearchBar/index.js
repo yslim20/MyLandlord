@@ -14,6 +14,7 @@ const FormCont = styled.div`
   padding: 16px 20px;
   box-sizing: border-box;
   margin-bottom: ${props => props.fmarginB}px; 
+  margin-left: ${props => props.marginL}%; 
 `
 const Form = styled.form`
   width: 100%;
@@ -64,6 +65,7 @@ const SearchBar = ({
     iwidth = "90%",
     src='./icons/icon_search.svg',
     placeholder = "Please type the area..",
+    marginL = "0",
 
 // ============ Action after pressing button    
     action="",
@@ -75,6 +77,7 @@ const SearchBar = ({
       fwidth={fwidth}
       fheight={fheight}
       fmarginB={fmarginB}
+      marginL={marginL}
     >
       <Form action={action}>
         <InputBox 

@@ -21,6 +21,7 @@ const FeatCont = styled.div`
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   box-sizing: border-box;
+  margin-bottom: 20px;
 `;
 
 const Img = styled.img`
@@ -30,18 +31,6 @@ const Img = styled.img`
   object-fit: contain;
   margin-bottom: ${props=>props.ImgMarginB}px;
 `
-
-const TextBox = styled.p`
-  width: ${props=>props.twidth};
-	font-family: 'Heebo', sans-serif;  
-	font-size: ${props=>props.fontSize}px;
-	font-weight: ${props=>props.fontWeight};
-	color: ${props=>props.fcolor};	
-	text-align: ${props=>props.align};
-	line-height: ${props=>props.lineHeight};
-	margin:0;
-	margin-bottom: ${props=>props.marginB}px;
-`;
 
 // ============ Function ============== //
 const Features = ({

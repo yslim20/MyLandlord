@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 const Cont = styled.div`
   width: ${props=>props.cwidth};
   height: ${props=>props.cheight}px;   
-  border-radius: ${props=>props.cBRadius}px;   
+  border-radius: ${props=>props.cRadius}px;   
   border: ${props=>props.border};
   margin-bottom: ${props=>props.cMBttm}px;  
   margin-top: ${props=>props.cMTop}px;  
@@ -80,7 +80,7 @@ function VeriButton({
   cwidth = "",
   cheight = 96,
   border = "solid 1px #666",
-  cBRadius = 8, 
+  cRadius = 8, 
   cBshadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
   cMBttm = 50,
   cMTop ="",
@@ -105,9 +105,9 @@ function VeriButton({
       cBshadow={cBshadow}
       cwidth={cwidth}
       cheight = {cheight}
-      cBRadius={cBRadius}
+      cRadius={cRadius}
       border={border}
-      cBRadius={cBRadius}
+      cRadius={cRadius}
       cMBttm={cMBttm}
       cMTop={cMTop}
     >

@@ -2,20 +2,13 @@ import styled from 'styled-components';
 import React from 'react';
 
 // ============ Imported Comps ============== //
-import Button from '../comps/Button';
 import SubHead from '../comps/SubHead';
-import TopNav from '../comps/TopNav';
 import VerLogo from '../comps/VerLogo';
 import Mediabox from '../comps/Mediabox'
 import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
-
-// ============ testing
-import ChatIcon from '../comps/ChatIcon';
-import LoginErrorBox from '../comps/LoginErrorBox';
-import NotiBox from '../comps/NotiBox';
-import CircleAvatar from '../comps/CircleAvatar'
+import Navi from '../comps/Navi';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -87,7 +80,7 @@ const FeatCont = styled.div`
 	display:flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content:space-between;
+	justify-content:space-around;
 	align-items: center;
 `
 
@@ -98,7 +91,7 @@ export default function Home() {
 		<Cont>
 {/* // ============ Top Navigation */}
 		<NavCont> 
-			<TopNav/>
+			<Navi />
 		</NavCont>			
 
 {/* // ============ Body Starts */}
@@ -113,13 +106,20 @@ export default function Home() {
 						cursor="default"                        
 					/>
 					<SubHead 
-						text="Welcome to MyLandlord!"
+						text="Welcome! We are a landlord review platform"
 						fontSize="24"
 						fontWeight="500"
 						lineHeight="29"
+						marginB="25"
 					/>
 					<SubHead 
-						text="Review your landlord now!" 	
+						text="You can write a review for your landlord right now" 	
+						fontSize="22"
+						lineHeight="39"						
+					/>
+					<SubHead 
+						text="Or check out the review of landlords in BC" 	
+						fontSize="22"
 						lineHeight="39"						
 					/>
 				</LeftBox>
@@ -139,6 +139,7 @@ export default function Home() {
 				<SubHead 
 					text = "Discover Features"
 					marginB = "20"
+					marginL = "2%"
 				/>
 
 				<FeatCont>

@@ -7,9 +7,10 @@ const Cont = styled.div`
   height: ${props => props.cheight};
   position: relative;  
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: ${props => props.cmargin};
+  justify-contents: center;
+  margin-left: ${props => props.marginL}
+
+  // margin-left: ${props => props.cmarginL};
 `
 
 const Img = styled.img`
@@ -35,13 +36,13 @@ const ImgBox = ({
 // container 
   cwidth = "80%",
   cheight = "1000px",
-  cmargin="",
+  marginL="",
 
 // image
   src = "https://placekitten.com/500/500",
   alt = "image box",
   width = "100%",
-  height = "100%",
+  height = "500px",
   objectFit = "cover",  
 
 // text if needed
@@ -61,7 +62,7 @@ const ImgBox = ({
     <Cont
       cwidth={cwidth}
       cheight={cheight}
-      cmargin={cmargin}
+      marginLeft={marginL}
     >
       <Img
         src={src}
