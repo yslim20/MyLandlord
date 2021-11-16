@@ -100,9 +100,10 @@ export default function SignUp() {
       </RadioCont>
 
 {/* // ============ Signup form */}
-      <MidCont> {/*  Form box starts */}
-        <ContLeft>
+      <MidCont onSubmit={signup}> {/*  Form box starts */}
+        <ContLeft >
           <FullName />
+
           {/* <Input/> repeated input field*/}
           <Input title="Email" type="email"/>
           <Input title="Password" type="password"/>
