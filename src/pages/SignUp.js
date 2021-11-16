@@ -93,8 +93,8 @@ export default function SignUp() {
       </RadioCont>
 
 {/* // ============ Signup form */}
-      <MidCont onSubmit={()=>signup(event)}> {/*  Form box starts */}
-        <ContLeft>
+      <MidCont onSubmit={()=>console.log('hi')}> {/*  Form box starts */}
+        <ContLeft >
           <FullName />
           <Input title="Email" type="email"/>
           <Input title="Password" type="password"/>
