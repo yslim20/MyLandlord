@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 
+import authTest from '../scripts/auth/authTest';
+
 // ============ Imported Comps ============== //
 import SubHead from '../comps/SubHead';
 import VerLogo from '../comps/VerLogo';
@@ -149,7 +151,7 @@ export default function Home() {
 						title = "Easy Communication"
 						para= "Users can contact any landlords if they are online on the landlord profile section."
 					/>
-					<Features 
+					<Features
 						src ="./images/img_rating.svg"
 						title = "Strong Rating System"
 						para= "Users can review their landlord by the rating system."
@@ -161,6 +163,8 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
+			<button onClick={authTest}>hi</button>
 		</Cont>
+
 	)
 }
