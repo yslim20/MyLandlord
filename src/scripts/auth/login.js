@@ -15,8 +15,8 @@ const login = async (event) => {
         headers: { "Content-Type": "application/json" },
       })
 	  // .then(window.location.replace("http://localhost:3000/"))
-    // .then(user => console.log(user))
-    .then(() => location.replace("https://idsp3-mylandlord.herokuapp.com/"))
+    .then(user => console.log(user))
+    // .then(() => location.replace("https://idsp3-mylandlord.herokuapp.com/"))
     // .then(() => console.log("hi"))
     .catch(err => {
        alert("not working")
