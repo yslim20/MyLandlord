@@ -28,13 +28,13 @@ function createData(avatar, name, address, rate) {
 
 //================ fake data for table body
 const rows = [
-  createData("/images/img_avatar_jasper.png", 'Jasper White','4388 Buchanan St 1901 Burnaby BC V5C 6R8', 5),
-  createData("/images/img_avatar_daniel.png", 'Daniel Robinson','Protperty Address: 406 47th Ave E Vancouver BC V5W 2B4', 2),
-  createData("/images/img_avatar_susan.png", 'Susan Davis','1181 Edgewood Pl North Vancouver BC V7R 1Z1', 5),
-  createData("/images/img_avatar_mary.png", 'Mary Lawing','1470 Pennyfarthing Dr 203 Vancouver BC V6J 4Y2', 3),
-  createData("/images/img_avatar_earl.png", 'Earl A. Sanchez','3421 10th Ave W Vancouver BC V6R 2E7', 5),
-  createData("/images/img_avatar_james.png", 'James Ward','731 Beachview Dr North Vancouver BC V7G 1P8', 5),
-  createData("/images/img_avatar_jack.png", 'Jack Chambers','406 47th Ave E Vancouver BC V5W 2B4', 2),
+  createData("avatar", 'name','address', 5),
+  createData("avatar", 'name','address', 2),
+  createData("avatar", 'name','address', 5),
+  createData("avatar", 'name','address', 3),
+  createData("avatar", 'name','address', 5),
+  createData("avatar", 'name','address', 5),
+  createData("avatar", 'name','address', 2),
 ];
 
 // ============ Function for filtering
