@@ -17,7 +17,7 @@ body {
   padding: 0;
 }
 
-.heading, .subheading, h3{
+.heading, .subheading, h1, h2, h3{
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
@@ -27,14 +27,19 @@ body {
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 36px;  
+}
+
+h3 {
+  font-size: 24px;
+  text-align: left;
 }
 
 .subheading {
   font-size: 24px;
 }
 
-P {
+P, textarea {
   font-family: 'Heebo', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -57,6 +62,10 @@ P {
   font-size: 16px;
   font-weight: 300;
   text-decoration: underline;
+} 
+
+ul{
+  list-style-type: none;
 } /* Font ends */
 
 .MuiDataGrid-columnHeaderTitle{
@@ -77,9 +86,75 @@ P {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 0 4% 0 4%;
+  margin: 0;
+  padding: 0 4%;
   box-sizing: border-box;
 }
+
+.header_cont{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0; 
+  padding: 0 4%;
+}
+
+.property_box{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0; 
+  padding: 0 4%;
+  box-sizing: border-box;
+  margin-bottom: 40px; 
+}
+
+.radio_cont{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items:space-between;
+  justify-content: flex-start;
+}
+
+.radio_cont > div {
+  margin-bottom: 10px;
+}
+
+.section_cont {
+  padding: 0 4%;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+  border-radius: 16px;  
+  border: 3px solid #5333ED;
+  box-sizing: border-box;
+}
+
+ul {
+  width: 100%;
+  margin: 0; padding-inline-start: 0;
+}
+
+
+
+
+
+
 
 /* PREVIEW PAGE ENDS HERE */
 
