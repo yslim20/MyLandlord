@@ -19,22 +19,26 @@ import Avatar from '../Avatar';
 // ============ Tabel Head Create Data
 function createData(avatar, name, address, rate) {
   return {
+    // avatar image (with src)
     avatar,
+    // landlord name
     name,
+    // landlord address
     address,
+    // landlordd rate (1-5)
     rate,
   };
 }
 
 //================ fake data for table body
 const rows = [
-  createData("avatar", 'name','address', 5),
-  createData("avatar", 'name','address', 2),
-  createData("avatar", 'name','address', 5),
-  createData("avatar", 'name','address', 3),
-  createData("avatar", 'name','address', 5),
-  createData("avatar", 'name','address', 5),
-  createData("avatar", 'name','address', 2),
+  createData("", '','', ""),
+  createData("", '','', ""),
+  createData("", '','', ""),
+  createData("", '','', ""),
+  createData("", '','', ""),
+  createData("", '','', ""),
+  createData("", '','', ""),
 ];
 
 // ============ Function for filtering
