@@ -32,7 +32,7 @@ export default function ContactUs() {
 
 {/* // ============ Content Start */}
       <InputCont> 
-        <Header text = "Contact Us" />
+        <Header text = "Contact Us" marginLeft="4%"/>
 				<InputGroup />
 			</InputCont>
 
