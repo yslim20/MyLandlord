@@ -21,7 +21,7 @@ const Sub = styled.p`
 // ============ Function ============== //
 const LandlordSub = ({
 // ============ Props
-    text="Joined in Augest 2011"
+    text="Joined in August 2011"
 }) => {
 
 // ============ Layout    
