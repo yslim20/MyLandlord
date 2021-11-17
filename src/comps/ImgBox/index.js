@@ -43,7 +43,7 @@ const ImgBox = ({
   alt = "image box",
   width = "100%",
   height = "500px",
-  objectFit = "cover",  
+  objectFit = "contain",  
 
 // text if needed
   zindex = 1,

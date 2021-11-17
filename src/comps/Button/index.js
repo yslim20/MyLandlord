@@ -7,7 +7,7 @@ import login from '../../scripts/auth/login'
 const ButtonCont = styled.div`
     margin-top: ${props=>props.mtop}px;
     margin-right: ${props=>props.mright}px;
-    width: 100%;
+    width: ${props=>props.cwidth};
     display:flex;
     justify-content:${props=>props.justify};
 `;
@@ -53,6 +53,7 @@ const Button = ({
     marginright="",
     bgcolor = "#ffffff",
     radius = 20,
+    cwidth = "100%",
     width = 360,
     height = 72,
     border = "5px solid #5333ED;",
@@ -76,6 +77,7 @@ const Button = ({
             mtop={margintop}
             mright={marginright}
             justify={justify}
+            cwidth={cwidth}
 
 // ============ onClick function
             onClick={()=>{ clickHandler()} }
