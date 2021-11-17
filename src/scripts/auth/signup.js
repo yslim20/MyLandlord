@@ -3,7 +3,7 @@ const signup = async event => {
 
 	// idk where this going dude
 	const response = await fetch('https://idsp-mylandlord.herokuapp.com/auth/register', {
-	// const response = await fetch('http://localhost:3080/auth/register', {
+	// await fetch('http://localhost:3080/auth/register', {
 		body: JSON.stringify({
         	email: event.target.Email.value,
         	firstname: event.target.fname.value,
@@ -15,10 +15,14 @@ const signup = async event => {
       headers: {
         'Content-Type': 'application/json'
       },
-      method: 'POST'
-  });
-  const successfail = await response.json();
-  alert(successfail);
+      method: 'POST',
+	  redirect: 'follow'
+  }) 
+// .then(window.location.replace("http://localhost:3000/LogIn"))
+  .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/LogIn"))
+  .catch(err => {
+	  alert("not working")
+  })
 }
 
 export default signup;
