@@ -4,7 +4,7 @@ const login = async (event) => {
 	event.preventDefault();
 
     // const result = await fetch("http://localhost:3080/auth/login",
-    const result = await fetch("https://idsp3-mylandlord.herokuapp.com/auth/login",
+    const result = await fetch("https://idsp-mylandlord.herokuapp.com/auth/login",
       {
         credentials: "include",
         method: "POST",
