@@ -95,14 +95,16 @@ export default function SignUp() {
 
 {/* // ============ Content Starts */}
       <Header text="Sign Up"/>
-      <RadioCont>
-        <RadioButton />
-      </RadioCont>
+
 
 {/* // ============ Signup form */}
-      <MidCont> {/*  Form box starts */}
-        <ContLeft>
+      <MidCont onSubmit={signup}> {/*  Form box starts */}
+        <ContLeft >
+          <RadioCont>
+              <RadioButton />
+          </RadioCont>
           <FullName />
+
           {/* <Input/> repeated input field*/}
           <Input title="Email" type="email"/>
           <Input title="Password" type="password"/>

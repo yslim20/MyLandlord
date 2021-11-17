@@ -3,22 +3,36 @@ import axios from 'axios'
 const login = async (event) => {
 	event.preventDefault();
 
-	// console.log(event.target);
-	// console.log(event.target.Email.value, event.target.Password.value)
+    // const result = await fetch("http://localhost:3080/auth/login",
+    const result = await fetch("https://idsp3-mylandlord.herokuapp.com/auth/login",
+      {
+        credentials: "include",
+        method: "POST",
+        body: JSON.stringify({
+          Email: event.target.Email.value,
+          Password: event.target.Password.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+	await console.log(result);
+
 
 	// idk where this going dude
-	const response = await axios({
-		// url: 'http://localhost:3080/auth/login',
-		url: 'http://idsp-mylandlord.herokuapp.com/auth/login',
-		data: {
-        	email: event.target.Email.value,
-        	password: event.target.Password.value,
-      },
-	  // withCredentials: true,
-      method: 'POST',
-	  // mode: 'no-cors'
-  }).then(r => console.log(r.text))
-  .catch(e => console.log(e));
+// 	const response = await axios({
+// 		url: 'http://localhost:3080/auth/login',
+// 		// url: 'https://idsp-mylandlord.herokuapp.com/auth/login',
+// 		data: {
+//         	Email: event.target.Email.value,
+//         	Password: event.target.Password.value,
+//       },
+// 	  withCredentials: true,
+//       method: 'POST',
+// 	  headers: { "Content-Type": "application/json" },
+// 	  // mode: 'no-cors'
+//   }).then(r => console.log(r.text))
+//   .catch(e => console.log(e));
 
   // sam did this:
   // axios.get("http://localhost:3080/fuckyoujeremy")

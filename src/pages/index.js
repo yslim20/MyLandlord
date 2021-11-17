@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 
+import authTest from '../scripts/auth/authTest';
+
 // ============ Imported Comps ============== //
 import SubHead from '../comps/SubHead';
 import VerLogo from '../comps/VerLogo';
@@ -106,13 +108,20 @@ export default function Home() {
 						cursor="default"                        
 					/>
 					<SubHead 
-						text="Welcome to MyLandlord!"
+						text="Welcome! We are a landlord review platform"
 						fontSize="24"
 						fontWeight="500"
 						lineHeight="29"
+						marginB="25"
 					/>
 					<SubHead 
-						text="Review your landlord now!" 	
+						text="You can write a review for your landlord right now" 	
+						fontSize="22"
+						lineHeight="39"						
+					/>
+					<SubHead 
+						text="Or check out the review of landlords in BC" 	
+						fontSize="22"
 						lineHeight="39"						
 					/>
 				</LeftBox>
@@ -142,7 +151,7 @@ export default function Home() {
 						title = "Easy Communication"
 						para= "Users can contact any landlords if they are online on the landlord profile section."
 					/>
-					<Features 
+					<Features
 						src ="./images/img_rating.svg"
 						title = "Strong Rating System"
 						para= "Users can review their landlord by the rating system."
@@ -154,6 +163,8 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
+			{/* <button onClick={authTest}>hi</button> */}
 		</Cont>
+
 	)
 }
