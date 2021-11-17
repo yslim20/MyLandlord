@@ -13,7 +13,7 @@ import Footer from '../comps/Footer';
 
 // ============ Function ============== //
 // ============ Layout
-export default function LandlordEditProp() {
+export default function LandlordAddProp() {
     return(
         <div>
             <Navi children={
@@ -22,9 +22,9 @@ export default function LandlordEditProp() {
                 routeTo = "/LandlordMypage"
                 />
             }/>
-            <Header text="Edit Properties"/>
+            <Header text="Add Properties"/>
             <div>
-                <img src="./images/property1.png" />
+                <img src="./images/property2.png" />
                 <Input title="Address Line 1" />
                 <Input title="Address Line 2" />
                 <Input title="City" />
