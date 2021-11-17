@@ -20,9 +20,9 @@ const signup = async event => {
   }) 
 // .then(window.location.replace("http://localhost:3000/LogIn"))
   .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/LogIn"))
-  .catch(err => {
-	  alert("not working")
-  })
+//   .catch(err => {
+// 	  alert("not working")
+//   })
 }
 
 export default signup;
