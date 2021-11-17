@@ -7,6 +7,7 @@ import Header from '../comps/Header';
 import Footer from '../comps/Footer';
 import SubHead from '../comps/SubHead';
 import RatingStar from '../comps/RatingStar';
+import Button from '../comps/Button'
 
 
 // ============ Function ============== //
@@ -45,7 +46,7 @@ export default function Review() {
 
 {/* Textarea */}
       <div className = "section_cont">
-        <form action="">
+        <form action="" className="textarea_cont">
           <textarea className="textarea" name="message" rows="10" cols="30">Type here...</textarea>
         </form>
       </div> {/* textarea ends */}
@@ -94,63 +95,79 @@ export default function Review() {
         </ul>
       </div> {/* review ends */}
 
-      <div className = "section_cont">
-        <h2>Add an image</h2>
-        <h3>Upload any images to support your experience!</h3>
-        <ul id = "add_img" className="flex-row">
-          <li>
-            <button 
-              type="button" 
-              className = "addImg flex-col"
-              href=""
-              onClick={()=>{ clickHandler() }}
-            >
-              <img src = "/icons/icon_addimg.png" alt = "no" />
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button" 
-              className = "addImg flex-col"
-              href=""
-              onClick={()=>{ clickHandler() }}
-            >
-              <img src = "/icons/icon_addimg.png" alt = "no" />
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button" 
-              className = "addImg flex-col"
-              href=""
-              onClick={()=>{ clickHandler() }}
-            >
-              <img src = "/icons/icon_addimg.png" alt = "no" />
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button" 
-              className = "addImg flex-col"
-              href=""
-              onClick={()=>{ clickHandler() }}
-            >
-              <img src = "/icons/icon_addimg.png" alt = "no" />
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button" 
-              className = "addImg flex-col"
-              href=""
-              onClick={()=>{ clickHandler() }}
-            >
-              <img src = "/icons/icon_addimg.png" alt = "no" />
-            </button>
-          </li>
-        </ul>
+{/* Add an image */}
+      <div className = "section_cont flex-start">
+        <div className="header_cont marginB"> 
+          <h2>Add an image</h2>
+          <h3>Upload any images to support your experience!</h3>
+        </div>
+        <div id = "add_img" className="flex-row">
+          <button 
+            type="button" 
+            className = "addImg flex-col"
+            href=""
+            onClick={()=>{ clickHandler() }}
+          >
+            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+          </button>
+
+          <button 
+            type="button" 
+            className = "addImg flex-col"
+            href=""
+            onClick={()=>{ clickHandler() }}
+          >
+            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+          </button>
+
+          <button 
+            type="button" 
+            className = "addImg flex-col"
+            href=""
+            onClick={()=>{ clickHandler() }}
+          >
+            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+          </button>
+
+          <button 
+            type="button" 
+            className = "addImg flex-col"
+            href=""
+            onClick={()=>{ clickHandler() }}
+          >
+            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+          </button>
+
+          <button 
+            type="button" 
+            className = "addImg flex-col"
+            href=""
+            onClick={()=>{ clickHandler() }}
+          >
+            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+          </button>
+        </div>
       </div> {/* add image ends */}
-      
+
+{/* Submit buttons */}
+      <div className = "flex-row bttn_cont">
+        <button 
+          type="reset" 
+          className = "cancel_bttn bttn"
+          href=""
+          onClick={()=>{ clickHandler() }}
+        >
+          Cancel
+        </button>
+        <button 
+          type="submit" 
+          className = "sub_bttn bttn"
+          href=""
+          onClick={()=>{ clickHandler() }}
+        >
+          Submit
+        </button>
+      </div> {/* button ends */}    
 
 {/* // ============ Bottom Navigation */}
       <Footer />
