@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import React from 'react';
 
 // ============ Imported Comps ============== //
@@ -80,11 +79,19 @@ export default function Review() {
           <li>
             <h2>Would you recommend this landlord to others?</h2>
             <div className = "thumb_con flex-row">
-              <a href="" target="" className="flex-row thumb thumbUp">
+              <a 
+                // href="" 
+                // target="" 
+                className="flex-row thumb thumbUp"
+              >
                <img src = "/icons/icon_thumbup.svg" alt = "yes" />
                <p>Yes</p>
               </a>
-              <a href="" target="" className="flex-row thumb thumbDown">
+              <a 
+                // href="" 
+                // target="" 
+                className="flex-row thumb thumbDown"
+              >
                <img src = "/icons/icon_thumbdown.svg" alt = "no" />
                <p>No</p>
               </a>              
@@ -103,7 +110,7 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            href=""
+            // href=""
             // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
@@ -112,7 +119,7 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            href=""
+            // href=""
             // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
@@ -121,7 +128,7 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            href=""
+            // href=""
             // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
@@ -130,7 +137,7 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            href=""
+            // href=""
             // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
@@ -139,7 +146,7 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            href=""
+            // href=""
             // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
@@ -152,7 +159,7 @@ export default function Review() {
         <button 
           type="reset" 
           className = "cancel_bttn bttn"
-          href=""
+          // href=""
           // onClick={()=>{ clickHandler() }}
         >
           Cancel
@@ -160,7 +167,7 @@ export default function Review() {
         <button 
           type="submit" 
           className = "sub_bttn bttn"
-          href=""
+          // href=""
           // onClick={()=>{ clickHandler() }}
         >
           Submit
