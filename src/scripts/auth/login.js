@@ -13,15 +13,12 @@ const login = async (event) => {
           Password: event.target.Password.value,
         }),
         headers: { "Content-Type": "application/json" },
-      }
-      // .then(window.location.replace("http://localhost:3000/"))
-      .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/"))
-      .catch(err => {
-        alert("not working")
       })
-    );
-
-	await console.log(result);
+	  // .then(window.location.replace("http://localhost:3000/"))
+    .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/"))
+    .catch(err => {
+       alert("not working")
+    })
 
 
 	// idk where this going dude
