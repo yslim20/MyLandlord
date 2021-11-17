@@ -110,46 +110,46 @@ export default function Review() {
           <button 
             type="button" 
             className = "addImg flex-col"
-            // href=""
+            href=""
             // onClick={()=>{ clickHandler() }}
           >
-            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+            <img src = "/icons/icon_addimg.png" alt = "add" />
           </button>
 
           <button 
             type="button" 
             className = "addImg flex-col"
-            // href=""
+            href=""
             // onClick={()=>{ clickHandler() }}
           >
-            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+            <img src = "/icons/icon_addimg.png" alt = "add" />
           </button>
 
           <button 
             type="button" 
             className = "addImg flex-col"
-            // href=""
+            href=""
             // onClick={()=>{ clickHandler() }}
           >
-            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+            <img src = "/icons/icon_addimg.png" alt = "add" />
           </button>
 
           <button 
             type="button" 
             className = "addImg flex-col"
-            // href=""
+            href=""
             // onClick={()=>{ clickHandler() }}
           >
-            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+            <img src = "/icons/icon_addimg.png" alt = "add" />
           </button>
 
           <button 
             type="button" 
             className = "addImg flex-col"
-            // href=""
+            href=""
             // onClick={()=>{ clickHandler() }}
           >
-            <img src = "/icons/icon_addimg.png" alt = "add an image" />
+            <img src = "/icons/icon_addimg.png" alt = "add" />
           </button>
         </div>
       </div> {/* add image ends */}
@@ -159,7 +159,7 @@ export default function Review() {
         <button 
           type="reset" 
           className = "cancel_bttn bttn"
-          // href=""
+          href=""
           // onClick={()=>{ clickHandler() }}
         >
           Cancel
