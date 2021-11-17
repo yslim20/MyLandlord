@@ -106,7 +106,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -115,7 +115,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -124,7 +124,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -133,7 +133,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -142,7 +142,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -155,7 +155,7 @@ export default function Review() {
           type="reset" 
           className = "cancel_bttn bttn"
           href=""
-          onClick={()=>{ clickHandler() }}
+          // onClick={()=>{ clickHandler() }}
         >
           Cancel
         </button>
@@ -163,7 +163,7 @@ export default function Review() {
           type="submit" 
           className = "sub_bttn bttn"
           href=""
-          onClick={()=>{ clickHandler() }}
+          // onClick={()=>{ clickHandler() }}
         >
           Submit
         </button>
