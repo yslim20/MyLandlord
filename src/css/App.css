@@ -35,7 +35,7 @@ h3 {
   text-align: left;
 }
 
-.subheading {
+.subheading, .fsize_24 {
   font-size: 24px;
 }
 
@@ -62,11 +62,20 @@ P, textarea {
   font-size: 16px;
   font-weight: 300;
   text-decoration: underline;
-} 
+} /* Font ends */
 
+/* STYLE */
 ul{
   list-style-type: none;
-} /* Font ends */
+} 
+
+a, img, span {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
 
 .MuiDataGrid-columnHeaderTitle{
   font-family: 'Heebo', sans-serif;
@@ -79,6 +88,22 @@ ul{
 
 .MuiPaginationItem-text{
   font-family: 'Heebo', sans-serif;
+}
+
+.flex-col {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* PREVIEW PAGE STARTS HERE */
@@ -147,8 +172,46 @@ ul{
 
 ul {
   width: 100%;
-  margin: 0; padding-inline-start: 0;
+  margin: 0; 
+  padding-inline-start: 0;
 }
+
+li {
+  width: 100%;
+  height: 200px;
+}
+
+.thumb_con {
+  width: 100%;
+}
+
+.thumb {
+  width: 20%;
+}
+
+.thumb:first-child{
+  margin-right: 30%;
+}
+
+.thumb:hover {
+  color: #5333ED;
+  text-decoration: underline;
+}
+
+.thumb > img {
+  margin-right: 20px;
+}
+
+.thumb:hover img{
+  transform: scale(0.90);
+  transition-duration: 0.5s; 
+}
+
+.space-around {
+  align-items: space-around;
+}
+
+
 
 
 
