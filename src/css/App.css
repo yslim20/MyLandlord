@@ -141,13 +141,17 @@ a {
   padding: 0 1%;
   margin: 0;
   box-sizing: border-box;
-  width: 100%;
+  width: 99%;
   margin-bottom: 80px;
   display:flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.no-padding{
+  padding: 0;
 }
 
 .textarea {
@@ -237,6 +241,8 @@ a {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
   cursor: pointer;
   justify-content: center;
+  align-items: center;
+  padding: 2%;
   margin-right: 2%;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -267,35 +273,7 @@ a {
 .bttn_cont{
   width: 100%;
   justify-content: space-around;
-  padding: 0 15%;
   box-sizing: border-box;
-}
-
-.bttn {
-  display:flex;
-  background-color:#ffffff;
-  border: 5px solid #5333ED;;
-  border-radius: 20px;
-  padding: 0 130px;
-  height: 72px;
-  font-size: 24px;
-  align-items:center;
-  justify-content:center;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; 
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.bttn:hover{
-  transform: scale(0.95);
-  transition-duration: 0.5s;
-  box-shadow: none;
-}
-
-.sub_bttn {
-  background-color:#5333ED;
-  border: 5px solid #5333ED;
-  color: #fff;
 } /* Review page ends here */
 
 
