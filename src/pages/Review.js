@@ -7,8 +7,6 @@ import Header from '../comps/Header';
 import Footer from '../comps/Footer';
 import SubHead from '../comps/SubHead';
 import RatingStar from '../comps/RatingStar';
-import Button from '../comps/Button'
-
 
 // ============ Function ============== //
 // ============ Layout
@@ -106,7 +104,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -115,7 +113,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -124,7 +122,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -133,7 +131,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -142,7 +140,7 @@ export default function Review() {
             type="button" 
             className = "addImg flex-col"
             href=""
-            onClick={()=>{ clickHandler() }}
+            // onClick={()=>{ clickHandler() }}
           >
             <img src = "/icons/icon_addimg.png" alt = "add an image" />
           </button>
@@ -155,7 +153,7 @@ export default function Review() {
           type="reset" 
           className = "cancel_bttn bttn"
           href=""
-          onClick={()=>{ clickHandler() }}
+          // onClick={()=>{ clickHandler() }}
         >
           Cancel
         </button>
@@ -163,7 +161,7 @@ export default function Review() {
           type="submit" 
           className = "sub_bttn bttn"
           href=""
-          onClick={()=>{ clickHandler() }}
+          // onClick={()=>{ clickHandler() }}
         >
           Submit
         </button>
