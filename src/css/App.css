@@ -211,6 +211,46 @@ li {
   align-items: space-around;
 }
 
+#add_img {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add_img > li {
+  width: 18%;
+}
+
+#add_img > li:last-child{
+  margin-right: 0;
+}
+
+.addImg {
+  width: 100%; 
+  min-height: 200px;
+  max-height: 215px;
+  border: 3px solid #5333ED;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
+  cursor: pointer;
+  justify-content: center;
+  margin-right: 2%;
+  box-sizing: border-box;
+}
+
+.addImg > img{
+  width: 94px; height: auto;
+}
+
+.addImg:hover {
+  transform: scale(0.95);
+  transition-duration: 0.5s; 
+}
+
 
 
 

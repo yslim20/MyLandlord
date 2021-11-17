@@ -97,14 +97,59 @@ export default function Review() {
       <div className = "section_cont">
         <h2>Add an image</h2>
         <h3>Upload any images to support your experience!</h3>
-        <ul>
+        <ul id = "add_img" className="flex-row">
           <li>
-            <a href="" target="" className = "addImg">
+            <button 
+              type="button" 
+              className = "addImg flex-col"
+              href=""
+              onClick={()=>{ clickHandler() }}
+            >
               <img src = "/icons/icon_addimg.png" alt = "no" />
-            </a>
+            </button>
+          </li>
+          <li>
+            <button 
+              type="button" 
+              className = "addImg flex-col"
+              href=""
+              onClick={()=>{ clickHandler() }}
+            >
+              <img src = "/icons/icon_addimg.png" alt = "no" />
+            </button>
+          </li>
+          <li>
+            <button 
+              type="button" 
+              className = "addImg flex-col"
+              href=""
+              onClick={()=>{ clickHandler() }}
+            >
+              <img src = "/icons/icon_addimg.png" alt = "no" />
+            </button>
+          </li>
+          <li>
+            <button 
+              type="button" 
+              className = "addImg flex-col"
+              href=""
+              onClick={()=>{ clickHandler() }}
+            >
+              <img src = "/icons/icon_addimg.png" alt = "no" />
+            </button>
+          </li>
+          <li>
+            <button 
+              type="button" 
+              className = "addImg flex-col"
+              href=""
+              onClick={()=>{ clickHandler() }}
+            >
+              <img src = "/icons/icon_addimg.png" alt = "no" />
+            </button>
           </li>
         </ul>
-      </div>
+      </div> {/* add image ends */}
       
 
 {/* // ============ Bottom Navigation */}
