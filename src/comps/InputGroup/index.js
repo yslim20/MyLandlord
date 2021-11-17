@@ -50,7 +50,6 @@ const FormBox = styled.form`
   flex-direction: column;
   align-items: felx-start;
   justify-content: center;   
-  margin-bottom: 80px;
 `
 
 const LabelFor = styled.label`
@@ -81,6 +80,7 @@ const BttnCont = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 80px;
 `
 
 // ============ Function ============== //
@@ -205,32 +205,36 @@ const InputGroup = ({
           align="right"
           fcolor="#6E7076"
           marginT="5"
-        />     
-      </FormBox> 
+        />
 
 {/* // ============ Buttons */}
-      <BttnCont>
-        <Button 
-          type ="cancel"
-          text = "Cancle"
-          margintop = "0px"
-          width = "95%"
-          marginright="30"
-          minWidth="400"
-          routeTo="/ContactUs"
-        />
-        <Button 
-          text = "Submit"
-          margintop = "0px"
-          border = "none"
-          bgcolor = "#5333ED"
-          color="#fff"
-          hover = "box-shadow: none"
-          width = "95%"
-          minWidth="400"
-          routeTo=""
-        />
-      </BttnCont>
+        <BttnCont>
+          <Button 
+            type ="cancel"
+            text = "Cancle"
+            margintop = "0px"
+            width ="48%"
+            width = "95%"
+            marginright="30"
+            minWidth="400"
+            routeTo="/ContactUs"
+            justify="flex-end"
+          />
+          <Button 
+            text = "Submit"
+            margintop = "0px"
+            border = "none"
+            bgcolor = "#5333ED"
+            color="#fff"
+            hover = "box-shadow: none"
+            width ="48%"
+            width = "95%"
+            minWidth="400"
+            routeTo=""
+            justify="flex-start"
+          />
+        </BttnCont>
+      </FormBox> {/* Form ends here */}
     </Cont>   
 	)
 }
