@@ -79,8 +79,10 @@ const ReviewCont = styled.div`
 
 // ============ Function ============== //
 export async function getServerSideProps() {
-    let view = await fetch('http://localhost:3080/profile/view/5');
-    let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
+    // let view = await fetch('http://localhost:3080/profile/view/5');
+    // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
+    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/5');
+    let reviewCount = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/5/count');
     let viewData = await view.json();
     let reviewCountData = await reviewCount.json();
 
