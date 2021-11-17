@@ -52,8 +52,8 @@ export default function Review() {
       </div> {/* textarea ends */}
 
 {/* Reviews */}
-      <div className = "section_cont">
-        <ul className ="review_list">
+      <div className = "section_cont flex-start">
+        <ul id ="review_list">
           <li>
             <h2>Housing maintenance</h2>
             <h3>How was the condition of the place?</h3>
