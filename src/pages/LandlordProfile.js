@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 
+import profile from '../scripts/profile/profile';
+
 // ============ Imported Comps ============== //
 import ProfileSub from '../comps/ProfileSub';
 import ShowAll from '../comps/ShowAll';
@@ -76,9 +78,18 @@ const ReviewCont = styled.div`
 `;
 
 // ============ Function ============== //
+export async function getServerSideProps() {
+    let view = await fetch('http://localhost:3080/profile/view/5');
+    let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
+    let viewData = await view.json();
+    let reviewCountData = await reviewCount.json();
+
+    return {props:{viewData, reviewCountData}}
+}
+
 // ============ Layout
-export default function LandlordProfile() {
-    return(
+export default function LandlordProfile({viewData, reviewCountData}) {
+    return  (
         <Cont>
 
 {/* // ============ Top Navigation */}
@@ -86,7 +97,7 @@ export default function LandlordProfile() {
 
 {/* // ============ Landlord information */}
             <HeadCont>
-                <Header marginBottom="45px" marginLeft="4%" text="Jasper White"/>
+                <Header marginBottom="45px" marginLeft="4%" text={viewData.firstname + " " + viewData.lastname}/>
                 <ChatIcon />
             </HeadCont>
             <ButtCont>
@@ -97,7 +108,7 @@ export default function LandlordProfile() {
                 <RetangleAvatar marginTop="2"/>
                 <InfoText>
                     <SubHead text="Burnaby, BC." fontSize="24" justifyContent="left" marginB="10" marginL="3%"/>
-                    <LandlordInfo />
+                    <LandlordInfo text={reviewCountData + " reviews"} />
                     <VeriCont>
                         <LandlordInfo src="/icons/icon_verification.png" text="Email address"/>
                         <LandlordInfo src="/icons/icon_verification.png" text="Phone number"/>
