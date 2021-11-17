@@ -3,8 +3,8 @@ import axios from 'axios'
 const login = async (event) => {
 	event.preventDefault();
 
-    // const result = await fetch("http://localhost:3080/auth/login",
-    const result = await fetch("https://idsp3-mylandlord.herokuapp.com/auth/login",
+    const result = await fetch("http://localhost:3080/auth/login",
+    // const result = await fetch("https://idsp3-mylandlord.herokuapp.com/auth/login",
       {
         credentials: "include",
         method: "POST",
@@ -13,15 +13,12 @@ const login = async (event) => {
           Password: event.target.Password.value,
         }),
         headers: { "Content-Type": "application/json" },
-      }
-      // .then(window.location.replace("http://localhost:3000/"))
-      .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/"))
-      .catch(err => {
-        alert("not working")
       })
-    );
-
-	await console.log(result);
+	  // .then(window.location.replace("http://localhost:3000/"))
+    .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/"))
+    .catch(err => {
+       alert("not working")
+    })
 
 
 	// idk where this going dude
