@@ -34,12 +34,25 @@ export default function Review() {
 {/* Radio button */}
         <div className="property_box">
           <div className="radio_cont">
-            <div>
-              <input type="radio" id="property_1" name="property" value="property_1" checked/>
+            <div className="radio_in">
+              <input 
+                type="radio" 
+                id="property_1" 
+                name="property" 
+                value="property_1" 
+                checked
+                className = "thumb_rad"
+              />
               <label for="property_1">5435 Kincaid St</label>
             </div>
             <div>
-              <input type="radio" id="property_2" name="property" value="property_2"/>
+              <input 
+                type="radio" 
+                id="property_2" 
+                name="property" 
+                value="property_2"
+                className = "thumb_rad"
+              />
               <label for="property_2">5435 Kincaid St</label>
             </div>
           </div>
@@ -81,22 +94,28 @@ export default function Review() {
             <li>
               <h2>Would you recommend this landlord to others?</h2>
               <div className = "thumb_con flex-row">
-                <a 
-                  // href="" 
-                  // target="" 
-                  className="flex-row thumb thumbUp"
-                >
-                <img src = "/icons/icon_thumbup.svg" alt = "yes" />
-                <p>Yes</p>
-                </a>
-                <a 
-                  // href="" 
-                  // target="" 
-                  className="flex-row thumb thumbDown"
-                >
-                <img src = "/icons/icon_thumbdown.svg" alt = "no" />
-                <p>No</p>
-                </a>              
+                <label for ="yes" class="flex-row thumb thumbup">
+                  <input 
+                    type="radio" 
+                    name="is_recommended" 
+                    value="recommend" 
+                    checked
+                    className = "thumb_rad"
+                  />
+                  <img src = "/icons/icon_thumbup.svg" alt = "yes" />
+                  Yes
+                </label>
+                
+                <label for ="no" class="flex-row thumb thumbdown">
+                  <input 
+                    type="radio" 
+                    name="is_recommended" 
+                    value="recommend"
+                    className = "thumb_rad"
+                  />                    
+                  <img src = "/icons/icon_thumbdown.svg" alt = "yes" />
+                  No
+                </label>          
               </div>
             </li>
           </ul>
@@ -106,7 +125,7 @@ export default function Review() {
         <div className = "section_cont flex-start">
           <div className="header_cont marginB"> 
             <h2>Add an image</h2>
-            <h3>Upload any images to support your experience!</h3>
+            <h3>Upload any images to support your xperience!</h3>
           </div>
           <div id = "add_img" className="flex-row">
             <input
@@ -159,11 +178,12 @@ export default function Review() {
   {/* Submit buttons */}
         <div className = "flex-row bttn_cont">
           <RoutButton 
-            cwidth ="48%"
+            rcwidth = "48%"
             text="Cancel"
             margintop = "0px"
             routeTo = "/"
             justify="flex-end"
+            minWidth="400"
           />
           <Button
             cwidth = "48%"
@@ -174,7 +194,8 @@ export default function Review() {
             bgcolor = "#5333ED"
             color="#fff"
             hover = "box-shadow: none"
-            width = "95%"
+            width = "100%"
+            minWidth="400"
           />
         </div> {/* button ends */}  
 

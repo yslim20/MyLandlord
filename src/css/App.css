@@ -134,7 +134,8 @@ a {
 }
 
 .radio_cont > div {
-  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 10px;  
 }
 
 .section_cont {
@@ -178,27 +179,38 @@ a {
   width: 100%;
 }
 
+/* .thumb input[type="radio"]{
+  display: none;
+} */
+
 .thumb {
   width: 20%;  
+  cursor: pointer;
+  font-size: 18px;  
 }
 
 .thumb:first-child{
   margin-right: 30%;
 }
 
-.thumb:hover {
-  color: #5333ED;
-  text-decoration: underline;
+.thumb_rad {
+  width: 20px; height: 20px;
+  margin-right: 20px;
+ 
 }
 
 .thumb > img {
   margin-right: 20px;
 }
 
+.thumb:hover {
+  color: #5333ED;
+}
+
 .thumb:hover img{
   transform: scale(0.90);
   transition-duration: 0.5s; 
-}
+} 
 
 .space-around {
   align-items: space-around;
@@ -272,17 +284,10 @@ a {
 
 .bttn_cont{
   width: 100%;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box;
 } /* Review page ends here */
-
-
-
-
-
-
-
-
 
 /* PREVIEW PAGE ENDS HERE */
 

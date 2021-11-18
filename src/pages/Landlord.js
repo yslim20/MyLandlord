@@ -76,6 +76,7 @@ const Landlord = ({
           cheight="auto"
           src="./images/img_map.png"
           marginL="%"
+          objectFit="cover"
         />
       </MidCont>
 
