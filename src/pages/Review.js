@@ -178,11 +178,12 @@ export default function Review() {
   {/* Submit buttons */}
         <div className = "flex-row bttn_cont">
           <RoutButton 
-            cwidth ="48%"
+            rcwidth = "48%"
             text="Cancel"
             margintop = "0px"
             routeTo = "/"
             justify="flex-end"
+            minWidth="400"
           />
           <Button
             cwidth = "48%"
@@ -193,7 +194,8 @@ export default function Review() {
             bgcolor = "#5333ED"
             color="#fff"
             hover = "box-shadow: none"
-            width = "95%"
+            width = "100%"
+            minWidth="400"
           />
         </div> {/* button ends */}  
 

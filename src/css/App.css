@@ -284,17 +284,10 @@ a {
 
 .bttn_cont{
   width: 100%;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   box-sizing: border-box;
 } /* Review page ends here */
-
-
-
-
-
-
-
-
 
 /* PREVIEW PAGE ENDS HERE */
 

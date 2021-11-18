@@ -6,7 +6,7 @@ import {useRouter} from 'next/router';
 const ButtonCont = styled.div`
     margin-top: ${props=>props.mtop}px;
     margin-right: ${props=>props.mright}px;
-    width: ${props=>props.cwidth};
+    width: ${props=>props.rcwidth};
     display:flex;
     justify-content:${props=>props.justify};
 `;
@@ -14,6 +14,7 @@ const ButtonCont = styled.div`
 const ButtonInput = styled.button`
     display:flex;
     background-color:${props=>props.bg};
+    min-width: ${props=>props.minWidth}px;
     border: ${props=>props.border};
     border-radius:${props=>props.radius}px;
     width: ${props=>props.width}px;
@@ -46,7 +47,7 @@ const RoutButton = ({
     marginright="",
     bgcolor = "#ffffff",
     radius = 20,
-    cwidth = "100%",
+    rcwidth = "100%",
     width = 360,
     height = 72,
     border = "5px solid #5333ED;",
@@ -55,7 +56,8 @@ const RoutButton = ({
     color="#000",
     fontSize="24px",
     fontWeight="500",
-    justify="center"
+    justify="center",
+    minWidth=""
 
 }) => {
 
@@ -64,7 +66,7 @@ const RoutButton = ({
 
 // ============== Layout
     return (
-        <ButtonCont cwidth={cwidth} mtop={margintop} mright={marginright} justify={justify} onClick={()=>router.push(routeTo)}>
+        <ButtonCont rcwidth={rcwidth} mtop={margintop} mright={marginright} justify={justify} onClick={()=>router.push(routeTo)}>
             <ButtonInput 
                 bg={bgcolor} 
                 radius={radius} 
@@ -72,6 +74,7 @@ const RoutButton = ({
                 height={height}
                 border={border}
                 bshadow={bshadow}
+                minWidth={minWidth}
             >
                 <ButtonText
                 color={color}
