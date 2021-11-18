@@ -19,10 +19,10 @@ const signup = async event => {
 	  redirect: 'follow'
   }) 
 // .then(window.location.replace("http://localhost:3000/LogIn"))
-  .then(window.location.replace("https://idsp3-mylandlord.herokuapp.com/LogIn"))
-//   .catch(err => {
-// 	  alert("not working")
-//   })
+  .then(window.location.replace("https://my-landlord-frontend.vercel.app/LogIn"))
+  .catch(err => {
+	  alert("sign up failed")
+  })
 }
 
 export default signup;
