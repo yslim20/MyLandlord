@@ -80,6 +80,22 @@ const IconCont = styled.button`
         transition-duration: 0.5s;    
     }
 `
+const EditIconCont = styled.button`
+    display: block;
+    position: relative;
+    right: 7%;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-radius: 50%; 
+    border: none;
+    margin-top: 10%;
+
+    :hover{
+        transform: scale(0.95);
+        transition-duration: 0.5s;    
+    }
+`;
 
 const Icon = styled.img`
     justify-content:center;
@@ -88,6 +104,12 @@ const Icon = styled.img`
     object-fit: contain;
     width: 140px;
     height: 140px;
+    border-radius: 50%;  
+`
+const EditIcon = styled.img`
+
+    width: 60px;
+    height: 60px;
     border-radius: 50%;  
 `
 
@@ -128,6 +150,9 @@ export default function LandlordEdit() {
                 <ProfileSub />
                 <CenterBox>
                     <PropertyCard marginTop="25%" />
+                    <EditIconCont onClick={()=>router.push('/LandlordEditProp')}> 
+                        <EditIcon src="/icons/icon_edit.png"/>
+                    </EditIconCont>
                 </CenterBox>
             </ProfCont>
 

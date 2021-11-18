@@ -76,7 +76,7 @@ const DateText = styled.p`
 // ============ Function ============== //
 const PropertyCard = ({
 // ============ Props
-    src= "./images/property1.png",
+    src= "./images/property1.jpeg",
     width= "196px",
     height="130px",
     cwidth = "100%",
