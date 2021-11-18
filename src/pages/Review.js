@@ -81,22 +81,28 @@ export default function Review() {
             <li>
               <h2>Would you recommend this landlord to others?</h2>
               <div className = "thumb_con flex-row">
-                <a 
-                  // href="" 
-                  // target="" 
-                  className="flex-row thumb thumbUp"
-                >
-                <img src = "/icons/icon_thumbup.svg" alt = "yes" />
-                <p>Yes</p>
-                </a>
-                <a 
-                  // href="" 
-                  // target="" 
-                  className="flex-row thumb thumbDown"
-                >
-                <img src = "/icons/icon_thumbdown.svg" alt = "no" />
-                <p>No</p>
-                </a>              
+                <label for ="yes" class="flex-row thumb thumbup">
+                  <input 
+                    type="radio" 
+                    name="is_recommended" 
+                    value="recommend" 
+                    checked
+                    className = "thumb_rad"
+                  />
+                  <img src = "/icons/icon_thumbup.svg" alt = "yes" />
+                  Yes
+                </label>
+                
+                <label for ="no" class="flex-row thumb thumbdown">
+                  <input 
+                    type="radio" 
+                    name="is_recommended" 
+                    value="recommend"
+                    className = "thumb_rad"
+                  />                    
+                  <img src = "/icons/icon_thumbdown.svg" alt = "yes" />
+                  No
+                </label>          
               </div>
             </li>
           </ul>
@@ -106,7 +112,7 @@ export default function Review() {
         <div className = "section_cont flex-start">
           <div className="header_cont marginB"> 
             <h2>Add an image</h2>
-            <h3>Upload any images to support your experience!</h3>
+            <h3>Upload any images to support your xperience!</h3>
           </div>
           <div id = "add_img" className="flex-row">
             <input

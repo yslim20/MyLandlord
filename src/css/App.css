@@ -178,27 +178,37 @@ a {
   width: 100%;
 }
 
+/* .thumb input[type="radio"]{
+  display: none;
+} */
+
 .thumb {
   width: 20%;  
+  cursor: pointer;
+  font-size: 18px;  
 }
 
 .thumb:first-child{
   margin-right: 30%;
 }
 
-.thumb:hover {
-  color: #5333ED;
-  text-decoration: underline;
+.thumb_rad {
+  width: 20px; height: 20px;
+  margin-right: 20px;
 }
 
 .thumb > img {
   margin-right: 20px;
 }
 
+.thumb:hover {
+  color: #5333ED;
+}
+
 .thumb:hover img{
   transform: scale(0.90);
   transition-duration: 0.5s; 
-}
+} 
 
 .space-around {
   align-items: space-around;
