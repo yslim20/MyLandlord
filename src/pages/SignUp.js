@@ -111,10 +111,13 @@ export default function SignUp() {
       redirect: 'follow'
     }) 
   // .then(window.location.replace("http://localhost:3000/LogIn"))
-    .then(window.location.replace("https://my-landlord-frontend.vercel.app/LogIn"))
-    .catch(err => {
-      alert("sign up failed")
-    })
+  .then((response) => {
+    console.log(response);
+    router.push("/LogIn");
+  })
+  .catch(err => {
+    alert("no worky")
+  })
   }
 
 
