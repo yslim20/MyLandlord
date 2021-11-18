@@ -34,12 +34,25 @@ export default function Review() {
 {/* Radio button */}
         <div className="property_box">
           <div className="radio_cont">
-            <div>
-              <input type="radio" id="property_1" name="property" value="property_1" checked/>
+            <div className="radio_in">
+              <input 
+                type="radio" 
+                id="property_1" 
+                name="property" 
+                value="property_1" 
+                checked
+                className = "thumb_rad"
+              />
               <label for="property_1">5435 Kincaid St</label>
             </div>
             <div>
-              <input type="radio" id="property_2" name="property" value="property_2"/>
+              <input 
+                type="radio" 
+                id="property_2" 
+                name="property" 
+                value="property_2"
+                className = "thumb_rad"
+              />
               <label for="property_2">5435 Kincaid St</label>
             </div>
           </div>
