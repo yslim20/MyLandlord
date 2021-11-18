@@ -1,6 +1,8 @@
 import axios from 'axios'
+import {useRouter} from 'next/router'
 
 const login = async (event) => {
+  const router = useRouter()
 	event.preventDefault();
 
     // const result = await fetch("http://localhost:3080/auth/login",
@@ -16,7 +18,10 @@ const login = async (event) => {
       })
 	  // .then(window.location.replace("http://localhost:3000/"))
     .then(user => console.log(user))
-    .then(window.location.replace("https://my-landlord-frontend.vercel.app/"))
+    .then((response) => {
+      console.log(response);
+      router.push("/");
+    })
     // .then(() => location.replace("https://idsp3-mylandlord.herokuapp.com/"))
     // .then(() => console.log("hi"))
     .catch(err => {
