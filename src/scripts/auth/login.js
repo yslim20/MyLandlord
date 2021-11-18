@@ -14,11 +14,12 @@ const login = async (event) => {
         }),
         headers: { "Content-Type": "application/json" },
       })
-      .then(window.location.replace("https://my-landlord-frontend.vercel.app/"))
 	  // .then(window.location.replace("http://localhost:3000/"))
-      .then(user => console.log(user))
-      .catch(err => {
-        alert("login fail")
+    .then(user => console.log(user))
+    // .then(() => location.replace("https://idsp3-mylandlord.herokuapp.com/"))
+    // .then(() => console.log("hi"))
+    .catch(err => {
+       alert("not working")
     })
 
 
