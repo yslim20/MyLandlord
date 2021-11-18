@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
+import { Router, useRouter } from "next/router";
+import { response } from 'express';
 
 // ============ CSS ============== //
 const FormCont = styled.div`
@@ -24,10 +26,27 @@ const InputBox = styled.input`
 `;
 // ============ Function ============== //
 const LongInForm = ({
-
 // ============ Props
     title="User Name"
 }) => {
+    const router = useRouter();
+    async function onSubmit(event) {
+        event.preventDefault();
+        const result = await fetch("https://idsp-mylandlord.herokuapp.com/auth/login",
+        {
+            credentials: "include",
+            method: "POST",
+            body: JSON.stringify({
+            Email: event.target.Email.value,
+            Password: event.target.Password.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+          console.log(response);
+          router.push
+      })
+    }
 
 // ===========Layout
     return (
