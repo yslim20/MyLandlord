@@ -6,10 +6,10 @@ import UserDrop from '../comps/UserDrop';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
-import Input from '../comps/Input';
 import InputCol from '../comps/InputCol';
 import Subhead from '../comps/SubHead';
-import { style } from '@mui/system';
+import Button from '../comps/Button';
+import RoutButton from '../comps/RoutButton';
 
 // ============ CSS ============== //
 const Cont = styled.form`
@@ -66,22 +66,25 @@ const TextBox = styled.textarea`
     box-sizing: border-box;
 `;
 
+const Buttcont = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
 // ============ Function ============== //
 // ============ Layout
-export default function LandlordProfile(
-    titleFive="Let us know what your issue is",
-    fsize = 24,
-    
-) {
+export default function LandlordProfile() {
     return(
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop/>} />
+            <Navi children = {<UserDrop
+                src="./images/img_avatar_jasper.png"
+            />} />
 
 {/* // ============ Property information */}
             <HeadCont>
-                <Header marginBottom="45px" marginLeft="4%" text="Edit Properties" fontSize="36px"/>
+                <Header marginBottom="45px" marginLeft="4%" text="Edit Property" fontSize="36px"/>
             </HeadCont>
             <InfoCont>
                 <ImgCont>
@@ -155,6 +158,12 @@ export default function LandlordProfile(
                 </button>
                 </div>
             </div>
+
+            {/* Buttons */}
+            <Buttcont>
+                <RoutButton text="Cancle" routeTo="/LandlordEdit" />
+                <Button text="Submit" bgcolor="#5333ED" color="#fff" />
+            </Buttcont>
 
 {/* // ============ Footer Navigation */}
             <Footer />
