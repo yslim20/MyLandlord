@@ -167,8 +167,8 @@ export default function LandlordProfile() {
             </div>
         {/* buttons */}
         <ButtCont>
-            <RoutButton text="Cancle" routeTo="/LandlordEdit" />
-            <Button text="Submit" bgcolor="#5333ED" color="#fff"/>
+            <RoutButton text="Cancle" routeTo="/LandlordEdit" margintop="0" />
+            <Button text="Submit" bgcolor="#5333ED" color="#fff" margintop="0"/>
         </ButtCont>
 {/* // ============ Footer Navigation */}
             <Footer />

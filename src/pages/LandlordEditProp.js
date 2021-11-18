@@ -69,6 +69,7 @@ const TextBox = styled.textarea`
 const Buttcont = styled.div`
     display: flex;
     flex-direction: row;
+    margin-top: 0;
 `;
 
 // ============ Function ============== //
@@ -161,8 +162,8 @@ export default function LandlordProfile() {
 
             {/* Buttons */}
             <Buttcont>
-                <RoutButton text="Cancle" routeTo="/LandlordEdit" />
-                <Button text="Submit" bgcolor="#5333ED" color="#fff" />
+                <RoutButton text="Cancle" routeTo="/LandlordEdit" margintop="0"/>
+                <Button text="Submit" bgcolor="#5333ED" color="#fff" margintop="0" />
             </Buttcont>
 
 {/* // ============ Footer Navigation */}
