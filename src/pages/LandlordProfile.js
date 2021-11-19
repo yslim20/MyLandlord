@@ -83,14 +83,18 @@ export async function getServerSideProps() {
     // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
     let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/5');
     let reviewCount = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/5/count');
+    // let reviews = await fetch('http://localhost:3080/profile/reviews/15/getAll');
+    let reviews = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/5/getAll');
+
     let viewData = await view.json();
     let reviewCountData = await reviewCount.json();
+    let reviewsData = await reviews.json();
 
-    return {props:{viewData, reviewCountData}}
+    return {props:{viewData, reviewCountData, reviewsData}}
 }
 
 // ============ Layout
-export default function LandlordProfile({viewData, reviewCountData}) {
+export default function LandlordProfile({viewData, reviewCountData, reviewsData}) {
     return  (
         <Cont>
 
@@ -131,15 +135,13 @@ export default function LandlordProfile({viewData, reviewCountData}) {
 {/* // ============ Reviews */}
             <ReviewCont>
                 <ProfileSub text="Reviews"/>
-                <CenterBox>
-                    <ReviewCard review="The house was newly renovated, and the landlord cared about many things such as electricity and water tanks."/>
-                </CenterBox>
-                <CenterBox>
-                    <ReviewCard text="SY" name="Sonia Yepez" />
-                </CenterBox>
-                <CenterBox>
-                    <ReviewCard text="CC" name="Corey Conyers" review="The house was quite old, but it was good that the landlord was not too involved in my life." />
-                </CenterBox>
+                
+                    {reviewsData.map((r) => {
+                        return <CenterBox><ReviewCard review = {r.content} name={r.firstname + " " + r.lastname} boldDate={r.date} /></CenterBox>;
+                    })}
+                    {reviewsData.length == 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}
+                   {/* <ReviewCard review="The house was newly renovated, and the landlord cared about many things such as electricity and water tanks."/> */}
+
             </ReviewCont>
             
 {/* // ============ Footer Navigation */}
