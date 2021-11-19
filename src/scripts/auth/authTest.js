@@ -1,5 +1,5 @@
 const authTest = async () => {
-    fetch('https://idsp-mylandlord.herokuapp.com/auth/register', {
+    fetch('https://idsp-mylandlord.herokuapp.com/hi', {
     // fetch('http://localhost:3080/profile/view/5', {
         credentials: "include",
     })
