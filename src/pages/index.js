@@ -96,8 +96,8 @@ export default function Home() {
 		// fetch('http://localhost:3080/profile/view/5', {
 			credentials: "include",
 		})
-	  .then(response => response.json())
-	  .then(data => console.log(data));
+	  .then(response => console.log(response.json()))
+	//   .then(data => console.log(data));
 	}
 
 	return(
