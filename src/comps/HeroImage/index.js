@@ -53,6 +53,7 @@ const HeroImage = ({
       cwidth={cwidth}
       cheight={cheight}
       imgurl={imgurl}
+      data-aos="fade-right"
     >
       <Letterbox>
         <SubHead 

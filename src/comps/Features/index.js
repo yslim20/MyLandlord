@@ -64,6 +64,7 @@ const Features = ({
       cheight={cheight}
       bradius={bradius}
       cpadding={cpadding}
+      data-aos="fade-up"
     >
       <Img 
         width={width} 
