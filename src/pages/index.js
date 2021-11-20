@@ -89,6 +89,7 @@ const FeatCont = styled.div`
 `
 
 // ============ Function ============== //
+
 // ============ Layout
 export default function Home() {
 
@@ -96,6 +97,15 @@ export default function Home() {
 	useEffect(() => {
 		AOS.init({ duration: 2000 });
 	}, []);
+	
+	const authTest = async () => {
+		await fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/profile/view/5', {
+			credentials: "include",
+		})
+	  .then(response => console.log(response.json()))
+	//   .then(data => console.log(data));
+	}
 
 	return(
 		<Cont>
@@ -171,7 +181,7 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
-			{/* <button onClick={authTest}>hi</button> */}
+			<button onClick={authTest}>hi</button>
 		</Cont>
 
 	)

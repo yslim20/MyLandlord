@@ -24,11 +24,9 @@ const InputBox = styled.input`
 `;
 // ============ Function ============== //
 const LongInForm = ({
-
 // ============ Props
     title="User Name"
 }) => {
-
 // ===========Layout
     return (
         <FormCont>

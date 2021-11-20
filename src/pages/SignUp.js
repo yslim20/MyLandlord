@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import React from 'react';
+import {useRouter} from 'next/router'
 // import ReactDOM from 'react-dom';
 // import axios from 'axios'
 
@@ -15,7 +16,7 @@ import Button from '../comps/Button'
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
-import signup from "../scripts/auth/signup";
+// import signup from "../scripts/auth/signup";
 import RoutButton from '../comps/RoutButton';
 
 
@@ -88,6 +89,38 @@ const BttnCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function SignUp() {
+  const router = useRouter()
+  const signup = async event => {
+    event.preventDefault();
+  
+    // idk where this going dude
+    const response = await fetch('https://idsp-mylandlord.herokuapp.com/auth/register', {
+    // await fetch('http://localhost:3080/auth/register', {
+      body: JSON.stringify({
+            email: event.target.Email.value,
+            firstname: event.target.fname.value,
+            lastname: event.target.lname.value,
+            // is_landlord: event.target.is_landlord.value,
+            is_landlord: 0,
+            password: event.target.Password.value,
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+      redirect: 'follow'
+    }) 
+  // .then(window.location.replace("http://localhost:3000/LogIn"))
+  .then((response) => {
+    console.log(response);
+    router.push("/LogIn");
+  })
+  .catch(err => {
+    alert("no worky")
+  })
+  }
+
+
   return (
     <Cont>
 {/* // ============ Top Navigation */}
