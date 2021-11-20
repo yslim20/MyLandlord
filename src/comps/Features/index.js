@@ -78,11 +78,12 @@ const Features = ({
         fontWeight = "600"
         fontSize= "24"
         text={title}
-        align="left"
+        align="center"
         marginB="20"        
       />
       <Para 
         text = {para}
+        align="center"
       />        
     </FeatCont>
   );

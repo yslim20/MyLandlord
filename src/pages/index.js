@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import authTest from '../scripts/auth/authTest';
 
@@ -89,6 +91,12 @@ const FeatCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function Home() {
+
+// ============ UseEffect - animation
+	useEffect(() => {
+		AOS.init({ duration: 2000 });
+	}, []);
+
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
@@ -154,7 +162,7 @@ export default function Home() {
 					<Features
 						src ="./images/img_rating.svg"
 						title = "Strong Rating System"
-						para= "Users can review their landlord by the rating system."
+						para= "Users can review their landlords by the strong rating system."
 					/>
 				</FeatCont>		
 			</FeatSec>
