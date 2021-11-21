@@ -77,6 +77,15 @@ const UserDrop=({
 // ============ Router  
   const router = useRouter();
 
+// ============ LOGOUT SCRIPT ===========//
+const logoutHit = async () => {
+	await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
+		credentials:'include',
+		method:'POST',
+		headers: { "Content-Type": "application/json" },
+	}).then(() => console.log("logged out??"))
+}
+
   return (
 
 // ============ Layout
