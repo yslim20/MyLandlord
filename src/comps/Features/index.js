@@ -39,7 +39,7 @@ const Features = ({
 // FeatCont
   bradius = 30,
   cwidth = "30%",
-  cheight = 654,
+  cheight = "auto",
   cpadding = "75px 40px",
 
 // img
@@ -47,7 +47,7 @@ const Features = ({
   height = 80,
   src= "./images/img_review.svg",
   alt="review",
-  ImgMarginB=60, 
+  ImgMarginB = 30, 
 
 // Text
   title="Transparent Review Site",
