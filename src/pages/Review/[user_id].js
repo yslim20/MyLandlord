@@ -1,13 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router'
 
 // ============ Imported Comps ============== //
-import Navi from '../comps/Navi';
-import Header from '../comps/Header';
-import Footer from '../comps/Footer';
-import SubHead from '../comps/SubHead';
-import RatingStar from '../comps/RatingStar';
-import Button from '../comps/Button';
-import RoutButton from '../comps/RoutButton';
+import Navi from '../../comps/Navi';
+import Header from '../../comps/Header';
+import Footer from '../../comps/Footer';
+import SubHead from '../../comps/SubHead';
+import RatingStar from '../../comps/RatingStar';
+import Button from '../../comps/Button';
+import RoutButton from '../../comps/RoutButton';
 
 // ============ Function ============== //
 // ============ Layout
