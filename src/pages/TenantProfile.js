@@ -91,18 +91,16 @@ export async function getServerSideProps() {
     // let view = await fetch('http://localhost:3080/profile/view/5');
     // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
     let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/:id');
-    let reviewCount = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/:id/count');
     let reviews = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/:id/getAll');
 
     let viewData = await view.json();
-    let tenantReviewCount = await reviewCount.json();
     let reviewsData = await reviews.json();
 
-    return {props:{viewData, tenantReviewCount, reviewsData}}
+    return {props:{viewData, reviewsData}}
 }
 
 // ============ Layout
-export default function TenantProfile({viewData, tenantReviewCount, reviewsData}) {
+export default function TenantProfile({viewData, reviewsData}) {
     return(
         <Cont>
 
