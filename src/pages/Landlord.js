@@ -40,6 +40,12 @@ const MidCont = styled.div`
 	margin-bottom: ${props=>props.cmarginB}; 
 `
 
+export async function getServerSideProps() {
+	let rows = await fetch("http://localhost:3080/browse/landlords")
+	let rowsData = await rows.json();
+	return {props:{rowsData}};
+}
+
 // ============ Function ============== //
 const Landlord = ({
 
@@ -48,6 +54,7 @@ const Landlord = ({
   cmarginB = "50px",
   cmarginBttm = "0px",
   flexDir = "column",
+  rowsData
 
 })=>{
 
@@ -96,7 +103,7 @@ const Landlord = ({
           marginL="2"
         />
 
-        <EnhancedTable/>        
+        <EnhancedTable rows={rowsData}/>        
 
         {/* <PaginationTest /> */}
         <PaginationRow />

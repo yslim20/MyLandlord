@@ -13,14 +13,14 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
 
-import list from '../../scripts/browse/list';
+// import list from '../../scripts/browse/list';
 
 // ============ Imported Components ============== //
 import Avatar from '../Avatar';
 
 // ============ Tabel Head Create Data
 // function createData(avatar, name, address, rate) {
-//   list();
+// //   list();
 //   return {
 //     // avatar image (with src)
 //     avatar,
@@ -33,7 +33,7 @@ import Avatar from '../Avatar';
 //   };
 // }
 
-//================ fake data for table body
+// // ================ fake data for table body
 // const rows = [
 //   createData("", '','', ""),
 //   createData("", '','', ""),
@@ -43,7 +43,10 @@ import Avatar from '../Avatar';
 //   createData("", '','', ""),
 //   createData("", '','', ""),
 // ];
-const rows = list();
+// const rows = list();
+// let rows = [];
+// list().then(data => rows = data)
+// console.log("this is rows: ", rows)
 
 // ============ Function for filtering
 function descendingComparator(a, b, orderBy) {
@@ -194,6 +197,7 @@ const EnhancedTable = ({
   marginB = 30,
   width = "100%",
   checkcolor="#5333ED",
+  rows
 
 // ---------------OI, CALISTA, MAKE THAT BACKEND FUNCTION ALREADY---------//
 // ============ clickHandler or Router  
@@ -224,7 +228,7 @@ const EnhancedTable = ({
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = props.rows.map((n) => n.firstname);
       setSelected(newSelecteds);
       return;
     }
@@ -269,7 +273,7 @@ const EnhancedTable = ({
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - props.rows.length) : 0;
 
 // ============ Layout
   return (
@@ -298,7 +302,7 @@ const EnhancedTable = ({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.firstname);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
@@ -306,7 +310,7 @@ const EnhancedTable = ({
                       hover
 
 // ============ onClick or onPress handler 
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row.firstname)}
                       // onPress={()=>{ clickHandler()} }  
                       onClick={() => router.push('/LandlordProfile/5')}                      
                     //   onClick={() => router.push(routeTo)}                      
@@ -314,7 +318,7 @@ const EnhancedTable = ({
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.firstname}
                       selected={isItemSelected}
                       align= "center"
                       sx={{
@@ -350,7 +354,7 @@ const EnhancedTable = ({
                         align="center"
                       >
                         <Avatar 
-                          src ={row.avatar}
+                          src ={row.profile_image}
                           bradius="50%"
                           bshadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
                         />
@@ -367,7 +371,7 @@ const EnhancedTable = ({
                         }}
                         
                       >
-                        {row.name}
+                        {row.firstname}
                       </TableCell>
 
 {/*================= ADDRESS =================*/}
@@ -377,7 +381,8 @@ const EnhancedTable = ({
                           boxSizing: {boxSizing},
                         }}
                       >
-                        {row.address}
+                        {""}
+                        {/* {row.address} */}
                       </TableCell>
 {/*================= RATE =================*/}
                       <TableCell 
@@ -386,7 +391,8 @@ const EnhancedTable = ({
                           boxSizing: {boxSizing},
                         }}
                       >
-                        {row.rate}
+                        {5}
+                        {/* {row.rate} */}
                       </TableCell>
                     </TableRow>
                   );
