@@ -13,33 +13,37 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import { visuallyHidden } from '@mui/utils';
 
+import list from '../../scripts/browse/list';
+
 // ============ Imported Components ============== //
 import Avatar from '../Avatar';
 
 // ============ Tabel Head Create Data
-function createData(avatar, name, address, rate) {
-  return {
-    // avatar image (with src)
-    avatar,
-    // landlord name
-    name,
-    // landlord address
-    address,
-    // landlordd rate (1-5)
-    rate,
-  };
-}
+// function createData(avatar, name, address, rate) {
+//   list();
+//   return {
+//     // avatar image (with src)
+//     avatar,
+//     // landlord name
+//     name,
+//     // landlord address
+//     address,
+//     // landlordd rate (1-5)
+//     rate,
+//   };
+// }
 
 //================ fake data for table body
-const rows = [
-  createData("", '','', ""),
-  createData("", '','', ""),
-  createData("", '','', ""),
-  createData("", '','', ""),
-  createData("", '','', ""),
-  createData("", '','', ""),
-  createData("", '','', ""),
-];
+// const rows = [
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+// ];
+const rows = list();
 
 // ============ Function for filtering
 function descendingComparator(a, b, orderBy) {
