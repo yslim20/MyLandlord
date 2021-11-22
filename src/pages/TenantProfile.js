@@ -86,8 +86,23 @@ const CenterBox = styled.div`
 `;
 
 // ============ Function ============== //
+
+export async function getServerSideProps() {
+    // let view = await fetch('http://localhost:3080/profile/view/5');
+    // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
+    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/:id');
+    let reviewCount = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/:id/count');
+    let reviews = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/:id/getAll');
+
+    let viewData = await view.json();
+    let tenantReviewCount = await reviewCount.json();
+    let reviewsData = await reviews.json();
+
+    return {props:{viewData, reviewCountData, reviewsData}}
+}
+
 // ============ Layout
-export default function TenantProfile() {
+export default function TenantProfile({viewData, tenantReviewCount, reviewsData}) {
     return(
         <Cont>
 
@@ -96,15 +111,13 @@ export default function TenantProfile() {
 
 {/* // ============ Landlord information */}
             <HeadCont>
-                <Header marginBottom="45px" marginLeft="3%" text="Nancy J. Rojas"/>
+            <Header marginBottom="45px" marginLeft="4%" text={viewData.firstname + " " + viewData.lastname}/>
                 <IconCont onClick={()=>router.push('/TenantEdit')}> 
                     <Icon src="/icons/icon_edit.png"/>
                 </IconCont>
             </HeadCont>
 
-            <LandlordSub
-                text ="Joined in October 2018"
-            />
+            
 
             <InfoCont>
                 <RetangleAvatar 
@@ -125,7 +138,6 @@ export default function TenantProfile() {
 
                     <VeriCont>
                         <TenantInfo />
-                        <TenantInfo title = "Phone Number : " text="604-434-3245"/>
                     </VeriCont> 
                 </InfoText>
             </InfoCont>
@@ -133,7 +145,10 @@ export default function TenantProfile() {
 {/* // ============ Reviews */}
             <ProfCont>
                 <ProfileSub text="Reviews"/>
-                <CenterBox>
+                {reviewsData.map((t) => {
+                        return <ReviewCard review = {t.content} name={t.firstname + " " + t.lastname} boldDate={r.date}/>;
+                    })}
+                {/* <CenterBox>
                     <ReviewCardImg 
                     bgImage='url("/images/img_avatar_malcom.png")'
                     text=""
@@ -168,7 +183,7 @@ export default function TenantProfile() {
                     boldDate="10 Oct 2018 19:01" 
                     routeTo=""
                     />
-                </CenterBox>
+                </CenterBox> */}
             </ProfCont>
             
 {/* // ============ Footer Navigation */}
