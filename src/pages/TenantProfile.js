@@ -98,7 +98,7 @@ export async function getServerSideProps() {
     let tenantReviewCount = await reviewCount.json();
     let reviewsData = await reviews.json();
 
-    return {props:{viewData, reviewCountData, reviewsData}}
+    return {props:{viewData, tenantReviewCount, reviewsData}}
 }
 
 // ============ Layout
@@ -146,7 +146,7 @@ export default function TenantProfile({viewData, tenantReviewCount, reviewsData}
             <ProfCont>
                 <ProfileSub text="Reviews"/>
                 {reviewsData.map((t) => {
-                        return <ReviewCard review = {t.content} name={t.firstname + " " + t.lastname} boldDate={r.date}/>;
+                        return <ReviewCardImg review = {t.content} name={t.firstname + " " + t.lastname} boldDate={t.date}/>;
                     })}
                 {/* <CenterBox>
                     <ReviewCardImg 
