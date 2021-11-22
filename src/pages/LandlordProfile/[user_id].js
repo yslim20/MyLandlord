@@ -1,23 +1,25 @@
 import styled from 'styled-components';
 import React from 'react';
+import { useRouter } from 'next/router'
 
-import profile from '../scripts/profile/profile';
+
+import profile from '../../scripts/profile/profile';
 
 // ============ Imported Comps ============== //
-import ProfileSub from '../comps/ProfileSub';
-import ShowAll from '../comps/ShowAll';
-import UserDrop from '../comps/UserDrop';
-import PropertyCard from '../comps/PropertyCard';
-import ReviewCard from '../comps/ReviewCard';
-import Footer from '../comps/Footer';
-import Header from '../comps/Header';
-import LandlordSub from '../comps/LandlordSub';
-import RetangleAvatar from '../comps/RectangleAvatar';
-import LandlordInfo from '../comps/LandlordInfo';
-import SubHead from '../comps/SubHead';
-import ChatIcon from '../comps/ChatIcon';
-import RoutButton from '../comps/RoutButton';
-import Navi from '../comps/Navi';
+import ProfileSub from '../../comps/ProfileSub';
+import ShowAll from '../../comps/ShowAll';
+import UserDrop from '../../comps/UserDrop';
+import PropertyCard from '../../comps/PropertyCard';
+import ReviewCard from '../../comps/ReviewCard';
+import Footer from '../../comps/Footer';
+import Header from '../../comps/Header';
+import LandlordSub from '../../comps/LandlordSub';
+import RetangleAvatar from '../../comps/RectangleAvatar';
+import LandlordInfo from '../../comps/LandlordInfo';
+import SubHead from '../../comps/SubHead';
+import ChatIcon from '../../comps/ChatIcon';
+import RoutButton from '../../comps/RoutButton';
+import Navi from '../../comps/Navi';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -78,13 +80,14 @@ const ReviewCont = styled.div`
 `;
 
 // ============ Function ============== //
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+	// const router=useRouter();
     // let view = await fetch('http://localhost:3080/profile/view/5');
     // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
-    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/5');
-    let reviewCount = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/5/count');
+    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/' + context.params.user_id);
+    let reviewCount = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.params.user_id}/count`);
     // let reviews = await fetch('http://localhost:3080/profile/reviews/15/getAll');
-    let reviews = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/5/getAll');
+    let reviews = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.params.user_id}/getAll`);
 
     let viewData = await view.json();
     let reviewCountData = await reviewCount.json();

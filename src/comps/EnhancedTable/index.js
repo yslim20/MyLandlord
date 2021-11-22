@@ -191,9 +191,10 @@ const EnhancedTable = ({
   width = "100%",
   checkcolor="#5333ED",
 
+// ---------------OI, CALISTA, MAKE THAT BACKEND FUNCTION ALREADY---------//
 // ============ clickHandler or Router  
   // clickHandler = () => {},
-  routeTo = "/LandlordProfile",
+//   routeTo = "/LandlordProfile",
 
 }) => {
 
@@ -303,7 +304,8 @@ const EnhancedTable = ({
 // ============ onClick or onPress handler 
                       onClick={(event) => handleClick(event, row.name)}
                       // onPress={()=>{ clickHandler()} }  
-                      onClick={() => router.push(routeTo)}                      
+                      onClick={() => router.push('/LandlordProfile/5')}                      
+                    //   onClick={() => router.push(routeTo)}                      
                       
                       role="checkbox"
                       aria-checked={isItemSelected}
