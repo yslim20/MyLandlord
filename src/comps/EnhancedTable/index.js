@@ -290,7 +290,7 @@ const EnhancedTable = ({
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
+            //   onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
@@ -312,7 +312,7 @@ const EnhancedTable = ({
 // ============ onClick or onPress handler 
                       onClick={(event) => handleClick(event, row.firstname)}
                       // onPress={()=>{ clickHandler()} }  
-                      onClick={() => router.push('/LandlordProfile/5')}                      
+                      onClick={() => router.push('/LandlordProfile/'+row.user_id)}                      
                     //   onClick={() => router.push(routeTo)}                      
                       
                       role="checkbox"
