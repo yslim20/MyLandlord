@@ -100,8 +100,8 @@ export default function SignUp() {
             email: event.target.Email.value,
             firstname: event.target.fname.value,
             lastname: event.target.lname.value,
-            // is_landlord: event.target.is_landlord.value,
-            is_landlord: 0,
+            is_landlord: event.target.is_landlord.value,
+            // is_landlord: 0,
             password: event.target.Password.value,
         }),
         headers: {
