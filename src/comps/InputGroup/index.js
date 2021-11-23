@@ -32,6 +32,7 @@ const LeftCont=styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-right: 50px;
 `
 
 const RightCont=styled.div`
@@ -121,9 +122,9 @@ const InputGroup = ({
 {/* // ============ Image */}
           <LeftCont> 
             <ImgBox 
-              src="./images/img_contactus.png" 						
+              src="./images/ani_ContactUs.gif" 						
               cheight ="100%"
-              cwidth = "90%"
+              cwidth = "100%"
               cmargin = "0 60px 0 0"
             />
           </LeftCont>
