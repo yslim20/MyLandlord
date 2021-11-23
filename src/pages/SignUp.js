@@ -185,7 +185,7 @@ export default function SignUp() {
 {/* // ============ Image */}
         <ContRight>
           <ImgBox
-            src="./images/img_signup.png"
+            src="./images/ani_SignUp.gif"
             cwidth = "90%"
             cheight = "800px"
             height = "auto"
