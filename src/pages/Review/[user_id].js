@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 
 // ============ Imported Comps ============== //
@@ -9,14 +9,27 @@ import SubHead from '../../comps/SubHead';
 import RatingStar from '../../comps/RatingStar';
 import Button from '../../comps/Button';
 import RoutButton from '../../comps/RoutButton';
+import UserDrop from '../../comps/UserDrop';
+import LoginDrop from '../../comps/LoginDrop';
 
 // ============ Function ============== //
 // ============ Layout
 export default function Review() {
+	let [drop, setDrop] = useState(null);
+
+	useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(data => setDrop(data));
+	})
 	return(
 		<div className = "container">
 {/* // ============ Top Navigation */}
-			<Navi/>
+	{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
 
 {/* // ============ Content Start */}
 

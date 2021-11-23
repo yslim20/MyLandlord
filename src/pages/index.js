@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import authTest from '../scripts/auth/authTest';
 
@@ -11,6 +11,8 @@ import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
 import Navi from '../comps/Navi';
+import UserDrop from '../comps/UserDrop';
+import LoginDrop from '../comps/LoginDrop';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -88,23 +90,35 @@ const FeatCont = styled.div`
 
 // ============ Function ============== //
 
+// export async function getServerSideProps() {
+// 	let auth = await fetch("http://localhost:3080/hi", {
+// 		credentials: 'include',
+// 	});
+// 	let authData = await auth.json();
+// 	// console.log(authData);
+// 	return await {props:{authData}};
+// }
+
 // ============ Layout
 export default function Home() {
+	let [drop, setDrop] = useState(null);
 
-	const authTest = async () => {
-		await fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		// fetch('http://localhost:3080/profile/view/5', {
+	useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
 			credentials: "include",
 		})
-	  .then(response => console.log(response.json()))
-	//   .then(data => console.log(data));
-	}
+		.then(response => response.json())
+		.then(data => setDrop(data));
+	})
+
 
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
 		<NavCont> 
-			<Navi />
+			{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
 		</NavCont>			
 
 {/* // ============ Body Starts */}
@@ -174,7 +188,7 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
-			<button onClick={authTest}>hi</button>
+			{/* <button onClick={authTest}>hi</button> */}
 		</Cont>
 
 	)

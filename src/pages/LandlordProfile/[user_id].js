@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 
 
@@ -20,6 +20,7 @@ import SubHead from '../../comps/SubHead';
 import ChatIcon from '../../comps/ChatIcon';
 import RoutButton from '../../comps/RoutButton';
 import Navi from '../../comps/Navi';
+import LoginDrop from '../../comps/LoginDrop';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -98,11 +99,26 @@ export async function getServerSideProps(context) {
 
 // ============ Layout
 export default function LandlordProfile({viewData, reviewCountData, reviewsData}) {
-    return  (
+	let [drop, setDrop] = useState(null);
+
+	useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(data => setDrop(data));
+	})
+	return  (
+		
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop/>} />
+            {/* <Navi children = {<UserDrop/>} /> */}
+
+		{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
+
 
 {/* // ============ Landlord information */}
             <HeadCont>

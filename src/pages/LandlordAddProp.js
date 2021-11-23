@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // ============ Imported Comps ============== //
 import UserDrop from '../comps/UserDrop';
@@ -10,6 +10,7 @@ import InputCol from '../comps/InputCol';
 import Subhead from '../comps/SubHead';
 import Button from '../comps/Button';
 import RoutButton from '../comps/RoutButton';
+import LoginDrop from '../comps/LoginDrop';
 
 // ============ CSS ============== //
 const Cont = styled.form`
@@ -81,13 +82,23 @@ const ButtCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function LandlordProfile() {
+	let [drop, setDrop] = useState(null);
+
+	useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(data => setDrop(data));
+	})
+
     return(
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop
-                src="./images/img_avatar_jasper.png"
-            />} />
+	{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
 
 {/* // ============ Property information */}
             <HeadCont>
