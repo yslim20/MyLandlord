@@ -13,7 +13,6 @@ import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
 import Navi from '../comps/Navi';
-
 import LoginErrorBox from '../comps/LoginErrorBox'
 
 // ============ CSS ============== //
@@ -118,8 +117,7 @@ export default function Home() {
 		setShowPop(false)
 	}
 
-	const [showpop, setShowPop] = useState(false)
-	
+	const [showpop, setShowPop] = useState(false)	
 
 	return(
 		<Cont>
