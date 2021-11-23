@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
 import {useRouter} from 'next/router'
 // import ReactDOM from 'react-dom';
 // import axios from 'axios'
@@ -18,6 +18,7 @@ import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
 // import signup from "../scripts/auth/signup";
 import RoutButton from '../comps/RoutButton';
+import LoginErrorBox from '../comps/LoginErrorBox';
 
 
 // ============ css ============== //
@@ -27,6 +28,16 @@ const Cont = styled.div`
   flex-direction: column;
   padding: 0 4% 0 4%;
   box-sizing: border-box;
+`
+
+const ErrorCont = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4% 0 4%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 `
 
 const RadioCont = styled.div`
@@ -120,14 +131,32 @@ export default function SignUp() {
   })
   }
 
+  function handleClick() {
+		setShowPop(true)	
+	}
+
+	function handleClickClose(){
+		setShowPop(false)
+	}
+
+	const [showpop, setShowPop] = useState(false)
+
 
   return (
     <Cont>
 {/* // ============ Top Navigation */}
-      <Navi />
+      <Navi 
+        chatClick={() => handleClick()}
+      />
 
 {/* // ============ Content Starts */}
       <Header text="Sign Up"/>
+
+      <ErrorCont> 
+        {showpop === true && <LoginErrorBox 
+            clickHandler={() => handleClickClose()}				
+        />}
+      </ErrorCont> 
 
 
 {/* // ============ Signup form */}
