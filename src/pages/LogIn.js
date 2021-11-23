@@ -95,7 +95,7 @@ export default function LogIn() {
 {/* // ============ Image*/}
                 <ContRight>
                     <ImgBox
-                        src="./images/LogInImg.svg"
+                        src="./images/ani_logIn.gif"
                         height="735px"
                         cwidth="90%"
                         cheight="auto"
