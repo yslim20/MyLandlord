@@ -14,7 +14,7 @@ const ErrorCont = styled.div`
     item-alignment: center;
     border-radius: 50px;
     box-shadow: ${props=>props.cbshadow}; 
-    padding: 60px 80px;
+    padding: 60px 70px;
     background-color: #fff;
     position: absolute;
     z-index: 22;
@@ -56,7 +56,7 @@ const LoginErrorBox = ({
     text="Log In",
     bgcolor = "#5333ED",
     radius = 20,
-    width = "85%",
+    width = "80%",
     height = 72,
     cbshadow = "rgba(0, 0, 0, 0.24) 0px 6px 18px",
     bshadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
@@ -85,7 +85,7 @@ const LoginErrorBox = ({
         <SubHead 
           text = {errortext}
           marginB="30"
-          fontSize="28"
+          fontSize="24"
         />
         
         <ButtonInput 
