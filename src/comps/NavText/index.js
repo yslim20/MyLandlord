@@ -51,10 +51,11 @@ const NavText = ({
     marginright = "",
     text= "Home",
     className = "bttntxt",
-    routeTo = "/Home",
+    // routeTo = "/Home",
     pSize = 24,
     pWeight = 400,
     pHeight = 40,
+    onClick=()=>{}
 
 }) => {
 // ============ Router
@@ -64,7 +65,8 @@ const NavText = ({
   return (
     <Nav 
       mright={marginright} 
-      onClick={() => router.push(routeTo)}
+      
+      onClick={onClick} 
       height={height}      
     >
       
