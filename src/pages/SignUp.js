@@ -152,11 +152,6 @@ export default function SignUp() {
             />
           </CheckCont>
 
-
-{/* // ============ Verification button */}
-          <VeriCont>
-            <VeriButton cwidth = "80%" cheight = "85"/>
-          </VeriCont>
           
 {/* // ============ Buttons */}
           <BttnCont>
