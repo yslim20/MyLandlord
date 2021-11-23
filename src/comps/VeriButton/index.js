@@ -94,8 +94,8 @@ function VeriButton({
   iBshadow = "rgba(0, 0, 0, 0.3) 3px 3px 3px 0px inset, rgba(0, 0, 0, 0.05) -3px -3px 3px 1px inset",
   iWidth = 36,
   bradius = 5,
-  marginR = 10,
-  fsize = 32,
+  marginR = 20,
+  fsize = 20,
 
 }) {
 

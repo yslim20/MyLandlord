@@ -184,7 +184,7 @@ export default function SignUp() {
 
 {/* // ============ Verification button */}
           <VeriCont>
-            <VeriButton cwidth = "80%" cheight = "85"/>
+            <VeriButton cwidth = "60%" cheight = "85"/>
           </VeriCont>
           
 {/* // ============ Buttons */}
