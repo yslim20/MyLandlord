@@ -98,11 +98,9 @@ export default function LandlordProfile() {
                     <Img src="./images/property2.jpeg"/>
                 </ImgCont>
                 <InputCont>
-                    <InputCol />
-                    <InputCol  text="Address Line 2"/>
-                    <InputCol text="City"/>
-                    <InputCol text="Zip Code"/>
-                    <InputCol text="Province"/>
+                    <InputCol title= "Address" />
+                    <InputCol text="City" title="City"/>
+
                 </InputCont>
             </InfoCont>
             <Subhead marginL="4%" justifyContent="left" fontSize="24" text="Describe your property" marginB="20"/>
