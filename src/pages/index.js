@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,6 +13,8 @@ import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
 import Navi from '../comps/Navi';
+
+import LoginErrorBox from '../comps/LoginErrorBox'
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -43,6 +45,7 @@ const MidCont = styled.div`
 	margin-bottom: 100px;
 	padding: 0 4% 0 4%;
 	box-sizing: border-box;
+	position: relative;
 `
 const LeftBox = styled.div`
 	display:flex;
@@ -107,15 +110,31 @@ export default function Home() {
 	//   .then(data => console.log(data));
 	}
 
+	function handleClick() {
+		setShowPop(true)	
+	}
+
+	function handleClickClose(){
+		setShowPop(false)
+	}
+
+	const [showpop, setShowPop] = useState(false)
+	
+
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
 		<NavCont> 
-			<Navi />
+			<Navi 
+				chatClick={() => handleClick()}
+			/>
 		</NavCont>			
 
 {/* // ============ Body Starts */}
 			<MidCont>
+				{showpop === true && <LoginErrorBox 
+					clickHandler={() => handleClickClose()}				
+				/>}
 				<LeftBox>
 					<VerLogo 
 						cwidth="278"
