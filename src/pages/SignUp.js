@@ -152,11 +152,6 @@ export default function SignUp() {
             />
           </CheckCont>
 
-
-{/* // ============ Verification button */}
-          <VeriCont>
-            <VeriButton cwidth = "80%" cheight = "85"/>
-          </VeriCont>
           
 {/* // ============ Buttons */}
           <BttnCont>
@@ -185,7 +180,7 @@ export default function SignUp() {
 {/* // ============ Image */}
         <ContRight>
           <ImgBox
-            src="./images/img_signup.png"
+            src="./images/ani_SignUp.gif"
             cwidth = "90%"
             cheight = "800px"
             height = "auto"
