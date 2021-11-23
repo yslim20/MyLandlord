@@ -41,7 +41,8 @@ const MidCont = styled.div`
 `
 
 export async function getServerSideProps() {
-	let rows = await fetch("http://localhost:3080/browse/landlords")
+	let rows = await fetch('https://idsp-mylandlord.herokuapp.com/browse/landlords/');
+	// let rows = await fetch("http://localhost:3080/browse/landlords")
 	let rowsData = await rows.json();
 	return {props:{rowsData}};
 }
