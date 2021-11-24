@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import authTest from '../scripts/auth/authTest';
 
@@ -11,8 +11,6 @@ import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
 import Navi from '../comps/Navi';
-import UserDrop from '../comps/UserDrop';
-import LoginDrop from '../comps/LoginDrop';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -101,24 +99,12 @@ const FeatCont = styled.div`
 
 // ============ Layout
 export default function Home() {
-	let [drop, setDrop] = useState(null);
-
-	useEffect(() => {
-
-		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		// fetch('http://localhost:3080/hi', {
-			credentials: "include",
-		})
-		.then(response => response.json())
-		.then(data => setDrop(data));
-	})
-
 
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
 		<NavCont> 
-			{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
+			<Navi />
 		</NavCont>			
 
 {/* // ============ Body Starts */}

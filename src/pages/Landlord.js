@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 
 // ============ Imported Components ============== //
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
 import Navi from '../comps/Navi';
-import UserDrop from '../comps/UserDrop';
-import LoginDrop from '../comps/LoginDrop';
 import SearchBar from '../comps/SearchBar';
 import ImgBox from '../comps/ImgBox';
 import EnhancedTable from '../comps/EnhancedTable'
@@ -62,24 +60,12 @@ const Landlord = ({
 
 })=>{
 
-	let [drop, setDrop] = useState(null);
-
-	useEffect(() => {
-
-		// await fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		fetch('http://localhost:3080/hi', {
-			credentials: "include",
-		})
-		.then(response => response.json())
-		.then(data => setDrop(data));
-	})
-
 // ============ Layout
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
 
-			{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
+	<Navi />
 
 
 {/* // ============ MAP */}

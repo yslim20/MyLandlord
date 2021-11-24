@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // ============ Imported Comps ============== //
 import Navi from '../comps/Navi';
 import Header from '../comps/Header';
 import Footer from '../comps/Footer';
 import InputGroup from '../comps/InputGroup';
-import UserDrop from '../comps/UserDrop';
-import LoginDrop from '../comps/LoginDrop';
+
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -27,21 +26,11 @@ const InputCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function ContactUs() {
-	let [drop, setDrop] = useState(null);
-
-	useEffect(() => {
-
-		// fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		fetch('http://localhost:3080/hi', {
-			credentials: "include",
-		})
-		.then(response => response.json())
-		.then(data => setDrop(data));
-	})
+	
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
-	{drop ? <Navi children={<UserDrop/>} /> : <Navi children={<LoginDrop />} />}
+	<Navi />
 
 {/* // ============ Content Start */}
       <InputCont> 
