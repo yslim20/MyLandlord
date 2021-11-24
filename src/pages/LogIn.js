@@ -30,6 +30,7 @@ const ErrorCont = styled.div`
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    
 `
 
 const BttmCont = styled.form`
