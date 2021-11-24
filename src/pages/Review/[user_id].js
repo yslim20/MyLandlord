@@ -51,7 +51,7 @@ export default function Review({landlord}) {
 				maintenance_rating: maintenance,
 				availability_rating: avail,
 	
-				landlord_id:router.query.user_id
+				landlord_id:parseInt(router.query.user_id),
 			}),
 			headers:{
 				'Content-Type':'application/json'
