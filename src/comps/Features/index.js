@@ -39,7 +39,7 @@ const Features = ({
 // FeatCont
   bradius = 30,
   cwidth = "30%",
-  cheight = 654,
+  cheight = "auto",
   cpadding = "75px 40px",
 
 // img
@@ -47,7 +47,7 @@ const Features = ({
   height = 80,
   src= "./images/img_review.svg",
   alt="review",
-  ImgMarginB=60, 
+  ImgMarginB = 30, 
 
 // Text
   title="Transparent Review Site",
@@ -64,6 +64,7 @@ const Features = ({
       cheight={cheight}
       bradius={bradius}
       cpadding={cpadding}
+      data-aos="fade-up"
     >
       <Img 
         width={width} 
@@ -77,11 +78,12 @@ const Features = ({
         fontWeight = "600"
         fontSize= "24"
         text={title}
-        align="left"
+        align="center"
         marginB="20"        
       />
       <Para 
         text = {para}
+        align="center"
       />        
     </FeatCont>
   );

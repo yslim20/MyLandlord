@@ -36,7 +36,7 @@ const ChatIcon = ({
   routeTo = "/Chat",
 
 // image
-  src = "./icons/icon_chat.svg",
+  src = "/icons/icon_chat.svg",
   alt = "image box",
   width = "70%",
   objectFit = "contain",  

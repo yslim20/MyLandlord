@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import {useRouter} from 'next/router';
 
+// ============ !! NOT USING ANYMORE !! ============== //
 // ============ Imported Components ============== //
 import NavText from '../NavText';
 import VerLogo from '../VerLogo';
@@ -53,6 +54,24 @@ const TopNav =({
   
   // const router = useRouter();
 
+  // if (ispop=true) {
+    
+  // }
+	function handleClick(e) {
+    if(ispop == true) {
+      const modal = document.querySelector(".popup_show")
+      const closeBtn = document.querySelector(".popup_hide")
+      modal.style.display = "block";
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      })
+    }
+    else {
+      
+    }
+		
+	}
+
 // ============ Layout
   return (
     <Cont cpadding={cpadding} cmarginB={cmarginB} >
@@ -64,18 +83,22 @@ const TopNav =({
       <Nav>
         <LeftBar>
           <NavText
-            routeTo = "/"
+            onClick={() => router.push('/')}
+            // routeTo = "/"
           />
           <NavText 
-            routeTo = "/Landlord"
+            // onClick={() => router.push("/Landlord")}
+            // routeTo = "/Landlord"
             text="Landlord"
           />
           <NavText 
-            routeTo = "/Chat"
             text="Chat"
+            ispop={true}
+            onClick={()=>handleClick(e)}
           />
           <NavText 
-            routeTo = "/ContactUs"
+            // onClick={() => router.push("/ContactUs")}
+            // routeTo = "/ContactUs"
             text="Contact Us"
           />
         </LeftBar>

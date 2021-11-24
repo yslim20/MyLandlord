@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useRouter} from 'next/router'
 
 // ============ Imported Comps ============== //
@@ -12,7 +12,7 @@ import login from '../scripts/auth/login'
 import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
 import RoutButton from '../comps/RoutButton';
-
+import LoginErrorBox from '../comps/LoginErrorBox';
 
 // ============ css ============== //
 const Cont = styled.div`
@@ -22,10 +22,22 @@ const Cont = styled.div`
     box-sizing: border-box;
 `;
 
+const ErrorCont = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4% 0 4%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    
+`
+
 const BttmCont = styled.form`
     display: flex;
     flex-wrap: row;
     flex-direction: row;
+    justify-content: center;
 `
 
 const ContLeft = styled.div`
@@ -73,15 +85,36 @@ export default function LogIn() {
         })
     }
 
+    function handleClick() {
+		setShowPop(true)	
+	}
+
+	function handleClickClose(){
+		setShowPop(false)
+	}
+
+	const [showpop, setShowPop] = useState(false)
+
     return(
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi />
-{/* // ============ Content start*/}
+            <Navi 
+                chatClick={() => handleClick()}
+            />
+{/* // ============ Content start*/}            
+            
             <Header />
 
+            <ErrorCont> 
+                {showpop === true && <LoginErrorBox 
+                    clickHandler={() => handleClickClose()}				
+                />}
+            </ErrorCont>            
+
             <BttmCont onSubmit={OKlogin} >
+                
+
 {/* // ============ Form*/}
                 <ContLeft>
                     <Input title="Email" type ="email"/>
