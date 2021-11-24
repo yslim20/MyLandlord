@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 
 // ============ Imported Comps ============== //
-import UserDrop from '../comps/UserDrop';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
@@ -81,14 +80,12 @@ const ButtCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function LandlordProfile() {
+
     return(
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop
-                src="./images/img_avatar_jasper.png"
-            />} />
-
+		<Navi />
 {/* // ============ Property information */}
             <HeadCont>
                 <Header marginBottom="45px" marginLeft="4%" text="Add Property" fontSize="36px"/>

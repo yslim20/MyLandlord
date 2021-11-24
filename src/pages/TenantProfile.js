@@ -4,7 +4,6 @@ import router from 'next/router';
 
 // ============ Imported Comps ============== //
 import ProfileSub from '../comps/ProfileSub';
-import UserDrop from '../comps/UserDrop';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import LandlordSub from '../comps/LandlordSub';
@@ -92,7 +91,7 @@ export default function TenantProfile() {
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop/>} />
+            <Navi />
 
 {/* // ============ Landlord information */}
             <HeadCont>

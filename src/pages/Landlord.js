@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
+
 // ============ Imported Components ============== //
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
@@ -63,7 +64,9 @@ const Landlord = ({
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
-			<Navi/>
+
+	<Navi />
+
 
 {/* // ============ MAP */}
       <MidCont cmarginB={cmarginB}>

@@ -7,6 +7,7 @@ import Header from '../comps/Header';
 import Footer from '../comps/Footer';
 import InputGroup from '../comps/InputGroup';
 
+
 // ============ CSS ============== //
 const Cont = styled.div`
   display: flex;
@@ -25,10 +26,11 @@ const InputCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function ContactUs() {
+	
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
-			<Navi/>
+	<Navi />
 
 {/* // ============ Content Start */}
       <InputCont> 

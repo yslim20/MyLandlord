@@ -88,17 +88,17 @@ const FeatCont = styled.div`
 
 // ============ Function ============== //
 
+// export async function getServerSideProps() {
+// 	let auth = await fetch("http://localhost:3080/hi", {
+// 		credentials: 'include',
+// 	});
+// 	let authData = await auth.json();
+// 	// console.log(authData);
+// 	return await {props:{authData}};
+// }
+
 // ============ Layout
 export default function Home() {
-
-	const authTest = async () => {
-		await fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		// fetch('http://localhost:3080/profile/view/5', {
-			credentials: "include",
-		})
-	  .then(response => console.log(response.json()))
-	//   .then(data => console.log(data));
-	}
 
 	return(
 		<Cont>
@@ -174,7 +174,7 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
-			<button onClick={authTest}>hi</button>
+			{/* <button onClick={authTest}>hi</button> */}
 		</Cont>
 
 	)
