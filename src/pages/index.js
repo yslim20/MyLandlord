@@ -174,7 +174,7 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
-			<button onClick={authTest}>hi</button>
+			{/* <button onClick={authTest}>hi</button> */}
 		</Cont>
 
 	)

@@ -15,7 +15,7 @@ import MenuList from '@mui/material/MenuList';
 import Avatar from '@mui/material/Avatar';
 
 // ============ Button Titles
-const options = ['Log In', 'Sign Up', 'My Page'];
+const options = ['Log In', 'Sign Up'];
 
 const LoginDrop=({  
 
