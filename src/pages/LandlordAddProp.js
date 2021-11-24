@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 
 // ============ Imported Comps ============== //
-import UserDrop from '../comps/UserDrop';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
@@ -81,14 +80,12 @@ const ButtCont = styled.div`
 // ============ Function ============== //
 // ============ Layout
 export default function LandlordProfile() {
+
     return(
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop
-                src="./images/img_avatar_jasper.png"
-            />} />
-
+		<Navi />
 {/* // ============ Property information */}
             <HeadCont>
                 <Header marginBottom="45px" marginLeft="4%" text="Add Property" fontSize="36px"/>
@@ -98,11 +95,9 @@ export default function LandlordProfile() {
                     <Img src="./images/property2.jpeg"/>
                 </ImgCont>
                 <InputCont>
-                    <InputCol />
-                    <InputCol  text="Address Line 2"/>
-                    <InputCol text="City"/>
-                    <InputCol text="Zip Code"/>
-                    <InputCol text="Province"/>
+                    <InputCol title= "Address" />
+                    <InputCol text="City" title="City"/>
+
                 </InputCont>
             </InfoCont>
             <Subhead marginL="4%" justifyContent="left" fontSize="24" text="Describe your property" marginB="20"/>

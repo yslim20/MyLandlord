@@ -68,29 +68,24 @@ export default function Review() {
         <div className = "section_cont flex-start">
           <ul id ="review_list">
             <li>
-              <h2>Housing maintenance</h2>
+			<h2>Housing maintenance</h2>
               <h3>How was the condition of the place?</h3>
-              <RatingStar />
-            </li>
-            <li>
-              <h2>Communication</h2>
-              <h3>Was the landlord privode enough communication?</h3>
-              <RatingStar />
+              <RatingStar name="maintenance_rating" />
             </li>
             <li>
               <h2>Cleanliness</h2>
               <h3>Was the place clean?</h3>
-              <RatingStar />
+              <RatingStar name="cleanliness_rating" id="cleanliness_rating" />
             </li>
             <li>
               <h2>Availability</h2>
               <h3>Was the length of renting period reasonable?</h3>
-              <RatingStar />
+              <RatingStar name="availability_rating" />
             </li>
             <li>
-              <h2>Accracy</h2>
-              <h3>Was the place identical as shown on picture?</h3>
-              <RatingStar />
+              <h2>Communication</h2>
+              <h3>Was the length of renting period reasonable?</h3>
+              <RatingStar name="communication_rating" />
             </li>
             <li>
               <h2>Would you recommend this landlord to others?</h2>

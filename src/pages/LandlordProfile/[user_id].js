@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import { useRouter } from 'next/router'
 
-
-import profile from '../../scripts/profile/profile';
-
 // ============ Imported Comps ============== //
 import ProfileSub from '../../comps/ProfileSub';
 import ShowAll from '../../comps/ShowAll';
@@ -98,11 +95,13 @@ export async function getServerSideProps(context) {
 
 // ============ Layout
 export default function LandlordProfile({viewData, reviewCountData, reviewsData}) {
-    return  (
+	
+	return  (
+		
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop/>} />
+            <Navi />
 
 {/* // ============ Landlord information */}
             <HeadCont>

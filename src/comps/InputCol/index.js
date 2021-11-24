@@ -33,7 +33,7 @@ const InputBox = styled.input`
 
 
 const InputCol = ({
-    text="Address Line 1",
+    text="Street Address",
     placeholder=""
 }) => {
     return(

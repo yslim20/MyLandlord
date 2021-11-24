@@ -92,6 +92,15 @@ const FeatCont = styled.div`
 
 // ============ Function ============== //
 
+// export async function getServerSideProps() {
+// 	let auth = await fetch("http://localhost:3080/hi", {
+// 		credentials: 'include',
+// 	});
+// 	let authData = await auth.json();
+// 	// console.log(authData);
+// 	return await {props:{authData}};
+// }
+
 // ============ Layout
 export default function Home() {
 
@@ -200,7 +209,7 @@ export default function Home() {
 			<NavCont> 		
 				<Footer />
 			</NavCont>	
-			<button onClick={authTest}>hi</button>
+			{/* <button onClick={authTest}>hi</button> */}
 		</Cont>
 
 	)

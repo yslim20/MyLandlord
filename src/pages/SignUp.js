@@ -111,8 +111,8 @@ export default function SignUp() {
             email: event.target.Email.value,
             firstname: event.target.fname.value,
             lastname: event.target.lname.value,
-            // is_landlord: event.target.is_landlord.value,
-            is_landlord: 0,
+            is_landlord: event.target.is_landlord.value,
+            // is_landlord: 0,
             password: event.target.Password.value,
         }),
         headers: {
@@ -181,7 +181,6 @@ export default function SignUp() {
             />
           </CheckCont>
 
-
 {/* // ============ Verification button */}
           <VeriCont>
             <VeriButton cwidth = "60%" cheight = "85"/>
@@ -214,7 +213,7 @@ export default function SignUp() {
 {/* // ============ Image */}
         <ContRight>
           <ImgBox
-            src="./images/img_signup.png"
+            src="./images/ani_SignUp.gif"
             cwidth = "90%"
             cheight = "800px"
             height = "auto"
