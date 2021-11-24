@@ -53,6 +53,7 @@ const Navi =({
   cpadding="",
   cmarginB=50,
   children = <LoginDrop />,
+  chatClick=()=>{}
 
 })=>{
 
@@ -83,7 +84,7 @@ const Navi =({
 
           <NavHome />  
           <NavLandlord />
-          <NavChat />
+          <NavChat chatClick={chatClick}/>
           <NavContact />
 
         </LeftBar>

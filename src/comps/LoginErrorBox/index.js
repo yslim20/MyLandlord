@@ -1,20 +1,24 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useRouter} from 'next/router';
+import {useRouter, useState} from 'next/router';
 
 // ============ Imported comps ============== //
 import SubHead from '../SubHead';
 
 // ============ CSS ============== //
 const ErrorCont = styled.div`
-    width: 30%;
-    display:flex;
+    width: 25%;
+    display:${props=>props.cdisplay}; 
     flex-direction: column;
     align-items:center;
     item-alignment: center;
     border-radius: 50px;
     box-shadow: ${props=>props.cbshadow}; 
-    padding: 76px 94px;
+    padding: 60px 70px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 22;
+    transition: all 1s ease-in-out;
 `;
 
 const ButtonInput = styled.button`
@@ -52,16 +56,19 @@ const LoginErrorBox = ({
     text="Log In",
     bgcolor = "#5333ED",
     radius = 20,
-    width = "100%",
+    width = "80%",
     height = 72,
-    cbshadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    cbshadow = "rgba(0, 0, 0, 0.24) 0px 6px 18px",
     bshadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
     color="#fff",
     fontSize="24px",
     fontWeight="500",
+    cdisplay="flex",
 
 // ============ Route To
     routeTo = "/LogIn",
+
+    clickHandler=() => {}
 
 }) => {
 
@@ -72,10 +79,13 @@ const LoginErrorBox = ({
     return (
       <ErrorCont 
         cbshadow={cbshadow}
+        cdisplay={cdisplay}
+        onClick={() => clickHandler()}
       >
         <SubHead 
           text = {errortext}
-          marginB="50"
+          marginB="30"
+          fontSize="24"
         />
         
         <ButtonInput 

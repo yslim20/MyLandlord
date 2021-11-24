@@ -9,7 +9,7 @@ const FormCont = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${props=>props.marginB}
+  margin-bottom: ${props=>props.marginB};
 `
 
 const FormBox = styled.div`
@@ -57,7 +57,7 @@ const Input = ({
   return (
     <FormCont
       minWidth={minWidth}
-      marginBott = {marginB}
+      marginB = {marginB}
     >
       <FormBox 
         fwidth={fwidth} 

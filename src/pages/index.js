@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import authTest from '../scripts/auth/authTest';
 
@@ -11,6 +13,7 @@ import HeroImage from '../comps/HeroImage'
 import Features from '../comps/Features'
 import Footer from '../comps/Footer';
 import Navi from '../comps/Navi';
+import LoginErrorBox from '../comps/LoginErrorBox'
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -41,6 +44,7 @@ const MidCont = styled.div`
 	margin-bottom: 100px;
 	padding: 0 4% 0 4%;
 	box-sizing: border-box;
+	position: relative;
 `
 const LeftBox = styled.div`
 	display:flex;
@@ -100,15 +104,44 @@ const FeatCont = styled.div`
 // ============ Layout
 export default function Home() {
 
+// ============ UseEffect - animation
+	useEffect(() => {
+		AOS.init({ duration: 2000 });
+	}, []);
+	
+	const authTest = async () => {
+		await fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/profile/view/5', {
+			credentials: "include",
+		})
+	  .then(response => console.log(response.json()))
+	//   .then(data => console.log(data));
+	}
+
+	function handleClick() {
+		setShowPop(true)	
+	}
+
+	function handleClickClose(){
+		setShowPop(false)
+	}
+
+	const [showpop, setShowPop] = useState(false)	
+
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
 		<NavCont> 
-			<Navi />
+			<Navi 
+				chatClick={() => handleClick()}
+			/>
 		</NavCont>			
 
 {/* // ============ Body Starts */}
 			<MidCont>
+				{showpop === true && <LoginErrorBox 
+					clickHandler={() => handleClickClose()}				
+				/>}
 				<LeftBox>
 					<VerLogo 
 						cwidth="278"
@@ -156,16 +189,18 @@ export default function Home() {
 				/>
 
 				<FeatCont>
-					<Features />
 					<Features 
-						src ="./images/img_comm.svg"
+						src ="./images/img_review.gif"
+					/>
+					<Features 
+						src ="./images/img_comm.gif"
 						title = "Easy Communication"
 						para= "Users can contact any landlords if they are online on the landlord profile section."
 					/>
 					<Features
-						src ="./images/img_rating.svg"
+						src ="./images/img_rating.gif"
 						title = "Strong Rating System"
-						para= "Users can review their landlord by the rating system."
+						para= "Users can review their landlords by the strong rating system."
 					/>
 				</FeatCont>		
 			</FeatSec>
