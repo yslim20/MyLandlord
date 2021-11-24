@@ -13,16 +13,18 @@ import RoutButton from '../../comps/RoutButton';
 // ============ Function ============== //
 export async function getServerSideProps(context) {
 	// need to get the route parameter of the landlord_id
-	let landlord = context.params.user_id;
+	let landlord = parseInt(context.params.user_id);
 	return{props:{landlord}};
 }
 
 // ============ Layout
 export default function Review({landlord}) {
-	const router = useRouter()
+	const router = useRouter();
 
 	const review = async event => {
 		event.preventDefault();
+
+		console.log()
 
 		let recommended = parseInt(document.querySelector('input[name="is_recommended"]:checked').value),
 		clean = parseInt(document.querySelector('input[name="cleanliness_rating"]:checked').value),
@@ -38,8 +40,8 @@ export default function Review({landlord}) {
 		//   }
 		// }
 		// console.log(recommended);
-		await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
-		// await fetch('http://localhost:3080/profile/reviews/create',{
+		// await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
+		await fetch('http://localhost:3080/profile/reviews/create',{
 			body: JSON.stringify({
 				content: event.target.message.value,
 				is_recommended: recommended,
@@ -49,7 +51,7 @@ export default function Review({landlord}) {
 				maintenance_rating: maintenance,
 				availability_rating: avail,
 	
-				landlord_id:{landlord}
+				landlord_id:router.query.user_id
 			}),
 			headers:{
 				'Content-Type':'application/json'
@@ -59,7 +61,7 @@ export default function Review({landlord}) {
 			method: 'POST',
 			// redirect: 'follow'
 		})
-		.then(router.push("/LandlordProfile/" + {landlord}))
+		// .then(router.push("/LandlordProfile/" + {landlord}))
 	  }
 	return(
 		<div className = "container">
@@ -83,7 +85,7 @@ export default function Review({landlord}) {
 
   {/* Textarea */}
         <div className = "section_cont no-padding">
-          <textarea className="textarea" name="message" rows="10" cols="30">Type here...</textarea>
+          <textarea className="textarea" name="message" rows="10" cols="30" placeholder="type here..."></textarea>
         </div> {/* textarea ends */}
 
   {/* Reviews */}
@@ -106,7 +108,7 @@ export default function Review({landlord}) {
             </li>
             <li>
               <h2>Communication</h2>
-              <h3>Was the length of renting period reasonable?</h3>
+              <h3>How was was {router.query.n}'s communication?</h3>
               <RatingStar name="communication_rating" />
             </li>
             <li>
@@ -116,7 +118,7 @@ export default function Review({landlord}) {
                   <input 
                     type="radio" 
                     name="is_recommended" 
-                    value="recommend" 
+                    value={1} 
                     checked
                     className = "thumb_rad"
                   />
@@ -128,7 +130,7 @@ export default function Review({landlord}) {
                   <input 
                     type="radio" 
                     name="is_recommended" 
-                    value="recommend"
+                    value={0}
                     className = "thumb_rad"
                   />                    
                   <img src = "/icons/icon_thumbdown.svg" alt = "yes" />
