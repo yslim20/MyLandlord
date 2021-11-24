@@ -1,5 +1,5 @@
 import React from 'react';
-import router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 // ============ Imported Comps ============== //
 import Navi from '../../comps/Navi';
@@ -19,7 +19,7 @@ export async function getServerSideProps(context) {
 
 // ============ Layout
 export default function Review({landlord}) {
-
+	const router = useRouter()
 
 	const review = async event => {
 		event.preventDefault();
@@ -59,11 +59,7 @@ export default function Review({landlord}) {
 			method: 'POST',
 			// redirect: 'follow'
 		})
-		    .then((response) => {
-			console.log(response);
-			router.push("/LandlordProfile/" + {landlord})
-		})
-		// .then(router.push("/LandlordProfile/" + {landlord}))
+		.then(router.push("/LandlordProfile/" + {landlord}))
 	  }
 	return(
 		<div className = "container">
