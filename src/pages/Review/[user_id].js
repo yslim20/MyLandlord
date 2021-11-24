@@ -40,8 +40,8 @@ export default function Review({landlord}) {
 		//   }
 		// }
 		// console.log(recommended);
-		// await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
-		await fetch('http://localhost:3080/profile/reviews/create',{
+		await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
+		// await fetch('http://localhost:3080/profile/reviews/create',{
 			body: JSON.stringify({
 				content: event.target.message.value,
 				is_recommended: recommended,
