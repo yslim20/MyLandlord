@@ -10,7 +10,7 @@ import RadioButton from '../comps/RadioButton';
 import FullName from '../comps/FullName';
 import Input from '../comps/Input';
 import Checkbox from '../comps/Checkbox';
-import VeriButton from '../comps/VeriButton';
+
 import ImgBox from '../comps/ImgBox';
 import Button from '../comps/Button'
 import Header from '../comps/Header';
@@ -83,13 +83,6 @@ const CheckCont = styled.div`
   margin-bottom: 50px;
   padding-left: 15px;
   box-sizing: border-box;
-`
-
-const VeriCont = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `
 
 const BttnCont = styled.div`
@@ -180,11 +173,6 @@ export default function SignUp() {
               required = "required"
             />
           </CheckCont>
-
-{/* // ============ Verification button */}
-          <VeriCont>
-            <VeriButton cwidth = "60%" cheight = "85"/>
-          </VeriCont>
           
 {/* // ============ Buttons */}
           <BttnCont>
