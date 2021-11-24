@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 
 // ============ Imported Comps ============== //
 import Navi from '../../comps/Navi';
@@ -59,7 +59,11 @@ export default function Review({landlord}) {
 			method: 'POST',
 			// redirect: 'follow'
 		})
-		.then(router.push("/LandlordProfile/" + {landlord}))
+		    .then((response) => {
+			console.log(response);
+			router.push("/LandlordProfile/" + {landlord})
+		})
+		// .then(router.push("/LandlordProfile/" + {landlord}))
 	  }
 	return(
 		<div className = "container">
