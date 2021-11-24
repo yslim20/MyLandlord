@@ -11,8 +11,56 @@ import Button from '../../comps/Button';
 import RoutButton from '../../comps/RoutButton';
 
 // ============ Function ============== //
+export async function getServerSideProps(context) {
+	// need to get the route parameter of the landlord_id
+	let landlord = context.params.user_id;
+	return{props:{landlord}};
+}
+
 // ============ Layout
-export default function Review() {
+export default function Review({landlord}) {
+
+
+	const review = async event => {
+		event.preventDefault();
+
+		let recommended = parseInt(document.querySelector('input[name="is_recommended"]:checked').value),
+		clean = parseInt(document.querySelector('input[name="cleanliness_rating"]:checked').value),
+		communication = parseInt(document.querySelector('input[name="communication_rating"]:checked').value),
+		maintenance = parseInt(document.querySelector('input[name="maintenance_rating"]:checked').value),
+		avail = parseInt(document.querySelector('input[name="availability_rating"]:checked').value);
+		
+		// i think a nodelist doesn't count as an array idk im too tired
+		// for(let r of event.target.is_recommended) {
+		//   if(r.checked) {
+		// 	recommended = parseInt(r.value);
+		// 	break;
+		//   }
+		// }
+		// console.log(recommended);
+		await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
+		// await fetch('http://localhost:3080/profile/reviews/create',{
+			body: JSON.stringify({
+				content: event.target.message.value,
+				is_recommended: recommended,
+	
+				cleanliness_rating: clean,
+				communication_rating:communication,
+				maintenance_rating: maintenance,
+				availability_rating: avail,
+	
+				landlord_id:{landlord}
+			}),
+			headers:{
+				'Content-Type':'application/json'
+	
+			},
+			credentials:'include',
+			method: 'POST',
+			// redirect: 'follow'
+		})
+		.then(router.push("/LandlordProfile/" + {landlord}))
+	  }
 	return(
 		<div className = "container">
 {/* // ============ Top Navigation */}
@@ -31,33 +79,7 @@ export default function Review() {
 			</div> {/* title ends */}
 
 {/* ===== Form starts here ===== */}
-      <form className="formCont">
-{/* Radio button */}
-        <div className="property_box">
-          <div className="radio_cont">
-            <div className="radio_in">
-              <input 
-                type="radio" 
-                id="property_1" 
-                name="property" 
-                value="property_1" 
-                checked
-                className = "thumb_rad"
-              />
-              <label for="property_1">5435 Kincaid St</label>
-            </div>
-            <div>
-              <input 
-                type="radio" 
-                id="property_2" 
-                name="property" 
-                value="property_2"
-                className = "thumb_rad"
-              />
-              <label for="property_2">5435 Kincaid St</label>
-            </div>
-          </div>
-        </div> {/* radio button ends */}
+      <form className="formCont" onSubmit={review}>
 
   {/* Textarea */}
         <div className = "section_cont no-padding">
