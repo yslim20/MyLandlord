@@ -65,8 +65,8 @@ export default function LogIn() {
     const OKlogin = async(event) => {
         event.preventDefault();
 
-        // const result = await fetch("http://localhost:3080/auth/login",
-        const result = await fetch("https://idsp-mylandlord.herokuapp.com/auth/login",
+        const result = await fetch("http://localhost:3080/auth/login",
+        // const result = await fetch("https://idsp-mylandlord.herokuapp.com/auth/login",
           {
             credentials: "include",
             method: "POST",
@@ -127,7 +127,7 @@ export default function LogIn() {
 {/* // ============ Image*/}
                 <ContRight>
                     <ImgBox
-                        src="./images/LogInImg.svg"
+                        src="./images/ani_LogIn.gif"
                         height="735px"
                         cwidth="90%"
                         cheight="auto"

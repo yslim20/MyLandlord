@@ -4,7 +4,6 @@ import React from 'react';
 
 // ============ Imported Comps ============== //
 import Navi from '../comps/Navi';
-import UserDrop from '../comps/UserDrop';
 import ProfileSub from '../comps/ProfileSub';
 import ReviewCardImg from '../comps/ReviewCardImg';
 import Footer from '../comps/Footer';
@@ -70,7 +69,7 @@ export default function TenantEdit() {
 		<Cont>
 
 {/* // ============ Top Navigation */}
-			<Navi children = {<UserDrop/>} />
+			<Navi />
 
 {/* =================== Header */}
       <HeadCont>

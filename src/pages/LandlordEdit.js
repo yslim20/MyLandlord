@@ -12,7 +12,6 @@ import Navi from '../comps/Navi';
 import CircleAvatar from '../comps/CircleAvatar';
 import Input from '../comps/Input';
 import Button from '../comps/Button';
-import UserDrop from '../comps/UserDrop';
 import FullName from '../comps/FullName';
 
 // ============ CSS ============== //
@@ -117,15 +116,17 @@ const EditIcon = styled.img`
 // ============ Function ============== //
 // ============ Layout
 export default function LandlordEdit() {
+	
     return(
         <Cont>
 {/* // ============ Top Navigation */}
-            <Navi children = 
+            {/* <Navi children = 
                 {<UserDrop 
                     src="./images/img_avatar_jasper.png"
                     routeTo = "/LandlordMypage"
                 />} 
-            />
+            /> */}
+			<Navi />
             <HeadCont>
                 <Header marginBottom="45px" marginLeft="4%" text="Jasper White"/>
             </HeadCont>
