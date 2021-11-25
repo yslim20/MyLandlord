@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
-import {useRouter} from 'next/router';
+import router, {useRouter} from 'next/router';
 
 // ============ Imported comps ============== //
 import Button from '@mui/material/Button';
@@ -58,7 +58,9 @@ const UserDrop=({
 
 // ============ Router to homepage
     if (index === 1) {
-      router.push("/")
+    //   router.push("/")
+		logout();
+		router.push("/")
     } else if (index === 0) {
       router.push(routeTo)
 
@@ -77,14 +79,13 @@ const UserDrop=({
 // ============ Router  
   const router = useRouter();
 
-// ============ LOGOUT SCRIPT ===========//
-const logoutHit = async () => {
-	await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
-		credentials:'include',
-		method:'POST',
-		headers: { "Content-Type": "application/json" },
-	}).then(() => console.log("logged out??"))
-}
+  const logout = async () => {
+	  await fetch("http://localhost:3080/auth/logout", {
+		  credentials:'include'
+	  })
+	  .then(() => router.push("/"))
+	  .catch(() => console.log("something's wrong"))
+  }
 
   return (
 
@@ -168,7 +169,7 @@ const logoutHit = async () => {
             >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu">
-                  {options.map((option, index) => (
+                  {/* {options.map((option, index) => (
                     <MenuItem
                       key={option}
                       selected={index === selectedIndex}
@@ -179,7 +180,13 @@ const logoutHit = async () => {
                     >
                       {option}
                     </MenuItem>                    
-                  ))}
+                  ))} */}
+					<MenuItem >
+				  		My Page
+					</MenuItem>
+					<MenuItem onClick={() => logout()}>
+				  		Logout
+					</MenuItem>
                 </MenuList>
               </ClickAwayListener>
             </Paper>
