@@ -22,7 +22,7 @@ const Img = styled.img`
 const PropImg = ({
     
 // ============ Props
-    src= "./images/property1.png",
+    src= "/images/property1.png",
     width= "196px",
     height="130px",
     cwidth = "100%",

@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
 import {useRouter} from 'next/router'
 // import ReactDOM from 'react-dom';
 // import axios from 'axios'
@@ -10,7 +10,7 @@ import RadioButton from '../comps/RadioButton';
 import FullName from '../comps/FullName';
 import Input from '../comps/Input';
 import Checkbox from '../comps/Checkbox';
-import VeriButton from '../comps/VeriButton';
+
 import ImgBox from '../comps/ImgBox';
 import Button from '../comps/Button'
 import Header from '../comps/Header';
@@ -18,6 +18,7 @@ import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
 // import signup from "../scripts/auth/signup";
 import RoutButton from '../comps/RoutButton';
+import LoginErrorBox from '../comps/LoginErrorBox';
 
 
 // ============ css ============== //
@@ -27,6 +28,16 @@ const Cont = styled.div`
   flex-direction: column;
   padding: 0 4% 0 4%;
   box-sizing: border-box;
+`
+
+const ErrorCont = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 4% 0 4%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 `
 
 const RadioCont = styled.div`
@@ -74,13 +85,6 @@ const CheckCont = styled.div`
   box-sizing: border-box;
 `
 
-const VeriCont = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
-
 const BttnCont = styled.div`
   display: flex;
   flex-direction: row;
@@ -100,8 +104,8 @@ export default function SignUp() {
             email: event.target.Email.value,
             firstname: event.target.fname.value,
             lastname: event.target.lname.value,
-            // is_landlord: event.target.is_landlord.value,
-            is_landlord: 0,
+            is_landlord: event.target.is_landlord.value,
+            // is_landlord: 0,
             password: event.target.Password.value,
         }),
         headers: {
@@ -120,14 +124,32 @@ export default function SignUp() {
   })
   }
 
+  function handleClick() {
+		setShowPop(true)	
+	}
+
+	function handleClickClose(){
+		setShowPop(false)
+	}
+
+	const [showpop, setShowPop] = useState(false)
+
 
   return (
     <Cont>
 {/* // ============ Top Navigation */}
-      <Navi />
+      <Navi 
+        chatClick={() => handleClick()}
+      />
 
 {/* // ============ Content Starts */}
       <Header text="Sign Up"/>
+
+      <ErrorCont> 
+        {showpop === true && <LoginErrorBox 
+            clickHandler={() => handleClickClose()}				
+        />}
+      </ErrorCont> 
 
 
 {/* // ============ Signup form */}
@@ -151,12 +173,6 @@ export default function SignUp() {
               required = "required"
             />
           </CheckCont>
-
-
-{/* // ============ Verification button */}
-          <VeriCont>
-            <VeriButton cwidth = "80%" cheight = "85"/>
-          </VeriCont>
           
 {/* // ============ Buttons */}
           <BttnCont>
@@ -185,7 +201,7 @@ export default function SignUp() {
 {/* // ============ Image */}
         <ContRight>
           <ImgBox
-            src="./images/img_signup.png"
+            src="./images/ani_SignUp.gif"
             cwidth = "90%"
             cheight = "800px"
             height = "auto"

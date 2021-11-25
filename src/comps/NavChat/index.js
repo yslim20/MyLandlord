@@ -60,38 +60,41 @@ const NavChat =({
   pWeight = 400,
   pHeight = 40,
   pColor="",
-  beforeWidth="0%"
+  beforeWidth="0%",
+  chatClick=()=>{}
 
 })=>{
   
   const router = useRouter();
-  if(router.pathname === "/Chat") 
-  {
-    return (
-      <Nav 
-        mright={marginright} 
-        onClick={() => router.push("/Chat")}
-        height={height}      
-      >            
-        <Content               
-          pSize={pSize}
-          pWeight={pWeight}
-          pHeight={pHeight}
-          pColor= "#5333ED"
-          beforeWidth = "100%"
-        >
-          Chat
-        </Content>
-      </Nav>
-    );
-  }
+  // if(router.pathname === "/Chat") 
+  // {
+  //   return (
+  //     <Nav 
+  //       mright={marginright} 
+  //       // onClick={() => router.push("/Chat")}
+  //       height={height}      
+  //     >            
+  //       <Content               
+  //         pSize={pSize}
+  //         pWeight={pWeight}
+  //         pHeight={pHeight}
+  //         pColor= "#5333ED"
+  //         beforeWidth = "100%"
+  //       >
+  //         Chat
+  //       </Content>
+  //     </Nav>
+  //   );
+  // }
+
   
 // ============ Layout
   return (
     <Nav 
       mright={marginright} 
-      onClick={() => router.push("/Chat")}
-      height={height}      
+      // onClick={() => router.push("/Chat")}
+      height={height}   
+      onClick={chatClick}   
     >            
       <Content               
         pSize={pSize}

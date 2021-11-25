@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
 
 // ============ Imported Components ============== //
 import VerLogo from '../VerLogo';
 import LoginDrop from '../LoginDrop';
+import UserDrop from '../UserDrop';
 import NavHome from '../NavHome';
 import NavLandlord from '../NavLandlord'
 import NavChat from '../NavChat';
@@ -52,8 +53,21 @@ const Navi =({
   cpadding="",
   cmarginB=50,
   children = <LoginDrop />,
+  chatClick=()=>{}
 
 })=>{
+
+	let [drop, setDrop] = useState(null);
+
+	useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(data => setDrop(data));
+	})
   
   const router = useRouter();  
 
@@ -70,13 +84,15 @@ const Navi =({
 
           <NavHome />  
           <NavLandlord />
-          <NavChat />
+          <NavChat chatClick={chatClick}/>
           <NavContact />
 
         </LeftBar>
 
         <RightBar>
-          {children}          
+          {/* {children} */}
+		  {drop ? <UserDrop/>:<LoginDrop/>}
+
         </RightBar>
       </NavCont>
     </Cont>

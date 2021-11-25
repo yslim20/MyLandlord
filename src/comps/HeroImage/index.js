@@ -1,6 +1,8 @@
-import * as React from "react";
 import styled from 'styled-components';
 import {useRouter} from 'next/router';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // ============ Imported Comps ============== //
 import RoutButton from "../RoutButton"
@@ -47,12 +49,19 @@ const HeroImage = ({
 // ============ Router
   const router = useRouter();
 
+// ============ UseEffect - animation
+	useEffect(() => {
+		AOS.init({ duration: 2000 });
+	}, []);
+
 // ============ Layout
   return (
     <ImgCont
       cwidth={cwidth}
       cheight={cheight}
       imgurl={imgurl}
+      data-aos="fade-right"
+      data-aos-once="true"
     >
       <Letterbox>
         <SubHead 

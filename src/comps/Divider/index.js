@@ -3,7 +3,7 @@ import React from 'react';
 
 // ============ CSS ============== //
 const Divdercont = styled.div`
-    margin-top:90px;
+    margin-top:60px;
     display:flex;
     flex-direction: row;
     justify-content:center;
