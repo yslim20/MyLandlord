@@ -80,7 +80,8 @@ const UserDrop=({
   const router = useRouter();
 
   const logout = async () => {
-	  await fetch("http://localhost:3080/auth/logout", {
+	  await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
+	//   await fetch("http://localhost:3080/auth/logout", {
 		  credentials:'include'
 	  })
 	  .then(() => router.push("/"))
