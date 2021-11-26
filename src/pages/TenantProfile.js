@@ -142,6 +142,7 @@ export default function TenantProfile({viewData, reviewsData}) {
 
 {/* // ============ Reviews */}
             <ProfCont>
+                {/* This will work once a user is able to write a review */}
                 <ProfileSub text="Reviews"/>
                 {reviewsData.map((t) => {
                         return <ReviewCardImg review = {t.content} name={t.firstname + " " + t.lastname} boldDate={t.date}/>;
