@@ -34,12 +34,13 @@ const InputBox = styled.input`
 
 const InputCol = ({
     text="Street Address",
-    placeholder=""
+    placeholder="",
+	name
 }) => {
     return(
         <Cont>
             <LabelText>{text}</LabelText>
-            <InputBox placeholder={placeholder}/>
+            <InputBox placeholder={placeholder} name={name}/>
         </Cont>
     );
 }
