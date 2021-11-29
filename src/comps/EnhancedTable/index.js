@@ -369,7 +369,7 @@ const EnhancedTable = ({
                         }}
                         
                       >
-                        {row.firstname}
+                        {row.firstname} {row.lastname}
                       </TableCell>
 
 {/*================= ADDRESS =================*/}
