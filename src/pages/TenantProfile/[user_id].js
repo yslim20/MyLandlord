@@ -3,16 +3,16 @@ import React from 'react';
 import router from 'next/router';
 
 // ============ Imported Comps ============== //
-import ProfileSub from '../comps/ProfileSub';
-import Footer from '../comps/Footer';
-import Header from '../comps/Header';
-import LandlordSub from '../comps/LandlordSub';
-import RetangleAvatar from '../comps/RectangleAvatar';
-import LandlordInfo from '../comps/LandlordInfo';
-import SubHead from '../comps/SubHead';
-import ReviewCardImg from '../comps/ReviewCardImg';
-import Navi from '../comps/Navi';
-import TenantInfo from '../comps/TenantInfo';
+import ProfileSub from '../../comps/ProfileSub';
+import Footer from '../../comps/Footer';
+import Header from '../../comps/Header';
+import LandlordSub from '../../comps/LandlordSub';
+import RetangleAvatar from '../../comps/RectangleAvatar';
+import LandlordInfo from '../../comps/LandlordInfo';
+import SubHead from '../../comps/SubHead';
+import ReviewCardImg from '../../comps/ReviewCardImg';
+import Navi from '../../comps/Navi';
+import TenantInfo from '../../comps/TenantInfo';
 
 
 // ============ CSS ============== //
