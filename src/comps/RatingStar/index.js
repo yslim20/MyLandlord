@@ -4,8 +4,8 @@ import Rating from '@mui/material/Rating';
 
 // ============ Function ============== //
 // ============ From React Library mui ============== //
-export default function RatingStar() {
-  const [value, setValue] = React.useState(2);
+export default function RatingStar({name}) {
+  const [value, setValue] = React.useState(0);
 
 // ============ Layout
   return (
@@ -15,7 +15,9 @@ export default function RatingStar() {
       }}
     >
       <Rating
-        name="simple-controlled"
+	 	//  id={id}
+        // name="simple-controlled"
+		name={name}
         value={value}
         size="large"
         onChange={(event, newValue) => {

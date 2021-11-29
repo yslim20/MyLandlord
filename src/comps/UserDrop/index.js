@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
-import {useRouter} from 'next/router';
+import router, {useRouter} from 'next/router';
 
 // ============ Imported comps ============== //
 import Button from '@mui/material/Button';
@@ -58,7 +58,9 @@ const UserDrop=({
 
 // ============ Router to homepage
     if (index === 1) {
-      router.push("/")
+    //   router.push("/")
+		logout();
+		router.push("/")
     } else if (index === 0) {
       router.push(routeTo)
 
@@ -76,6 +78,27 @@ const UserDrop=({
   
 // ============ Router  
   const router = useRouter();
+
+  const logout = async () => {
+	  await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
+	//   await fetch("http://localhost:3080/auth/logout", {
+		  credentials:'include'
+	  })
+	  .then(() => router.push("/"))
+	  .catch(() => console.log("something's wrong"))
+  }
+
+  let [userType, setUserType] = React.useState(null);
+
+	React.useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+		// fetch('http://localhost:3080/hey', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(uType => setUserType(uType));
+	})
 
   return (
 
@@ -159,7 +182,7 @@ const UserDrop=({
             >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id="split-button-menu">
-                  {options.map((option, index) => (
+                  {/* {options.map((option, index) => (
                     <MenuItem
                       key={option}
                       selected={index === selectedIndex}
@@ -170,7 +193,17 @@ const UserDrop=({
                     >
                       {option}
                     </MenuItem>                    
-                  ))}
+                  ))} */}
+					<MenuItem onClick={() => {
+						userType 
+						? router.push("/LandlordMypage")
+						: router.push("/TenantEdit")
+					}}>
+				  		My Page
+					</MenuItem>
+					<MenuItem onClick={() => logout()}>
+				  		Logout
+					</MenuItem>
                 </MenuList>
               </ClickAwayListener>
             </Paper>

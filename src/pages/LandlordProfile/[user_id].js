@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import { useRouter } from 'next/router'
 
-
-import profile from '../../scripts/profile/profile';
-
 // ============ Imported Comps ============== //
 import ProfileSub from '../../comps/ProfileSub';
 import ShowAll from '../../comps/ShowAll';
@@ -93,16 +90,20 @@ export async function getServerSideProps(context) {
     let reviewCountData = await reviewCount.json();
     let reviewsData = await reviews.json();
 
+	let n=context.params.n;
+
     return {props:{viewData, reviewCountData, reviewsData}}
 }
 
 // ============ Layout
 export default function LandlordProfile({viewData, reviewCountData, reviewsData}) {
-    return  (
+	
+	return  (
+		
         <Cont>
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop/>} />
+            <Navi />
 
 {/* // ============ Landlord information */}
             <HeadCont>
@@ -110,7 +111,7 @@ export default function LandlordProfile({viewData, reviewCountData, reviewsData}
                 <ChatIcon />
             </HeadCont>
             <ButtCont>
-                <RoutButton margintop="0" text="Leave Review" routeTo="/Review"/>
+                <RoutButton margintop="0" text="Leave Review" routeTo={`/Review/${viewData.user_id}?n=${viewData.firstname}`}/>
             </ButtCont>
             <LandlordSub/>
             <InfoCont>
@@ -146,6 +147,7 @@ export default function LandlordProfile({viewData, reviewCountData, reviewsData}
                    {/* <ReviewCard review="The house was newly renovated, and the landlord cared about many things such as electricity and water tanks."/> */}
 
             </ReviewCont>
+			
             
 {/* // ============ Footer Navigation */}
             <Footer />

@@ -11,8 +11,58 @@ import Button from '../../comps/Button';
 import RoutButton from '../../comps/RoutButton';
 
 // ============ Function ============== //
+export async function getServerSideProps(context) {
+	// need to get the route parameter of the landlord_id
+	let landlord = parseInt(context.params.user_id);
+	return{props:{landlord}};
+}
+
 // ============ Layout
-export default function Review() {
+export default function Review({landlord}) {
+	const router = useRouter();
+
+	const review = async event => {
+		event.preventDefault();
+
+		console.log()
+
+		let recommended = parseInt(document.querySelector('input[name="is_recommended"]:checked').value),
+		clean = parseInt(document.querySelector('input[name="cleanliness_rating"]:checked').value),
+		communication = parseInt(document.querySelector('input[name="communication_rating"]:checked').value),
+		maintenance = parseInt(document.querySelector('input[name="maintenance_rating"]:checked').value),
+		avail = parseInt(document.querySelector('input[name="availability_rating"]:checked').value);
+		
+		// i think a nodelist doesn't count as an array idk im too tired
+		// for(let r of event.target.is_recommended) {
+		//   if(r.checked) {
+		// 	recommended = parseInt(r.value);
+		// 	break;
+		//   }
+		// }
+		// console.log(recommended);
+		await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/create',{
+		// await fetch('http://localhost:3080/profile/reviews/create',{
+			body: JSON.stringify({
+				content: event.target.message.value,
+				is_recommended: recommended,
+	
+				cleanliness_rating: clean,
+				communication_rating:communication,
+				maintenance_rating: maintenance,
+				availability_rating: avail,
+	
+				landlord_id:parseInt(router.query.user_id),
+			}),
+			headers:{
+				'Content-Type':'application/json'
+	
+			},
+			credentials:'include',
+			method: 'POST',
+			// redirect: 'follow'
+		})
+		// .then(router.push("/LandlordProfile/" + {landlord}))
+	  }
 	return(
 		<div className = "container">
 {/* // ============ Top Navigation */}
@@ -31,66 +81,35 @@ export default function Review() {
 			</div> {/* title ends */}
 
 {/* ===== Form starts here ===== */}
-      <form className="formCont">
-{/* Radio button */}
-        <div className="property_box">
-          <div className="radio_cont">
-            <div className="radio_in">
-              <input 
-                type="radio" 
-                id="property_1" 
-                name="property" 
-                value="property_1" 
-                checked
-                className = "thumb_rad"
-              />
-              <label for="property_1">5435 Kincaid St</label>
-            </div>
-            <div>
-              <input 
-                type="radio" 
-                id="property_2" 
-                name="property" 
-                value="property_2"
-                className = "thumb_rad"
-              />
-              <label for="property_2">5435 Kincaid St</label>
-            </div>
-          </div>
-        </div> {/* radio button ends */}
+      <form className="formCont" onSubmit={review}>
 
   {/* Textarea */}
         <div className = "section_cont no-padding">
-          <textarea className="textarea" name="message" rows="10" cols="30">Type here...</textarea>
+          <textarea className="textarea" name="message" rows="10" cols="30" placeholder="type here..."></textarea>
         </div> {/* textarea ends */}
 
   {/* Reviews */}
         <div className = "section_cont flex-start">
           <ul id ="review_list">
             <li>
-              <h2>Housing maintenance</h2>
+			<h2>Housing maintenance</h2>
               <h3>How was the condition of the place?</h3>
-              <RatingStar />
-            </li>
-            <li>
-              <h2>Communication</h2>
-              <h3>Was the landlord privode enough communication?</h3>
-              <RatingStar />
+              <RatingStar name="maintenance_rating" />
             </li>
             <li>
               <h2>Cleanliness</h2>
               <h3>Was the place clean?</h3>
-              <RatingStar />
+              <RatingStar name="cleanliness_rating" id="cleanliness_rating" />
             </li>
             <li>
               <h2>Availability</h2>
               <h3>Was the length of renting period reasonable?</h3>
-              <RatingStar />
+              <RatingStar name="availability_rating" />
             </li>
             <li>
-              <h2>Accracy</h2>
-              <h3>Was the place identical as shown on picture?</h3>
-              <RatingStar />
+              <h2>Communication</h2>
+              <h3>How was was {router.query.n}'s communication?</h3>
+              <RatingStar name="communication_rating" />
             </li>
             <li>
               <h2>Would you recommend this landlord to others?</h2>
@@ -99,7 +118,7 @@ export default function Review() {
                   <input 
                     type="radio" 
                     name="is_recommended" 
-                    value="recommend" 
+                    value={1} 
                     checked
                     className = "thumb_rad"
                   />
@@ -111,7 +130,7 @@ export default function Review() {
                   <input 
                     type="radio" 
                     name="is_recommended" 
-                    value="recommend"
+                    value={0}
                     className = "thumb_rad"
                   />                    
                   <img src = "/icons/icon_thumbdown.svg" alt = "yes" />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
+
 // ============ Imported Components ============== //
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
@@ -40,6 +41,13 @@ const MidCont = styled.div`
 	margin-bottom: ${props=>props.cmarginB}; 
 `
 
+export async function getServerSideProps() {
+	let rows = await fetch('https://idsp-mylandlord.herokuapp.com/browse/landlords/');
+	// let rows = await fetch("http://localhost:3080/browse/landlords")
+	let rowsData = await rows.json();
+	return {props:{rowsData}};
+}
+
 // ============ Function ============== //
 const Landlord = ({
 
@@ -48,6 +56,7 @@ const Landlord = ({
   cmarginB = "50px",
   cmarginBttm = "0px",
   flexDir = "column",
+  rowsData
 
 })=>{
 
@@ -55,7 +64,9 @@ const Landlord = ({
 	return(
 		<Cont>
 {/* // ============ Top Navigation */}
-			<Navi/>
+
+	<Navi />
+
 
 {/* // ============ MAP */}
       <MidCont cmarginB={cmarginB}>
@@ -96,7 +107,7 @@ const Landlord = ({
           marginL="2"
         />
 
-        <EnhancedTable/>        
+        <EnhancedTable rows={rowsData}/>        
 
         {/* <PaginationTest /> */}
         <PaginationRow />

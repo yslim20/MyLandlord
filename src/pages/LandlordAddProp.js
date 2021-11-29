@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
+import {useRouter} from 'next/router'
 
 // ============ Imported Comps ============== //
-import UserDrop from '../comps/UserDrop';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
@@ -12,7 +12,7 @@ import Button from '../comps/Button';
 import RoutButton from '../comps/RoutButton';
 
 // ============ CSS ============== //
-const Cont = styled.form`
+const Cont = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0 4% 0 4%;
@@ -80,16 +80,35 @@ const ButtCont = styled.div`
 
 // ============ Function ============== //
 // ============ Layout
-export default function LandlordProfile() {
+export default function LandlordAddProp() {
+
+	const router = useRouter();
+
+	const addProperty = async event => {
+		event.preventDefault();
+
+		await fetch("https://idsp-mylandlord.herokuapp.com/profile/property/create", {
+		// await fetch("http://localhost:3080/profile/property/create", {
+			body: JSON.stringify({
+				address: event.target.address.value,
+				city: event.target.city.value,
+				description: event.target.description.value
+			}),
+			credentials: 'include',
+			method: 'POST',
+			headers: { "Content-Type": "application/json" },
+		})
+		.then(() => router.push("/"))
+		.catch(() => alert("not working"))
+	}
+
     return(
-        <Cont>
+        <Cont >
 
 {/* // ============ Top Navigation */}
-            <Navi children = {<UserDrop
-                src="./images/img_avatar_jasper.png"
-            />} />
-
+		<Navi />
 {/* // ============ Property information */}
+		<form onSubmit={addProperty}>
             <HeadCont>
                 <Header marginBottom="45px" marginLeft="4%" text="Add Property" fontSize="36px"/>
             </HeadCont>
@@ -98,18 +117,16 @@ export default function LandlordProfile() {
                     <Img src="./images/property2.jpeg"/>
                 </ImgCont>
                 <InputCont>
-                    <InputCol />
-                    <InputCol  text="Address Line 2"/>
-                    <InputCol text="City"/>
-                    <InputCol text="Zip Code"/>
-                    <InputCol text="Province"/>
+                    <InputCol title= "Street Address" name="address"/>
+                    <InputCol title="City" name="city" />
+
                 </InputCont>
             </InfoCont>
             <Subhead marginL="4%" justifyContent="left" fontSize="24" text="Describe your property" marginB="20"/>
             
             {/* Textarea */}
             <DescribeCont>
-                <TextBox placeholder="Type here..."/>
+                <TextBox placeholder="Type here..." name="description"/>
             </DescribeCont>
 
             {/* Add an image */}
@@ -167,9 +184,10 @@ export default function LandlordProfile() {
             </div>
         {/* buttons */}
         <ButtCont>
-            <RoutButton text="Cancle" routeTo="/LandlordEdit" margintop="0" />
+            <RoutButton text="Cancel" routeTo="/LandlordEdit" margintop="0" />
             <Button text="Submit" bgcolor="#5333ED" color="#fff" margintop="0"/>
         </ButtCont>
+		</form>
 {/* // ============ Footer Navigation */}
             <Footer />
         </Cont>
