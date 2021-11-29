@@ -101,7 +101,7 @@ const headCells = [
     id: 'rate',
     numeric: true,
     disablePadding: false,
-    label: 'Rate',
+    label: 'Rating',
   },
   
 ];
