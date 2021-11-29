@@ -87,16 +87,20 @@ const CenterBox = styled.div`
 
 // ============ Function ============== //
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+	// const router=useRouter();
     // let view = await fetch('http://localhost:3080/profile/view/5');
     // let reviewCount = await fetch('http://localhost:3080/profile/reviews/5/count');
-    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/:id');
-    let reviews = await fetch('https://idsp-mylandlord.herokuapp.com/profile/reviews/:id/getAll');
+    let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/' + context.params.user_id);
+    let reviewCount = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.params.user_id}/count`);
+    // let reviews = await fetch('http://localhost:3080/profile/reviews/15/getAll');
+    let reviews = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.params.user_id}/getAll`);
 
     let viewData = await view.json();
+    let reviewCountData = await reviewCount.json();
     let reviewsData = await reviews.json();
 
-    return {props:{viewData, reviewsData}}
+    return {props:{viewData, reviewCountData, reviewsData}}
 }
 
 // ============ Layout
@@ -117,7 +121,7 @@ export default function TenantProfile({viewData, reviewsData}) {
 
             
 
-            <InfoCont>
+            {/* <InfoCont>
                 <RetangleAvatar 
                     src="/images/img_tenant.png"
                     marginTop = "2"
@@ -138,15 +142,16 @@ export default function TenantProfile({viewData, reviewsData}) {
                         <TenantInfo />
                     </VeriCont> 
                 </InfoText>
-            </InfoCont>
+            </InfoCont> */}
 
 {/* // ============ Reviews */}
             <ProfCont>
                 {/* This will work once a user is able to write a review */}
                 <ProfileSub text="Reviews"/>
-                {reviewsData.map((t) => {
-                        return <ReviewCardImg review = {t.content} name={t.firstname + " " + t.lastname} boldDate={t.date}/>;
+                {reviewsData.map((r) => {
+                        return <CenterBox><ReviewCard review = {r.content} name={r.firstname + " " + r.lastname} boldDate={r.date} /></CenterBox>;
                     })}
+                    {reviewsData.length == 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}
                 {/* <CenterBox>
                     <ReviewCardImg 
                     bgImage='url("/images/img_avatar_malcom.png")'
