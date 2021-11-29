@@ -18,6 +18,53 @@ import { visuallyHidden } from '@mui/utils';
 // ============ Imported Components ============== //
 import Avatar from '../Avatar';
 
+// ============ Tabel Head Create Data
+// function createData(avatar, name, address, rate) {
+// //   list();
+//   return {
+//     // avatar image (with src)
+//     avatar,
+//     // landlord name
+//     name,
+//     // landlord address
+//     address,
+//     // landlordd rate (1-5)
+//     rate,
+//   };
+// }
+
+// // ================ fake data for table body
+// const rows = [
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+//   createData("", '','', ""),
+// ];
+// const rows = list();
+// let rows = [];
+// list().then(data => rows = data)
+// console.log("this is rows: ", rows)
+
+// ============ Function for filtering
+function descendingComparator(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+  return 0;
+}
+
+function getComparator(order, orderBy) {
+  return order === 'desc'
+    ? (a, b) => descendingComparator(a, b, orderBy)
+    : (a, b) => -descendingComparator(a, b, orderBy);
+}
+
 // This method is created for cross-browser compatibility, if you don't
 // need to support IE11, you can use Array.prototype.sort() directly
 function stableSort(array, comparator) {
@@ -54,7 +101,7 @@ const headCells = [
     id: 'rate',
     numeric: true,
     disablePadding: false,
-    label: 'Rating',
+    label: '',
   },
   
 ];
