@@ -88,6 +88,18 @@ const UserDrop=({
 	  .catch(() => console.log("something's wrong"))
   }
 
+  let [userType, setUserType] = React.useState(null);
+
+	React.useEffect(() => {
+
+		fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+		// fetch('http://localhost:3080/hey', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(uType => setUserType(uType));
+	})
+
   return (
 
 // ============ Layout
@@ -182,7 +194,11 @@ const UserDrop=({
                       {option}
                     </MenuItem>                    
                   ))} */}
-					<MenuItem >
+					<MenuItem onClick={() => {
+						userType 
+						? router.push("/LandlordMypage")
+						: router.push("/TenantEdit")
+					}}>
 				  		My Page
 					</MenuItem>
 					<MenuItem onClick={() => logout()}>
