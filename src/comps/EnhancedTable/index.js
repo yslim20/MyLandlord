@@ -85,19 +85,18 @@ const headCells = [
     id: 'avatar',
     numeric: false,
     disablePadding: true,
-    label: 'Avatar',
   },
   {
-    id: 'name',
+    id: 'fname',
     numeric: false,
     disablePadding: false,
-    label: 'Name',
+    label: 'First Name',
   },
   {
-    id: 'address',
+    id: 'lname',
     numeric: false,
     disablePadding: false,
-    label: 'Address',
+    label: 'Last Name'
   },
   {
     id: 'rate',
@@ -128,14 +127,14 @@ function EnhancedTableHead(props) {
     >
       <TableRow>
         <TableCell padding="checkbox">
-          <Checkbox
+          {/* <Checkbox
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{
               'aria-label': 'select all desserts',
             }}            
-          />
+          /> */}
         </TableCell>
         {headCells.map((headCell) => (
           <TableCell
@@ -338,7 +337,7 @@ const EnhancedTable = ({
                             'aria-labelledby': labelId,
                           }}
                           sx={{ 
-                            color: "#c4c4c4",
+                            color: "white",
                             '&.Mui-checked': {
                               color: checkcolor,
                             },                           
