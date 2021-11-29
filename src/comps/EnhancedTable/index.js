@@ -87,16 +87,15 @@ const headCells = [
     disablePadding: true,
   },
   {
-    id: 'fname',
+    id: 'name',
     numeric: false,
     disablePadding: false,
-    label: 'First Name',
+    label: 'Name',
   },
   {
     id: 'lname',
     numeric: false,
     disablePadding: false,
-    label: 'Last Name'
   },
   {
     id: 'rate',
