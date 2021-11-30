@@ -1,6 +1,5 @@
-// import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import React, { useEffect, useState }  from 'react';
+import React, { useState }  from 'react';
 import {useRouter} from 'next/router'
 // import ReactDOM from 'react-dom';
 // import axios from 'axios'
@@ -16,7 +15,6 @@ import Button from '../comps/Button'
 import Header from '../comps/Header';
 import Navi from '../comps/Navi';
 import Footer from '../comps/Footer';
-// import signup from "../scripts/auth/signup";
 import RoutButton from '../comps/RoutButton';
 import LoginErrorBox from '../comps/LoginErrorBox';
 

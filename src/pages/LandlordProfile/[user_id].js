@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 // ============ Imported Comps ============== //
 import ProfileSub from '../../comps/ProfileSub';
 import ShowAll from '../../comps/ShowAll';
-import UserDrop from '../../comps/UserDrop';
+// import UserDrop from '../../comps/UserDrop';
 import PropertyCard from '../../comps/PropertyCard';
 import ReviewCard from '../../comps/ReviewCard';
 import Footer from '../../comps/Footer';
@@ -143,7 +143,7 @@ export default function LandlordProfile({viewData, reviewCountData, reviewsData}
                     {reviewsData.map((r) => {
                         return <CenterBox><ReviewCard review = {r.content} name={r.firstname + " " + r.lastname} boldDate={r.date} /></CenterBox>;
                     })}
-                    {reviewsData.length == 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}
+                    {reviewsData.length === 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}
                    {/* <ReviewCard review="The house was newly renovated, and the landlord cared about many things such as electricity and water tanks."/> */}
 
             </ReviewCont>
