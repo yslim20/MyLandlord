@@ -61,7 +61,7 @@ export default function Review({landlord}) {
 			method: 'POST',
 			// redirect: 'follow'
 		})
-		.then(router.push("/LandlordProfile/" + {landlord}))
+		.then(router.push("/LandlordProfile/" + landlord))
 	}
 	return(
 		<div className = "container">
