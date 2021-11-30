@@ -142,7 +142,7 @@ export default function LandlordAddProp() {
                     href=""
                     // onClick={()=>{ clickHandler() }}
                 >
-                    <img src = "/icons/icon_addimg.png" alt = "add a picture" />
+                    <img src = "/icons/icon_addimg.png" alt = "upload pic" />
                 </button>
 
                 <button 
@@ -151,7 +151,7 @@ export default function LandlordAddProp() {
                     href=""
                     // onClick={()=>{ clickHandler() }}
                 >
-                    <img src = "/icons/icon_addimg.png" alt = "add a picture" />
+                    <img src = "/icons/icon_addimg.png" alt = "upload pic" />
                 </button>
 
                 <button 
@@ -160,7 +160,7 @@ export default function LandlordAddProp() {
                     href=""
                     // onClick={()=>{ clickHandler() }}
                 >
-                    <img src = "/icons/icon_addimg.png" alt = "add a picture"/>
+                    <img src = "/icons/icon_addimg.png" alt = "upload pic"/>
                 </button>
 
                 <button 
@@ -169,7 +169,7 @@ export default function LandlordAddProp() {
                     href=""
                     // onClick={()=>{ clickHandler() }}
                 >
-                    <img src = "/icons/icon_addimg.png" alt = "add a picture"/>
+                    <img src = "/icons/icon_addimg.png" alt = "upload pic"/>
                 </button>
 
                 <button 
@@ -178,7 +178,7 @@ export default function LandlordAddProp() {
                     href=""
                     // onClick={()=>{ clickHandler() }}
                 >
-                    <img src = "/icons/icon_addimg.png" alt = "add a picture"/>
+                    <img src = "/icons/icon_addimg.png" alt = "upload pice"/>
                 </button>
                 </div>
             </div>
