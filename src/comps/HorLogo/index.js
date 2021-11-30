@@ -27,7 +27,7 @@ const HorLogo = ({}) => {
 // ============ Layout
     return(
         <LogoCont onClick={()=>router.push("/")}>
-            <Logo src="./images/logo_horizontal.png" alt="MyLandlord Logo V2" />
+            <Logo src="/images/logo_horizontal.png" alt="MyLandlord Logo V2" />
         </LogoCont>
     );
 }
