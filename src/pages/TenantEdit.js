@@ -4,8 +4,6 @@ import React from 'react';
 
 // ============ Imported Comps ============== //
 import Navi from '../comps/Navi';
-// import ProfileSub from '../comps/ProfileSub';
-// import ReviewCardImg from '../comps/ReviewCardImg';
 import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
@@ -31,12 +29,6 @@ const HeadCont = styled.div`
   justify-content: flex-start;
 `;
 
-// const ProfCont = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: column;
-// `;
-
 const UserInfo = styled.div`
   display:flex;
   flex-direction: column;
@@ -54,13 +46,6 @@ const InfoForm = styled.div`
   margin-left: 7%;
 
 `;
-
-// const CenterBox = styled.div`
-//   display:flex;
-//   margin-top: 50px;
-//   justify-content: center;
-//   align-items:center;
-// `;
 
 // ============ Function ============== //
 // ============ Layout
