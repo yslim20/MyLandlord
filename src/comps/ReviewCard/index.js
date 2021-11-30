@@ -113,9 +113,8 @@ const CircleId = styled.p`
 // ============ Function ============== //
 const ReviewCard = ({
 // ============ Props
-    name="Adam Biebe",
-    select="Selected: 5435 Kincaid St",
-    review="I lived this home for about 1 year last year, and it ways horrible. The room is dirty, the maintenance was not what I expected.",
+    name="",
+    review="",
     boldDate="19 Jan 2017 19:01",
     right="80px",
     marginTop="",
@@ -141,14 +140,13 @@ const ReviewCard = ({
                         <RatingCont>
                             <RatingStar />
                             <BoldText>{name}</BoldText>
-                            <RegText>{select}</RegText>
                             <RegText>{review}</RegText>
                         </RatingCont>
                     </LeftSide>
                     <DateTextCont right={right}>
                         <DateText >{boldDate}</DateText>
                         <SmileCont>
-                            <SmileRating right={right} />
+                            <SmileRating right={right}/>
                         </SmileCont>
                     </DateTextCont>
 

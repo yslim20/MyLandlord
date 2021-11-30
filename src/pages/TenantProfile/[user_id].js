@@ -145,10 +145,15 @@ export default function TenantProfile({viewData, reviewCountData, reviewsData}) 
 
 {/* // ============ Reviews */}
             <ProfCont>
-                {/* This will work once a user is able to write a review */}
                 <ProfileSub text={`${viewData.firstname} wrote reviews for...`}/>
                 {reviewsData.map((r) => {
-                        return <CenterBox><ReviewCardImg review = {r.content} name={r.firstname + " " + r.lastname} boldDate={r.date} /></CenterBox>;
+                        return <CenterBox>
+							<ReviewCardImg 
+								review = {r.content} 
+								name={r.firstname + " " + r.lastname} 
+								boldDate={r.date} 
+								is_recommmended={r.is_recommmended}/>
+							</CenterBox>;
                 })}
             	{reviewsData.length == 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}
             </ProfCont>

@@ -89,15 +89,16 @@ const BoldText = styled.p`
 const ReviewCardImg = ({
 
 // ============ Props		
-		bWidth = "1100px",
-		bHeight = "245px",
-    name="Adam Biebe",
-    select="Selected: 5435 Kincaid St",
-    review="I lived this home for about 1 year last year, and it ways horrible. The room is dirty, the maintenance was not what I expected.",
+	bWidth = "1100px",
+	bHeight = "245px",
+    name="",
+    // select="Selected: 5435 Kincaid St",
+    review="",
     boldDate="19 Jan 2017 19:01",
     width="140px",
     height="140px",
     bgImage="",
+	is_recommended=0,
 
 // ============ Router		
 		routTo = "/",
@@ -128,10 +129,10 @@ const ReviewCardImg = ({
 					</FirstRow>
 					
 					<BoldText>{name}</BoldText>
-					<RegText>{select}</RegText>
+					{/* <RegText>{select}</RegText> */}
 					<RegText>{review}</RegText>
 
-					<SmileRating />
+					<SmileRating is_recommended={is_recommended}/>
 				</RatingCont>
 
 			</RevBox>
