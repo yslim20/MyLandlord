@@ -142,7 +142,7 @@ export default function Review({landlord}) {
         </div> {/* review ends */}
 
   {/* Add an image */}
-        <div className = "section_cont flex-start">
+        {/* <div className = "section_cont flex-start">
           <div className="header_cont marginB"> 
             <h2>Add an image</h2>
             <h3>Upload any images to support your xperience!</h3>
@@ -152,12 +152,12 @@ export default function Review({landlord}) {
               type="file" 
               className = "addImg_rev flex-col"
               accept="image/png, image/jpeg"
-              // onClick={()=>{ clickHandler() }}
+              onClick={()=>{ clickHandler() }}
             >
-              {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
+              <img src = "/icons/icon_addimg.png" alt = "add" />
             </input>
           </div> 
-        </div> {/* add image ends */}
+        </div> add image ends */}
 
   {/* Submit buttons */}
         <div className = "flex-row bttn_cont">
