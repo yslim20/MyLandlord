@@ -147,10 +147,10 @@ export default function Review({landlord}) {
             <h2>Add an image</h2>
             <h3>Upload any images to support your xperience!</h3>
           </div>
-          <div id = "add_img" className="flex-row">
+          <div id = "add_img_rev" className="flex-row">
             <input
               type="file" 
-              className = "addImg flex-col"
+              className = "addImg_rev flex-col"
               accept="image/png, image/jpeg"
               // onClick={()=>{ clickHandler() }}
             >
