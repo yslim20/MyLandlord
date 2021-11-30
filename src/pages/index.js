@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import authTest from '../scripts/auth/authTest';
+// import authTest from '../scripts/auth/authTest';
 
 // ============ Imported Comps ============== //
 import SubHead from '../comps/SubHead';
