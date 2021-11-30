@@ -13,7 +13,7 @@ import RoutButton from '../../comps/RoutButton';
 // ============ Function ============== //
 export async function getServerSideProps(context) {
 	// need to get the route parameter of the landlord_id
-	let landlord = parseInt(context.params.user_id);
+	let landlord = parseInt(context.query.user_id);
 	return{props:{landlord}};
 }
 
@@ -61,8 +61,8 @@ export default function Review({landlord}) {
 			method: 'POST',
 			// redirect: 'follow'
 		})
-		// .then(router.push("/LandlordProfile/" + {landlord}))
-	  }
+		.then(router.push("/LandlordProfile/" + {landlord}))
+	}
 	return(
 		<div className = "container">
 {/* // ============ Top Navigation */}
