@@ -9,9 +9,7 @@ import Footer from '../comps/Footer';
 import Header from '../comps/Header';
 import Subhead from '../comps/SubHead';
 import MessageEx from '../comps/MessageEx';
-// import Avatar from '../comps/Avatar'
 import ShowChat from '../comps/ShowChat';
-// import Para from '../comps/Para';
 
 
 // ============ CSS ============== //
@@ -99,7 +97,6 @@ export default function Chat(
         document.text_input.reset();
     }
     const [ShowMsg, setShowMsg] = useState(false)
-    // const [claer, setClear] = useState(true)
     return(
         <Cont>
             <Navi children = 
@@ -143,7 +140,6 @@ export default function Chat(
                 <TextBox id="text_input"/>
                 <Button onClick={()=>
                     setShowMsg(true)
-                    // setClear(false)
             }>Send</Button>
             </TextBoxCont>
             <Footer />

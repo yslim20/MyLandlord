@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import React from 'react';
-import { useRouter } from 'next/router'
 
 // ============ Imported Comps ============== //
 import ProfileSub from '../../comps/ProfileSub';
 import ShowAll from '../../comps/ShowAll';
-// import UserDrop from '../../comps/UserDrop';
 import PropertyCard from '../../comps/PropertyCard';
 import ReviewCard from '../../comps/ReviewCard';
 import Footer from '../../comps/Footer';
