@@ -11,6 +11,7 @@ const FeatCont = styled.div`
   max-width: ${props=>props.cwidth};
   min-width: 300px;
   min-height: ${props=>props.cheight}px;
+  max-height: 650px;
   border: solid 7px #7763D6;
   border-radius: ${props=>props.bradius}px;
   padding: ${props=>props.cpadding};  
@@ -39,7 +40,7 @@ const Features = ({
 // FeatCont
   bradius = 30,
   cwidth = "30%",
-  cheight = "auto",
+  cheight = "600",
   cpadding = "75px 40px",
 
 // img
