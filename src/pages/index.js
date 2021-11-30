@@ -182,7 +182,7 @@ export default function Home() {
 			<FeatSec>
 				<SubHead 
 					text = "Discover Features"
-					marginB = "20"
+					marginB = "40"
 					marginL = "2%"
 				/>
 
