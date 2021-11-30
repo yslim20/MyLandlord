@@ -156,43 +156,7 @@ export default function Review({landlord}) {
             >
               {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
             </input>
-
-            <input
-              type="file" 
-              className = "addImg flex-col"
-              accept="image/png, image/jpeg"
-              // onClick={()=>{ clickHandler() }}
-            >
-              {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
-            </input>
-
-            <input
-              type="file" 
-              className = "addImg flex-col"
-              accept="image/png, image/jpeg"
-              // onClick={()=>{ clickHandler() }}
-            >
-              {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
-            </input>
-
-            <input
-              type="file" 
-              className = "addImg flex-col"
-              accept="image/png, image/jpeg"
-              // onClick={()=>{ clickHandler() }}
-            >
-              {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
-            </input>
-
-            <input
-              type="file" 
-              className = "addImg flex-col"
-              accept="image/png, image/jpeg"
-              // onClick={()=>{ clickHandler() }}
-            >
-              {/* <img src = "/icons/icon_addimg.png" alt = "add" /> */}
-            </input>
-          </div>
+          </div> 
         </div> {/* add image ends */}
 
   {/* Submit buttons */}
