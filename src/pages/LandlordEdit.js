@@ -151,9 +151,7 @@ export default function LandlordEdit() {
                 <ProfileSub />
                 <CenterBox>
                     <PropertyCard marginTop="25%" />
-                    <EditIconCont onClick={()=>router.push('/LandlordEditProp')}> 
-                        <EditIcon src="/icons/icon_edit.png"/>
-                    </EditIconCont>
+
                 </CenterBox>
             </ProfCont>
 
