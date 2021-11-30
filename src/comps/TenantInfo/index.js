@@ -34,8 +34,8 @@ const Info = styled.p`
 // ============ Function ============== //
 const TenantInfo = ({
 // ============ Props
-  title = "Email : ",
-  text="copperm32@hotmail.com"
+  title = "",
+  text=""
 
 }) => {
 
