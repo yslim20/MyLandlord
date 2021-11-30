@@ -274,6 +274,46 @@ a {
   box-shadow: none;
 }
 
+/* REVIEW PAGE ADDIMG BUTTON */
+#add_img_rev {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.addImg_rev {
+  min-width: 30%; 
+  border: 3px solid #5333ED;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;  
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.addImg_rev:last-child{
+  margin-right: 0;
+}
+
+.addImg_rev > img{
+  width: 94px; height: auto;
+}
+
+.addImg_rev:hover {
+  transform: scale(0.95);
+  transition-duration: 0.5s; 
+  box-shadow: none;
+}/* review page addimg button ends*/
+
 .marginB{
   margin-bottom: 20px;
 }
