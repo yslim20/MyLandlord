@@ -4,7 +4,7 @@ import Rating from '@mui/material/Rating';
 
 // ============ Function ============== //
 // ============ From React Library mui ============== //
-export default function RatingStar({name}) {
+export default function RatingStar({name, val}) {
   const [value, setValue] = React.useState(0);
 
 // ============ Layout

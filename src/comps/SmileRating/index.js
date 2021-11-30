@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 // ============ Function ============== //
 // ============ From React Library mui ============== //
 const customIcons = {
+	// absolutely no one touch this, everything breaks if you do
     1: {
       icon: <SentimentVeryDissatisfiedIcon />,
       label: 'Very Dissatisfied',
@@ -40,7 +41,7 @@ const customIcons = {
   };
 
   // ============ Function ============== //
-  export default function SmileRating() {
+  export default function SmileRating({is_recommended}) {
   // ============ Layout
     return (
       <Box
@@ -54,7 +55,7 @@ const customIcons = {
         <Rating
           name="highlight-selected-only"
           size="large"
-          defaultValue={2}
+          defaultValue={is_recommended+1}
           IconContainerComponent={IconContainer}
           highlightSelectedOnly
           position= 'absolute'

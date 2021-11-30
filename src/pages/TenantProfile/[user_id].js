@@ -152,7 +152,8 @@ export default function TenantProfile({viewData, reviewCountData, reviewsData}) 
 								review = {r.content} 
 								name={r.firstname + " " + r.lastname} 
 								boldDate={r.date} 
-								is_recommmended={r.is_recommmended}/>
+								is_recommended={r.is_recommended}
+							/>
 							</CenterBox>;
                 })}
             	{reviewsData.length == 0 ? <CenterBox>No Reviews yet</CenterBox>: ""}

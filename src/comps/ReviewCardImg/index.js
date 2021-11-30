@@ -99,9 +99,9 @@ const ReviewCardImg = ({
     height="140px",
     bgImage="",
 	is_recommended=0,
+	overall,
 
 // ============ Router		
-		routTo = "/",
 
 }) => {
     
@@ -110,7 +110,6 @@ const ReviewCardImg = ({
 		<BoxCont>
 			<RevBox 
 				bWidth={bWidth} bHeight={bHeight}
-				onClick={()=>router.push(routTo)}
 			>
 {/* // ============ Avatar */}
 				<TextAvatarCont>
@@ -124,7 +123,7 @@ const ReviewCardImg = ({
 {/* // ============ Reviews */}
 				<RatingCont>
 					<FirstRow> 
-						<RatingStar />
+						{/* <RatingStar val={overall}/> */}
 						<DateText >{boldDate}</DateText>
 					</FirstRow>
 					
