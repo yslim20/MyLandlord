@@ -39,13 +39,13 @@ const InputBox = styled.input`
 `
 
 // ============ Function ============== //
-const FullName = () => {  
+const FullName = (props) => {  
 // ============ Layout
   return (
     <Cont>
       <MidCont> 
         <LabelFor for="fname">First Name</LabelFor>
-        <InputBox type="text" name="fname" autoComplete="name" required />
+        <InputBox type="text" name="fname" autoComplete="name" required value={props.firstname}/>
       </MidCont>
       
       <MidCont>

@@ -80,8 +80,8 @@ const UserDrop=({
   const router = useRouter();
 
   const logout = async () => {
-	  await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
-	//   await fetch("http://localhost:3080/auth/logout", {
+	//   await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
+	  await fetch("http://localhost:3080/auth/logout", {
 		  credentials:'include'
 	  })
 	  .then(() => router.push("/"))
@@ -92,12 +92,24 @@ const UserDrop=({
 
 	React.useEffect(() => {
 
-		fetch('https://idsp-mylandlord.herokuapp.com/hey', {
-		// fetch('http://localhost:3080/hey', {
+		// fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+		fetch('http://localhost:3080/hey', {
 			credentials: "include",
 		})
 		.then(response => response.json())
 		.then(uType => setUserType(uType));
+	})
+
+  let [userId, setUserId] = React.useState(null);
+
+	React.useEffect(() => {
+
+		// fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+		fetch('http://localhost:3080/profile/whoami', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(user => setUserId(user));
 	})
 
   return (
@@ -196,7 +208,7 @@ const UserDrop=({
                   ))} */}
 					<MenuItem onClick={() => {
 						userType 
-						? router.push("/LandlordMypage")
+						? router.push("/LandlordEdit?id=" + userId.user_id)
 						: router.push("/TenantEdit")
 					}}>
 				  		My Page

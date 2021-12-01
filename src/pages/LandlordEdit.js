@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import router from 'next/router';
 
 // ============ Imported Comps ============== //
@@ -13,6 +13,7 @@ import CircleAvatar from '../comps/CircleAvatar';
 import Input from '../comps/Input';
 import Button from '../comps/Button';
 import FullName from '../comps/FullName';
+// import { getServerSideProps } from './Landlord';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -114,6 +115,7 @@ const EditIcon = styled.img`
 
 
 // ============ Function ============== //
+
 // ============ Layout
 export default function LandlordEdit() {
 	
@@ -137,7 +139,7 @@ export default function LandlordEdit() {
                     <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
                     <InfoForm>
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
-                        <FullName />
+                        <FullName/>
                         <Input title="Password" type="password" iheight="54"/>
                         <Input title="Email Address" iheight="54"/>
                         <Input title="Phone Number" iheight="54"/>
@@ -157,7 +159,7 @@ export default function LandlordEdit() {
 
 {/* // ============ Add new property button */}
             <CenterCont>
-                <IconCont onClick={()=>router.push('/NewProperty')}>
+                <IconCont onClick={()=>router.push('/LandlordAddProp')}>
                     <Icon src="/icons/icon_addProperty.png/" />
                 </IconCont>
             </CenterCont>
