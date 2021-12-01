@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -40,17 +40,31 @@ const InputBox = styled.input`
 
 // ============ Function ============== //
 const FullName = (props) => {  
+
+	const [fname, setfname] = useState(props.fname);
+	const [lname, setlname] = useState(props.lname);
+
 // ============ Layout
   return (
     <Cont>
       <MidCont> 
         <LabelFor for="fname">First Name</LabelFor>
-        <InputBox type="text" name="fname" autoComplete="name" required value={props.firstname}/>
+        <InputBox 
+			type="text" 
+			name="fname" 
+			autoComplete="name" 
+			required value={fname}
+			onChange={e => setfname( e.target.value )}/>
       </MidCont>
       
       <MidCont>
         <LabelFor for="lname">Last Name</LabelFor>
-        <InputBox type="text" name="lname" autoComplete="name" required />          
+        <InputBox 
+			type="text" 
+			name="lname" 
+			autoComplete="name" 
+			required value={lname}
+			onChange={e => setlname( e.target.value )}/>          
       </MidCont>        
     </Cont>    
   );

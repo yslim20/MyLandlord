@@ -14,6 +14,7 @@ import CircleAvatar from '../comps/CircleAvatar';
 import Button from '../comps/Button';
 import FullName from '../comps/FullName';
 import EditInput from '../comps/EditInput';
+import { Update } from '@mui/icons-material';
 
 
 // ============ CSS ============== //
@@ -116,6 +117,27 @@ const EditIcon = styled.img`
 
 
 // ============ Function ============== //
+
+const update = async(event) => {
+	event.preventDefault();
+
+	await fetch("http://localhost:3080/profile/update",
+	// const result = await fetch("https://idsp-mylandlord.herokuapp.com/profile/update",
+	  {
+		credentials: "include",
+		method: "PUT",
+		body: JSON.stringify({ 
+		  firstname: event.target.fname.value,
+		  lastname: event.target.lname.value,
+		  email: event.target.Email.value,
+		  password: event.target.Password.value,
+		  profile_image: "default_pfp",
+		}),
+		headers: { "Content-Type": "application/json" },
+	  })
+	.then(() => router.push("/"))
+}
+
 export async function getServerSideProps(context) {
 	let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
 	let userData = await user.json();
@@ -137,11 +159,11 @@ export default function LandlordEdit({userData}) {
             /> */}
 			<Navi />
             <HeadCont>
-                <Header marginBottom="45px" marginLeft="4%" text="Jasper White"/>
+                <Header marginBottom="45px" marginLeft="4%" text={`${userData.firstname} ${userData.lastname}`}/>
             </HeadCont>
 
 {/* // ============ User Information */}
-            <UserInfo>
+            <UserInfo onSubmit={update}>
                 <InfoCont>
                     <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
                     <InfoForm>
