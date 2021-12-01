@@ -121,8 +121,8 @@ const EditIcon = styled.img`
 const update = async(event) => {
 	event.preventDefault();
 
-	await fetch("http://localhost:3080/profile/update",
-	// const result = await fetch("https://idsp-mylandlord.herokuapp.com/profile/update",
+	// await fetch("http://localhost:3080/profile/update",
+	const result = await fetch("https://idsp-mylandlord.herokuapp.com/profile/update",
 	  {
 		credentials: "include",
 		method: "PUT",
@@ -139,7 +139,8 @@ const update = async(event) => {
 }
 
 export async function getServerSideProps(context) {
-	let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
+	// let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
+	let user = await fetch("https://idsp-mylandlord.herokuapp.com/profile/me/" + context.query.id);
 	let userData = await user.json();
 	return {props:{userData}}
 }

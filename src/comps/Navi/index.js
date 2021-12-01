@@ -61,8 +61,8 @@ const Navi =({
 
 	useEffect(() => {
 
-		// fetch('https://idsp-mylandlord.herokuapp.com/hi', {
-		fetch('http://localhost:3080/hi', {
+		fetch('https://idsp-mylandlord.herokuapp.com/hi', {
+		// fetch('http://localhost:3080/hi', {
 			credentials: "include",
 		})
 		.then(response => response.json())

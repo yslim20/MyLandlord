@@ -112,7 +112,6 @@ export default function SignUp() {
         method: 'POST',
       redirect: 'follow'
     }) 
-  // .then(window.location.replace("http://localhost:3000/LogIn"))
   .then((response) => {
     console.log(response);
     router.push("/LogIn");
