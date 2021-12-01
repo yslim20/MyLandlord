@@ -115,9 +115,14 @@ const EditIcon = styled.img`
 
 
 // ============ Function ============== //
+export async function getServerSideProps(context) {
+	let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
+	let userData = await user.json();
+	return {props:{id:context.query.id, userData}}
+}
 
 // ============ Layout
-export default function LandlordEdit() {
+export default function LandlordEdit({id, userData}) {
 	
     return(
         <Cont>
@@ -141,8 +146,8 @@ export default function LandlordEdit() {
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
                         <FullName/>
                         <Input title="Password" type="password" iheight="54"/>
-                        <Input title="Email Address" iheight="54"/>
-                        <Input title="Phone Number" iheight="54"/>
+                        <Input title="Email" iheight="54"/>
+                        {/* <Input title="Phone Number" iheight="54"/> */}
                         <Button text="Save" margintop="80" minWidth="275" width="275" height="62" justify="right" routeTo="/"/>
                     </InfoForm>
                 </InfoCont>
