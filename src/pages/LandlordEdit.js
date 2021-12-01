@@ -119,11 +119,12 @@ const EditIcon = styled.img`
 export async function getServerSideProps(context) {
 	let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
 	let userData = await user.json();
-	return {props:{id:context.query.id, userData}}
+	return {props:{userData}}
 }
 
 // ============ Layout
-export default function LandlordEdit({id, userData}) {
+export default function LandlordEdit({userData}) {
+// export default function LandlordEdit() {
 	
     return(
         <Cont>
@@ -145,10 +146,9 @@ export default function LandlordEdit({id, userData}) {
                     <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
                     <InfoForm>
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
-                        <FullName />
-                        <EditInput title="Password" type="password" iheight="54"/>
-                        <EditInput title="Email Address" iheight="54"/>
-                        <EditInput title="Phone Number" iheight="54"/>
+                        <FullName fname={userData.firstname} lname={userData.lastname}/>
+                        <EditInput title="Password" type="password" iheight="54" val={userData.password}/>
+                        <EditInput title="Email" iheight="54" val={userData.email}/>
                         <Button text="Save" margintop="80" minWidth="275" width="275" height="62" justify="right" routeTo="/"/>
                     </InfoForm>
                 </InfoCont>

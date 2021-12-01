@@ -1,5 +1,6 @@
+// this is purely for edit profiles
 import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 
 // ============ CSS ============== //
 const FormCont = styled.div`
@@ -39,20 +40,20 @@ const InputBox = styled.input`
   box-sizing: border-box;
 `
 // ============ Function ============== //
-const EditInput = ({
+const EditInput = (props, {
   
 // ============ Properties
   minWidth = "",
-  title = "Email",
   fwidth = "100%",
   fheight = "100%",
   fsize = 24,
   iwidth = "100%",
   iheight = 57,
-  type ="text",
-  marginB = "25px"
+  marginB = "25px",
 
 }) => {  
+
+	const [value, setValue] = useState(props.val);
 // ============ Layout
   return (
     <FormCont
@@ -64,14 +65,16 @@ const EditInput = ({
         fheight={fheight}
       >
         <LabelFor 
-          for={title} 
+          for={props.title} 
           fsize = {fsize}
-        > {title}</LabelFor>
+        > {props.title}</LabelFor>
         <InputBox 
-          type={type} 
-          name={title}
+		  value={value}
+          type={props.type} 
+          name={props.title}
           iwidth={iwidth} 
           iheight={iheight}
+		  onChange={e => setValue( e.target.value )}
         />
       </FormBox>
     </FormCont>    
