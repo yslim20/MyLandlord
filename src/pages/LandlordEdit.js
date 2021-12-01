@@ -10,10 +10,11 @@ import Header from '../comps/Header';
 import SubHead from '../comps/SubHead';
 import Navi from '../comps/Navi';
 import CircleAvatar from '../comps/CircleAvatar';
-import Input from '../comps/Input';
+// import Input from '../comps/Input';
 import Button from '../comps/Button';
 import FullName from '../comps/FullName';
-// import { getServerSideProps } from './Landlord';
+import EditInput from '../comps/EditInput';
+
 
 // ============ CSS ============== //
 const Cont = styled.div`
@@ -35,7 +36,7 @@ const ProfCont = styled.div`
     flex-direction: column;
     margin-bottom: 70px;
 `;
-const UserInfo = styled.div`
+const UserInfo = styled.form`
     display:flex;
     flex-direction: column;
 `;
@@ -144,10 +145,10 @@ export default function LandlordEdit({id, userData}) {
                     <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
                     <InfoForm>
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
-                        <FullName/>
-                        <Input title="Password" type="password" iheight="54"/>
-                        <Input title="Email" iheight="54"/>
-                        {/* <Input title="Phone Number" iheight="54"/> */}
+                        <FullName />
+                        <EditInput title="Password" type="password" iheight="54"/>
+                        <EditInput title="Email Address" iheight="54"/>
+                        <EditInput title="Phone Number" iheight="54"/>
                         <Button text="Save" margintop="80" minWidth="275" width="275" height="62" justify="right" routeTo="/"/>
                     </InfoForm>
                 </InfoCont>
