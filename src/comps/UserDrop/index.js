@@ -88,7 +88,8 @@ const UserDrop=({
 	  .catch(() => console.log("something's wrong"))
   }
 
-  let [userType, setUserType] = React.useState(null);
+  let [userInfo, setUserInfo] = React.useState(null);
+  let [userID, setUserID] = React.useState(null);
 
 	React.useEffect(() => {
 
@@ -97,8 +98,27 @@ const UserDrop=({
 			credentials: "include",
 		})
 		.then(response => response.json())
-		.then(uType => setUserType(uType));
+		.then(data => setUserInfo(data));
+
+		fetch('https://idsp-mylandlord.herokuapp.com/id', {
+		// fetch('http://localhost:3080/id', {
+			credentials: "include",
+		})
+		.then(response => response.json())
+		.then(data => setUserID(data));
 	})
+
+//   let [userId, setUserId] = React.useState(null);
+
+// 	React.useEffect(() => {
+
+// 		// fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+// 		fetch('http://localhost:3080/profile/whoami', {
+// 			credentials: "include",
+// 		})
+// 		.then(response => response.json())
+// 		.then(user => setUserId(user));
+// 	})
 
   return (
 
@@ -195,8 +215,8 @@ const UserDrop=({
                     </MenuItem>                    
                   ))} */}
 					<MenuItem onClick={() => {
-						userType 
-						? router.push("/LandlordMypage")
+						userInfo 
+						? router.push("/LandlordEdit?id=" + userID)
 						: router.push("/TenantEdit")
 					}}>
 				  		My Page

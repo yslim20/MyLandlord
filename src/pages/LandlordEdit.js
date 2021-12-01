@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import router from 'next/router';
 
 // ============ Imported Comps ============== //
@@ -14,6 +14,7 @@ import CircleAvatar from '../comps/CircleAvatar';
 import Button from '../comps/Button';
 import FullName from '../comps/FullName';
 import EditInput from '../comps/EditInput';
+import { Update } from '@mui/icons-material';
 
 
 // ============ CSS ============== //
@@ -116,8 +117,37 @@ const EditIcon = styled.img`
 
 
 // ============ Function ============== //
+
+const update = async(event) => {
+	event.preventDefault();
+
+	// await fetch("http://localhost:3080/profile/update",
+	const result = await fetch("https://idsp-mylandlord.herokuapp.com/profile/update",
+	  {
+		credentials: "include",
+		method: "PUT",
+		body: JSON.stringify({ 
+		  firstname: event.target.fname.value,
+		  lastname: event.target.lname.value,
+		  email: event.target.Email.value,
+		  password: event.target.Password.value,
+		  profile_image: "default_pfp",
+		}),
+		headers: { "Content-Type": "application/json" },
+	  })
+	.then(() => router.push("/"))
+}
+
+export async function getServerSideProps(context) {
+	// let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
+	let user = await fetch("https://idsp-mylandlord.herokuapp.com/profile/me/" + context.query.id);
+	let userData = await user.json();
+	return {props:{userData}}
+}
+
 // ============ Layout
-export default function LandlordEdit() {
+export default function LandlordEdit({userData}) {
+// export default function LandlordEdit() {
 	
     return(
         <Cont>
@@ -130,19 +160,18 @@ export default function LandlordEdit() {
             /> */}
 			<Navi />
             <HeadCont>
-                <Header marginBottom="45px" marginLeft="4%" text="Jasper White"/>
+                <Header marginBottom="45px" marginLeft="4%" text={`${userData.firstname} ${userData.lastname}`}/>
             </HeadCont>
 
 {/* // ============ User Information */}
-            <UserInfo>
+            <UserInfo onSubmit={update}>
                 <InfoCont>
                     <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
                     <InfoForm>
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
-                        <FullName />
-                        <EditInput title="Password" type="password" iheight="54"/>
-                        <EditInput title="Email Address" iheight="54"/>
-                        <EditInput title="Phone Number" iheight="54"/>
+                        <FullName fname={userData.firstname} lname={userData.lastname}/>
+                        <EditInput title="Password" type="password" iheight="54" val={userData.password}/>
+                        <EditInput title="Email" iheight="54" val={userData.email}/>
                         <Button text="Save" margintop="80" minWidth="275" width="275" height="62" justify="right" routeTo="/"/>
                     </InfoForm>
                 </InfoCont>
@@ -159,7 +188,7 @@ export default function LandlordEdit() {
 
 {/* // ============ Add new property button */}
             <CenterCont>
-                <IconCont onClick={()=>router.push('/NewProperty')}>
+                <IconCont onClick={()=>router.push('/LandlordAddProp')}>
                     <Icon src="/icons/icon_addProperty.png/" />
                 </IconCont>
             </CenterCont>

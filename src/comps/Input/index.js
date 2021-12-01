@@ -50,7 +50,8 @@ const Input = ({
   iwidth = "100%",
   iheight = 57,
   type ="text",
-  marginB = "25px"
+  marginB = "25px",
+  value
 
 }) => {  
 // ============ Layout
@@ -72,6 +73,7 @@ const Input = ({
           name={title}
           iwidth={iwidth} 
           iheight={iheight}
+		  value={value}
         />
       </FormBox>
     </FormCont>    
