@@ -150,7 +150,7 @@ export default function Home() {
 						cursor="default"                        
 					/>
 					<SubHead 
-						text="Welcome! We are a platform for rating landlord's"
+						text="Welcome! We are a platform for rating landlords"
 						fontSize="24"
 						fontWeight="500"
 						lineHeight="29"
