@@ -80,8 +80,8 @@ const UserDrop=({
   const router = useRouter();
 
   const logout = async () => {
-	//   await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
-	  await fetch("http://localhost:3080/auth/logout", {
+	  await fetch("https://idsp-mylandlord.herokuapp.com/auth/logout", {
+	//   await fetch("http://localhost:3080/auth/logout", {
 		  credentials:'include'
 	  })
 	  .then(() => router.push("/"))
@@ -93,15 +93,15 @@ const UserDrop=({
 
 	React.useEffect(() => {
 
-		// fetch('https://idsp-mylandlord.herokuapp.com/hey', {
-		fetch('http://localhost:3080/hey', {
+		fetch('https://idsp-mylandlord.herokuapp.com/hey', {
+		// fetch('http://localhost:3080/hey', {
 			credentials: "include",
 		})
 		.then(response => response.json())
 		.then(data => setUserInfo(data));
 
-		// fetch('https://idsp-mylandlord.herokuapp.com/id', {
-		fetch('http://localhost:3080/id', {
+		fetch('https://idsp-mylandlord.herokuapp.com/id', {
+		// fetch('http://localhost:3080/id', {
 			credentials: "include",
 		})
 		.then(response => response.json())

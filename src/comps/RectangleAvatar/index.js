@@ -20,11 +20,11 @@ const Avatar = styled.img`
 `;
 
 // ============ Function ============== //
-const RetangleAvatar = ({
+const RetangleAvatar = (props,{
 // ============ Props
     width="399px",
     height="419px",
-    src="/images/img_landlordProfile.png",
+    // src="/images/img_landlordProfile.png",
     marginTop = "1"
 
 }) => {
@@ -32,7 +32,7 @@ const RetangleAvatar = ({
 // ============ Layout
     return(
         <Cont width={width} height={height} mtop={marginTop}>
-            <Avatar src={src} />
+            <Avatar src={`https://irl-dater-image-upload.s3.amazonaws.com/${props.src}`} />
         </Cont>
     );
 }
