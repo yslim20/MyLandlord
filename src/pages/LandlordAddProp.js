@@ -117,8 +117,8 @@ export default function LandlordAddProp() {
                     <Img src="./images/property2.jpeg"/>
                 </ImgCont>
                 <InputCont>
-                    <InputCol title= "Street Address" name="address"/>
-                    <InputCol title="City" name="city" />
+                    <InputCol text= "Street Address" name="address"/>
+                    <InputCol text="City" name="city" />
 
                 </InputCont>
             </InfoCont>
