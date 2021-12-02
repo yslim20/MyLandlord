@@ -212,7 +212,7 @@ const InputGroup = ({
         <BttnCont>
           <Button 
             type ="cancel"
-            text = "Cancle"
+            text = "Cancel"
             margintop = "0px"
             cwidth ="48%"
             width = "95%"
