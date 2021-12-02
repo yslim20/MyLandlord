@@ -91,7 +91,7 @@ const Navi =({
 
         <RightBar>
           {/* {children} */}
-		  {drop ? <UserDrop/>:<LoginDrop/>}
+		  {drop ? <UserDrop src="landlord_pfp.png"/>:<LoginDrop/>}
 
         </RightBar>
       </NavCont>

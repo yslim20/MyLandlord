@@ -111,7 +111,7 @@ export default function LandlordProfile({viewData, reviewCountData, reviewsData}
             </ButtCont>
             <LandlordSub/>
             <InfoCont>
-                <RetangleAvatar marginTop="2"/>
+                <RetangleAvatar marginTop="2" src={viewData.profile_image}/>
                 <InfoText>
                     <SubHead text="Burnaby, BC." fontSize="24" justifyContent="left" marginB="10" marginL="3%"/>
                     <LandlordInfo text={reviewCountData + " reviews"} />

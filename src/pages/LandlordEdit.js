@@ -166,7 +166,7 @@ export default function LandlordEdit({userData}) {
 {/* // ============ User Information */}
             <UserInfo onSubmit={update}>
                 <InfoCont>
-                    <CircleAvatar mtop="-100" src="/images/img_landlordProfile.png"/>
+                    <CircleAvatar mtop="-100" src = {`https://irl-dater-image-upload.s3.amazonaws.com/${userData.profile_image}`}/>
                     <InfoForm>
                         <SubHead text="Personal Information" fontSize="36" justifyContent="left" marginB="32"/>
                         <FullName fname={userData.firstname} lname={userData.lastname}/>
