@@ -32,7 +32,7 @@ const RetangleAvatar = (props,{
 // ============ Layout
     return(
         <Cont width={width} height={height} mtop={marginTop}>
-            <Avatar src={`https://irl-dater-image-upload.s3.amazonaws.com/${props.src}`} />
+            <Avatar className = "rec_avatar" src={`https://irl-dater-image-upload.s3.amazonaws.com/${props.src}`} />
         </Cont>
     );
 }

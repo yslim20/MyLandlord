@@ -331,6 +331,16 @@ a {
 
 /* PREVIEW PAGE ENDS HERE */
 
+/* AVATAR */
+
+.rec_avatar {
+  display: block;
+  object-fit: cover;
+  width:100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
 /* ================= MEDIA ================= */
 
 @media (prefers-reduced-motion: no-preference) {
