@@ -83,16 +83,18 @@ export async function getServerSideProps(context) {
     let view = await fetch('https://idsp-mylandlord.herokuapp.com/profile/view/' + context.query.user_id);
     let reviewCount = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.query.user_id}/count`);
     let reviews = await fetch(`https://idsp-mylandlord.herokuapp.com/profile/reviews/${context.query.user_id}/getAll`);
+	let properties = await fetch("https://idsp-mylandlord.herokuapp.com/profile/property/"+context.query.user_id+"/getAll");
 
     let viewData = await view.json();
     let reviewCountData = await reviewCount.json();
     let reviewsData = await reviews.json();
+	let propertiesData = await properties.json();
 
-    return {props:{viewData, reviewCountData, reviewsData}}
+    return {props:{viewData, reviewCountData, reviewsData, propertiesData}}
 }
 
 // ============ Layout
-export default function LandlordProfile({viewData, reviewCountData, reviewsData}) {
+export default function LandlordProfile({viewData, reviewCountData, reviewsData, propertiesData}) {
 	
 	return  (
 		
@@ -127,9 +129,9 @@ export default function LandlordProfile({viewData, reviewCountData, reviewsData}
             <ProfCont>
                 <ProfileSub />
                 <ShowAll />
-                <CenterBox>
-                    <PropertyCard marginTop="25%" />
-                </CenterBox>
+                {propertiesData.map((p) => {
+					return <CenterBox><PropertyCard  marginTop="25%" address={p.address} city={p.city}  description={p.description}/></CenterBox>
+				})}
             </ProfCont>
 
 {/* // ============ Reviews */}

@@ -141,12 +141,14 @@ const update = async(event) => {
 export async function getServerSideProps(context) {
 	// let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
 	let user = await fetch("https://idsp-mylandlord.herokuapp.com/profile/me/" + context.query.id);
+	let properties = await fetch("https://idsp-mylandlord.herokuapp.com/profile/property/"+context.query.id+"/getAll");
 	let userData = await user.json();
-	return {props:{userData}}
+	let propertiesData = await properties.json();
+	return {props:{userData, propertiesData}}
 }
 
 // ============ Layout
-export default function LandlordEdit({userData}) {
+export default function LandlordEdit({userData, propertiesData}) {
 // export default function LandlordEdit() {
 	
     return(
@@ -178,12 +180,13 @@ export default function LandlordEdit({userData}) {
             </UserInfo>
 
 {/* // ============ Properties Information */}
+			{console.log(propertiesData)}
             <ProfCont>
                 <ProfileSub />
-                <CenterBox>
-                    <PropertyCard marginTop="25%" />
-
-                </CenterBox>
+				{propertiesData.map((p) => {
+					return <CenterBox><PropertyCard  marginTop="25%" address={p.address} city={p.city}  description={p.description}/></CenterBox>
+				})}
+                
             </ProfCont>
 
 {/* // ============ Add new property button */}

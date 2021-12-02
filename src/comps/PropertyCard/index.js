@@ -74,19 +74,21 @@ const DateText = styled.p`
 `;
 
 // ============ Function ============== //
-const PropertyCard = ({
+const PropertyCard = (props, {
 // ============ Props
     src= "/images/property1.jpeg",
     width= "196px",
     height="130px",
     cwidth = "100%",
     cheight = 300,
-    bold="5435 Kincaid St",
+    // bold="5435 Kincaid St",
     boldDate="19 Jan 2017 19:01",
-    regT1= "8 Rooms, 3 Bath",
-    regT2= "Built in 2008",
-    regT3= "Litigation History: No",
-    regT4= "Since: 2011~",
+	address="",
+    // regT1= "8 Rooms, 3 Bath",
+    // regT2= "Built in 2008",
+    // regT3= "Litigation History: No",
+    // regT4= "Since: 2011~",
+
     marginTop= "35%"
 
 }) => {
@@ -99,11 +101,9 @@ const PropertyCard = ({
                     <LeftSide>
                         <Img src={src} width={width} height={height} />
                         <TextCont>
-                            <BoldText>{bold}</BoldText>
-                            <RegText>{regT1}</RegText>
-                            <RegText>{regT2}</RegText>
-                            <RegText>{regT3}</RegText>
-                            <RegText>{regT4}</RegText>
+                            <BoldText>{address}</BoldText>
+                            <RegText>{props.city}</RegText>
+                            <RegText>{props.description}</RegText>
                         </TextCont>
                     </LeftSide>
                     <RightSide>
