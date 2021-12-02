@@ -352,7 +352,7 @@ const EnhancedTable = ({
                         align="center"
                       >
                         <Avatar 
-                          src ={row.profile_image}
+                          src = {`https://irl-dater-image-upload.s3.amazonaws.com/${row.profile_image}`}
                           bradius="50%"
                           bshadow = "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
                         />
