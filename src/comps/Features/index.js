@@ -52,7 +52,7 @@ const Features = ({
 
 // Text
   title="Transparent Review Site",
-	para="Tenants can write reviews on the current or previous landlord.",
+	para="Tenants can write reviews on their current or previous landlord(s).",
 }) => {
 
 // ============ Router 

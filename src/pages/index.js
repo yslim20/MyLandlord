@@ -150,7 +150,7 @@ export default function Home() {
 						cursor="default"                        
 					/>
 					<SubHead 
-						text="Welcome! We are a landlord review platform"
+						text="Welcome! We are a platform for rating landlords"
 						fontSize="24"
 						fontWeight="500"
 						lineHeight="29"
@@ -162,7 +162,7 @@ export default function Home() {
 						lineHeight="39"						
 					/>
 					<SubHead 
-						text="Or check out the review of landlords in BC" 	
+						text="Or check out the reviews of landlords in BC" 	
 						fontSize="22"
 						lineHeight="39"						
 					/>

@@ -99,11 +99,11 @@ const Landlord = ({
         <SubHead 
           marginB = "40"
           justifyContent="left"            
-          text="Who do you want to search?"
+          text="Who would you like to search for?"
           marginL="2%"
         />
         <SearchBar
-          placeholder="Please type your landlord name or address.."
+          placeholder="Please type the name of the landlord you are looking for"
           marginL="2"
         />
 

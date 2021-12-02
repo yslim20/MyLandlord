@@ -65,7 +65,7 @@ const HeroImage = ({
     >
       <Letterbox>
         <SubHead 
-          text = "Share your experiences with landlord with us"
+          text = "Share your experiences with a landlord with us"
           fontWeight = "500"
           align="center"
           marginB="30"
