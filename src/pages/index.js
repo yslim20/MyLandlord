@@ -49,7 +49,11 @@ const LeftBox = styled.div`
 	flex-direction: column;	
 	justify-content:center;
 	align-items:center;
-	flex: 1;
+	flex: 1;	
+	box-sizing: border-box;
+	margin-right: 50px;
+	margin-bottom: 25px;
+	box-sizing: border-box;
 `
 
 const RightBox = styled.div`
@@ -151,19 +155,19 @@ export default function Home() {
 					/>
 					<SubHead 
 						text="Welcome! We are a platform for rating landlords"
-						fontSize="24"
+						fontSize="22"
 						fontWeight="500"
 						lineHeight="29"
 						marginB="25"
 					/>
 					<SubHead 
 						text="You can write a review for your landlord right now" 	
-						fontSize="22"
+						fontSize="20"
 						lineHeight="39"						
 					/>
 					<SubHead 
 						text="Or check out the reviews of landlords in BC" 	
-						fontSize="22"
+						fontSize="20"
 						lineHeight="39"						
 					/>
 				</LeftBox>

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import CardMedia from '@mui/material/CardMedia';
 
 // ============ CSS ============== //
 const MedCont = styled.div`    
@@ -8,9 +7,15 @@ const MedCont = styled.div`
   height: ${props=>props.cheight};
   margin: ${props=>props.cmargin}px;
   display:flex;
+  flex-wrap: warp;
   justify-content:center;
   align-items:center;
 `;
+
+const MediaBox = styled.iframe`
+  width: 750px;
+  height: 423px;
+`
 
 // ============ Function ============== //
 const Mediabox = ({
@@ -19,8 +24,7 @@ const Mediabox = ({
   cwidth = 751,
   cheight = "auto",
   cmargin="auto",
-  component = "video" ,
-  src = "./video/Promovideo.mp4",
+  src = "https://www.youtube.com/embed/74wOQIiVwuI?autoplay=1&mute=1&loop=1&playlist=74wOQIiVwuI&ab_channel=Ivan;",
 
 }) => {
 
@@ -31,14 +35,12 @@ const Mediabox = ({
       cheight={cheight}
       cmargin={cmargin}
     >
-      <CardMedia
-        component={component}                       
-        loop
-        autoPlay
-        muted
-        controls 
+      <MediaBox                   
         src={src}
-      />  
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+      >
+      </MediaBox> 
     </MedCont>
   );
 }
