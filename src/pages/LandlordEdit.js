@@ -140,6 +140,7 @@ const update = async(event) => {
 
 export async function getServerSideProps(context) {
 	// let user = await fetch("http://localhost:3080/profile/me/" + context.query.id);
+	// let properties = await fetch("http://localhost:3080/profile/property/"+context.query.id+"/getAll");
 	let user = await fetch("https://idsp-mylandlord.herokuapp.com/profile/me/" + context.query.id);
 	let properties = await fetch("https://idsp-mylandlord.herokuapp.com/profile/property/"+context.query.id+"/getAll");
 	let userData = await user.json();
