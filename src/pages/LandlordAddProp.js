@@ -98,7 +98,9 @@ export default function LandlordAddProp() {
 			method: 'POST',
 			headers: { "Content-Type": "application/json" },
 		})
-		.then(() => router.push("/"))
+		.then(id => id.json())
+		.then(id => router.push("/LandlordEdit?id="+id))
+		// .then(id => console.log(id.json()))
 		.catch(() => alert("not working"))
 	}
 
