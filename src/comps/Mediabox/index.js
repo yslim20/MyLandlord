@@ -24,7 +24,7 @@ const Mediabox = ({
   cwidth = 751,
   cheight = "auto",
   cmargin="auto",
-  src = "https://www.youtube.com/embed/74wOQIiVwuI?autoplay=1&mute=1&loop=1&playlist=74wOQIiVwuI&ab_channel=Ivan;",
+  src = "https://www.youtube.com/embed/kNf_rnuuyxE?autoplay=1&mute=1&loop=1&playlist=kNf_rnuuyxE&ab_channel=Ivan;",
 
 }) => {
 
